@@ -1,0 +1,2457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Kiwi.Plugins.Primitives.Star - primitives</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+            
+                <h1><img src="../assets/css/logo.png" title="primitives"></h1>
+            
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 1.0.0</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+    <h2 class="off-left">APIs</h2>
+    <div id="api-tabview" class="tabview">
+        <ul class="tabs">
+            <li><a href="#api-classes">Classes</a></li>
+            <li><a href="#api-modules">Modules</a></li>
+        </ul>
+
+        <div id="api-tabview-filter">
+            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+        </div>
+
+        <div id="api-tabview-panel">
+            <ul id="api-classes" class="apis classes">
+            
+                <li><a href="../classes/Kiwi.Plugins.Primitives.html">Kiwi.Plugins.Primitives</a></li>
+            
+                <li><a href="../classes/Kiwi.Plugins.Primitives.Ellipse.html">Kiwi.Plugins.Primitives.Ellipse</a></li>
+            
+                <li><a href="../classes/Kiwi.Plugins.Primitives.Line.html">Kiwi.Plugins.Primitives.Line</a></li>
+            
+                <li><a href="../classes/Kiwi.Plugins.Primitives.NullAtlas.html">Kiwi.Plugins.Primitives.NullAtlas</a></li>
+            
+                <li><a href="../classes/Kiwi.Plugins.Primitives.Polygon.html">Kiwi.Plugins.Primitives.Polygon</a></li>
+            
+                <li><a href="../classes/Kiwi.Plugins.Primitives.Rectangle.html">Kiwi.Plugins.Primitives.Rectangle</a></li>
+            
+                <li><a href="../classes/Kiwi.Plugins.Primitives.Star.html">Kiwi.Plugins.Primitives.Star</a></li>
+            
+                <li><a href="../classes/Kiwi.Plugins.Primitives.Triangle.html">Kiwi.Plugins.Primitives.Triangle</a></li>
+            
+                <li><a href="../classes/Kiwi.Renderers.PrimitiveRenderer.html">Kiwi.Renderers.PrimitiveRenderer</a></li>
+            
+                <li><a href="../classes/Kiwi.Shaders.PrimitiveShader.html">Kiwi.Shaders.PrimitiveShader</a></li>
+            
+            </ul>
+
+            <ul id="api-modules" class="apis modules">
+            
+                <li><a href="../modules/Kiwi.html">Kiwi</a></li>
+            
+                <li><a href="../modules/Plugins.html">Plugins</a></li>
+            
+            </ul>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+        Show:
+        <label for="api-show-inherited">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+        <label for="api-show-deprecated">
+            <input type="checkbox" id="api-show-deprecated">
+            Deprecated
+        </label>
+
+    </div>
+
+
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+                        <h1>Kiwi.Plugins.Primitives.Star Class</h1>
+<div class="box meta">
+    
+
+    
+        <div class="extends">
+            Extends <a href="../classes/Kiwi.Plugins.Primitives.Polygon.html" class="crosslink">Kiwi.Plugins.Primitives.Polygon</a>
+        </div>
+    
+
+    
+        <div class="foundat">
+            Defined in: <a href="../files/src_primitives-1.0.0.js.html#l1330"><code>src&#x2F;primitives-1.0.0.js:1330</code></a>
+        </div>
+    
+
+    
+        
+            Module: <a href="../modules/Plugins.html">Plugins</a><br>
+            Parent Module: <a href="../modules/Kiwi.html">Kiwi</a>
+        
+    
+
+    
+        <p>Available since 0.4.0</p>
+    
+</div>
+
+
+
+<div class="box intro">
+    <p>Star Primitive
+<br><br>
+Create a star primitive. Define a params object including a reference
+to the current state. You may also add style parameters from the Polygon.
+<br><br>
+You may draw semi-random stars. For example, to draw a cartoon impact flare:
+<br><br>
+new Kiwi.Plugins.Primitives.Star( {<br>
+    centerOnTransform: true,<br>
+    color: [ 1, 0.01, 1 ],<br>
+    drawStroke: false,<br>
+    radius: 32,<br>
+    spikeRandom: 1,<br>
+    state: MyGame.state,<br>
+    segments: 16<br>
+} );</p>
+
+</div>
+
+
+    <div class="constructor">
+        <h2>Constructor</h2>
+        <div id="method_Kiwi.Plugins.Primitives.Star" class="method item">
+    <h3 class="name"><code>Kiwi.Plugins.Primitives.Star</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>params</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/src_primitives-1.0.0.js.html#l1330"><code>src&#x2F;primitives-1.0.0.js:1330</code></a>
+        
+        </p>
+
+
+        
+
+        
+            <p>Available since 0.4.0</p>
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">params</code>
+                        <span class="type">Object</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>Parameter object</p>
+
+                    </div>
+
+                    
+                        <ul class="params-list">
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name">state</code>
+                                    <span class="type">Kiwi.State</span>
+                                
+
+                                <div class="param-description">
+                                    <p>Current state</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name optional">[centerOnTransform=false]</code>
+                                    <span class="type">Boolean</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+
+                                <div class="param-description">
+                                    <p>If true, star is centered
+    on transform; if false star has top left corner on transform</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name optional">[height=8]</code>
+                                    <span class="type">Number</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+
+                                <div class="param-description">
+                                    <p>Height of the star</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name optional">[spikeLength=1]</code>
+                                    <span class="type">Number</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+
+                                <div class="param-description">
+                                    <p>Length of spikes relative to radius</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name optional">[spikeRandom=0]</code>
+                                    <span class="type">Number</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+
+                                <div class="param-description">
+                                    <p>Randomness of star spikes, where 0 is
+    no randomness and 1 will make some spikes up to twice as long;
+    there is no cap.</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name optional">[radius]</code>
+                                    <span class="type">Number</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+
+                                <div class="param-description">
+                                    <p>Radius of a star; overide width and height</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name optional">[segments=32]</code>
+                                    <span class="type">Number</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+
+                                <div class="param-description">
+                                    <p>Number of points</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name optional">[width=8]</code>
+                                    <span class="type">Number</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+
+                                <div class="param-description">
+                                    <p>Width of the star</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+    </div>
+
+
+<div id="classdocs" class="tabview">
+    <ul class="api-class-tabs">
+        <li class="api-class-tab index"><a href="#index">Index</a></li>
+
+        
+            <li class="api-class-tab methods"><a href="#methods">Methods</a></li>
+        
+        
+            <li class="api-class-tab properties"><a href="#properties">Properties</a></li>
+        
+        
+        
+    </ul>
+
+    <div>
+        <div id="index" class="api-class-tabpanel index">
+            <h2 class="off-left">Item Index</h2>
+
+            
+                <div class="index-section methods">
+                    <h3>Methods</h3>
+
+                    <ul class="index-list methods extends">
+                        
+                            <li class="index-item method private inherited">
+                                <a href="#method__buildMiter">_buildMiter</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method private inherited">
+                                <a href="#method__buildStroke">_buildStroke</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method private inherited">
+                                <a href="#method__initProperties">_initProperties</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method public inherited">
+                                <a href="#method_clone">clone</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method public inherited">
+                                <a href="#method_combine">combine</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method public inherited">
+                                <a href="#method_complain">complain</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method public inherited">
+                                <a href="#method_computeMinMaxXY">computeMinMaxXY</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method public inherited">
+                                <a href="#method_createstroke">createstroke</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method public inherited">
+                                <a href="#method_objType">objType</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method public inherited">
+                                <a href="#method_parseParams">parseParams</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method public inherited">
+                                <a href="#method_parseStrict">parseStrict</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method public inherited">
+                                <a href="#method_rebuildBounds">rebuildBounds</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method public inherited">
+                                <a href="#method_render">render</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method inherited">
+                                <a href="#method_renderGL">renderGL</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method public inherited">
+                                <a href="#method_shatter">shatter</a>
+
+                                
+                                
+                            </li>
+                        
+                    </ul>
+                </div>
+            
+
+            
+                <div class="index-section properties">
+                    <h3>Properties</h3>
+
+                    <ul class="index-list properties extends">
+                        
+                            <li class="index-item property public inherited">
+                                <a href="#property_color">color</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property public inherited inherited">
+                                <a href="#property_drawFill">drawFill</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property public inherited">
+                                <a href="#property_glRenderer">glRenderer</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property public inherited">
+                                <a href="#property_indices">indices</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property public inherited">
+                                <a href="#property_strokeColor">strokeColor</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property public inherited">
+                                <a href="#property_strokeIndices">strokeIndices</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property public inherited">
+                                <a href="#property_strokePolyIndices">strokePolyIndices</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property public inherited">
+                                <a href="#property_strokePolyVertices">strokePolyVertices</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property public inherited">
+                                <a href="#property_strokeWidth">strokeWidth</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property public inherited">
+                                <a href="#property_vertices">vertices</a>
+
+                                
+                                
+                            </li>
+                        
+                    </ul>
+                </div>
+            
+
+            
+
+            
+        </div>
+
+        
+            <div id="methods" class="api-class-tabpanel">
+                <h2 class="off-left">Methods</h2>
+
+                
+                    <div id="method__buildMiter" class="method item private inherited">
+    <h3 class="name"><code>_buildMiter</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>line1</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>line2</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type">Object</span>
+        </span>
+    
+
+    
+
+    
+        <span class="flag private">private</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/Kiwi.Plugins.Primitives.Polygon.html#method__buildMiter">Kiwi.Plugins.Primitives.Polygon</a>:
+            
+        
+        
+        <a href="../files/src_primitives-1.0.0.js.html#l307"><code>src&#x2F;primitives-1.0.0.js:307</code></a>
+        
+        </p>
+
+
+        
+
+        
+            <p>Available since 0.3.0</p>
+        
+    </div>
+
+    <div class="description">
+        <p>Constructs a miter, a building block for strokes.
+Miters sit atop vertices and form the endpoints for two stroke segments.</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">line1</code>
+                        <span class="type">Array</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The first line, an array of 2 Points</p>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">line2</code>
+                        <span class="type">Array</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The second line, an array of 2 Points;
+the first point on line2 is the actual position of the miter</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type">Object</span>:
+                    
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method__buildStroke" class="method item private inherited">
+    <h3 class="name"><code>_buildStroke</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>srcIndices</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>srcVertices</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+        <span class="flag private">private</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/Kiwi.Plugins.Primitives.Polygon.html#method__buildStroke">Kiwi.Plugins.Primitives.Polygon</a>:
+            
+        
+        
+        <a href="../files/src_primitives-1.0.0.js.html#l391"><code>src&#x2F;primitives-1.0.0.js:391</code></a>
+        
+        </p>
+
+
+        
+
+        
+            <p>Available since 0.3.0</p>
+        
+    </div>
+
+    <div class="description">
+        <p>Construct a stroke by tracing a connection through all vertices.</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">srcIndices</code>
+                        <span class="type">Array</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>List of points to connect in order.</p>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">srcVertices</code>
+                        <span class="type">Array</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>Definition of points.</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method__initProperties" class="method item private inherited">
+    <h3 class="name"><code>_initProperties</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+
+    
+
+    
+        <span class="flag private">private</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/Kiwi.Plugins.Primitives.Polygon.html#method__initProperties">Kiwi.Plugins.Primitives.Polygon</a>:
+            
+        
+        
+        <a href="../files/src_primitives-1.0.0.js.html#l678"><code>src&#x2F;primitives-1.0.0.js:678</code></a>
+        
+        </p>
+
+
+        
+
+        
+            <p>Available since 0.1.0</p>
+        
+    </div>
+
+    <div class="description">
+        <p>Initialise internal properties</p>
+
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_clone" class="method item public inherited">
+    <h3 class="name"><code>clone</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type"><a href="../classes/Kiwi.Plugins.Primitives.Polygon.html" class="crosslink">Kiwi.Plugins.Primitives.Polygon</a></span>
+        </span>
+    
+
+    
+
+    
+        <span class="flag public">public</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/Kiwi.Plugins.Primitives.Polygon.html#method_clone">Kiwi.Plugins.Primitives.Polygon</a>:
+            
+        
+        
+        <a href="../files/src_primitives-1.0.0.js.html#l474"><code>src&#x2F;primitives-1.0.0.js:474</code></a>
+        
+        </p>
+
+
+        
+
+        
+            <p>Available since 0.3.0</p>
+        
+    </div>
+
+    <div class="description">
+        <p>Creates a copy of this polygon.</p>
+
+    </div>
+
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type"><a href="../classes/Kiwi.Plugins.Primitives.Polygon.html" class="crosslink">Kiwi.Plugins.Primitives.Polygon</a></span>:
+                    
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_combine" class="method item public inherited">
+    <h3 class="name"><code>combine</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>poly</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code class="optional">[discard=true]</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type">Boolean</span>
+        </span>
+    
+
+    
+
+    
+        <span class="flag public">public</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/Kiwi.Plugins.Primitives.Polygon.html#method_combine">Kiwi.Plugins.Primitives.Polygon</a>:
+            
+        
+        
+        <a href="../files/src_primitives-1.0.0.js.html#l544"><code>src&#x2F;primitives-1.0.0.js:544</code></a>
+        
+        </p>
+
+
+        
+
+        
+            <p>Available since 0.3.0</p>
+        
+    </div>
+
+    <div class="description">
+        <p>Adds another poly to this.</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">poly</code>
+                        <span class="type"><a href="../classes/Kiwi.Plugins.Primitives.Polygon.html" class="crosslink">Kiwi.Plugins.Primitives.Polygon</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>Primitive to combine.</p>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name optional">[discard=true]</code>
+                        <span class="type">Boolean</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>Discard the combination source?</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type">Boolean</span>:
+                    
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_complain" class="method item public inherited">
+    <h3 class="name"><code>complain</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>string</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+        <span class="flag public">public</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/Kiwi.Plugins.Primitives.Polygon.html#method_complain">Kiwi.Plugins.Primitives.Polygon</a>:
+            
+        
+        
+        <a href="../files/src_primitives-1.0.0.js.html#l647"><code>src&#x2F;primitives-1.0.0.js:647</code></a>
+        
+        </p>
+
+
+        
+
+        
+            <p>Available since 0.4.0</p>
+        
+    </div>
+
+    <div class="description">
+        <p>Reports an error message.</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">string</code>
+                        <span class="type">String</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>Text to report</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_computeMinMaxXY" class="method item public inherited">
+    <h3 class="name"><code>computeMinMaxXY</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>array</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type"></span>
+        </span>
+    
+
+    
+
+    
+        <span class="flag public">public</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/Kiwi.Plugins.Primitives.Polygon.html#method_computeMinMaxXY">Kiwi.Plugins.Primitives.Polygon</a>:
+            
+        
+        
+        <a href="../files/src_primitives-1.0.0.js.html#l504"><code>src&#x2F;primitives-1.0.0.js:504</code></a>
+        
+        </p>
+
+
+        
+
+        
+            <p>Available since 0.1.0</p>
+        
+    </div>
+
+    <div class="description">
+        <p>Determines the min and max x and y coordinates from an array.</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">array</code>
+                        <span class="type">Array</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>Array of points, defined as arrays [ x, y ]</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                    <p>object</p>
+
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_createstroke" class="method item public inherited">
+    <h3 class="name"><code>createstroke</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type"></span>
+        </span>
+    
+
+    
+
+    
+        <span class="flag public">public</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/Kiwi.Plugins.Primitives.Polygon.html#method_createstroke">Kiwi.Plugins.Primitives.Polygon</a>:
+            
+        
+        
+        <a href="../files/src_primitives-1.0.0.js.html#l661"><code>src&#x2F;primitives-1.0.0.js:661</code></a>
+        
+        </p>
+
+
+        
+
+        
+            <p>Available since 0.3.0</p>
+        
+    </div>
+
+    <div class="description">
+        <p>Put a stroke on this Polygon, following the strokeIndices vertex list.
+You should not need to do this manually.</p>
+
+    </div>
+
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                    <p>boolean</p>
+
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_objType" class="method item public inherited">
+    <h3 class="name"><code>objType</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type">String</span>
+        </span>
+    
+
+    
+
+    
+        <span class="flag public">public</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/Kiwi.Plugins.Primitives.Polygon.html#method_objType">Kiwi.Plugins.Primitives.Polygon</a>:
+            
+        
+        
+        <a href="../files/src_primitives-1.0.0.js.html#l702"><code>src&#x2F;primitives-1.0.0.js:702</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Returns the type of object that this is.</p>
+
+    </div>
+
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type">String</span>:
+                    
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_parseParams" class="method item public inherited">
+    <h3 class="name"><code>parseParams</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>params</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type"></span>
+        </span>
+    
+
+    
+
+    
+        <span class="flag public">public</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/Kiwi.Plugins.Primitives.Polygon.html#method_parseParams">Kiwi.Plugins.Primitives.Polygon</a>:
+            
+        
+        
+        <a href="../files/src_primitives-1.0.0.js.html#l712"><code>src&#x2F;primitives-1.0.0.js:712</code></a>
+        
+        </p>
+
+
+        
+
+        
+            <p>Available since 0.1.0</p>
+        
+    </div>
+
+    <div class="description">
+        <p>Sets default parameters on primitive. Note that this will redefine the
+entire primitive. If you call parseParams after creation, you will have to
+take steps to preserve any shape, style, or transform data you wish to keep.</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">params</code>
+                        <span class="type">Object</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The param objects</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                    <p>boolean</p>
+
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_parseStrict" class="method item public inherited">
+    <h3 class="name"><code>parseStrict</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type"></span>
+        </span>
+    
+
+    
+
+    
+        <span class="flag public">public</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/Kiwi.Plugins.Primitives.Polygon.html#method_parseStrict">Kiwi.Plugins.Primitives.Polygon</a>:
+            
+        
+        
+        <a href="../files/src_primitives-1.0.0.js.html#l799"><code>src&#x2F;primitives-1.0.0.js:799</code></a>
+        
+        </p>
+
+
+        
+
+        
+            <p>Available since 0.4.0</p>
+        
+    </div>
+
+    <div class="description">
+        <p>Perform a strict compliance check on data. If this fails,
+it&#39;s because somebody passed bad data.</p>
+
+    </div>
+
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                    <p>boolean</p>
+
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_rebuildBounds" class="method item public inherited">
+    <h3 class="name"><code>rebuildBounds</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+
+    
+
+    
+        <span class="flag public">public</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/Kiwi.Plugins.Primitives.Polygon.html#method_rebuildBounds">Kiwi.Plugins.Primitives.Polygon</a>:
+            
+        
+        
+        <a href="../files/src_primitives-1.0.0.js.html#l897"><code>src&#x2F;primitives-1.0.0.js:897</code></a>
+        
+        </p>
+
+
+        
+
+        
+            <p>Available since 0.1.0</p>
+        
+    </div>
+
+    <div class="description">
+        <p>Compute width, height, box, anchor points etc</p>
+
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_render" class="method item public inherited">
+    <h3 class="name"><code>render</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>camera</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+        <span class="flag public">public</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/Kiwi.Plugins.Primitives.Polygon.html#method_render">Kiwi.Plugins.Primitives.Polygon</a>:
+            
+        
+        
+        <a href="../files/src_primitives-1.0.0.js.html#l922"><code>src&#x2F;primitives-1.0.0.js:922</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Software rendering method</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">camera</code>
+                        <span class="type">Kiwi.Camera</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_renderGL" class="method item inherited">
+    <h3 class="name"><code>renderGL</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>gl</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>camera</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>params</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/Kiwi.Plugins.Primitives.Polygon.html#method_renderGL">Kiwi.Plugins.Primitives.Polygon</a>:
+            
+        
+        
+        <a href="../files/src_primitives-1.0.0.js.html#l1047"><code>src&#x2F;primitives-1.0.0.js:1047</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Hardware rendering method using WebGL</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">gl</code>
+                        <span class="type">WebGLRenderingContext</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">camera</code>
+                        <span class="type">Kiwi.Camera</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">params</code>
+                        <span class="type">Object</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_shatter" class="method item public inherited">
+    <h3 class="name"><code>shatter</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type">Kiwi.Group</span>
+        </span>
+    
+
+    
+
+    
+        <span class="flag public">public</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/Kiwi.Plugins.Primitives.Polygon.html#method_shatter">Kiwi.Plugins.Primitives.Polygon</a>:
+            
+        
+        
+        <a href="../files/src_primitives-1.0.0.js.html#l1071"><code>src&#x2F;primitives-1.0.0.js:1071</code></a>
+        
+        </p>
+
+
+        
+
+        
+            <p>Available since 0.3.0</p>
+        
+    </div>
+
+    <div class="description">
+        <p>Decompose a polygon into its constituent triangles.
+This will destroy the original polygon and substitute a group
+containing the triangles.</p>
+
+    </div>
+
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type">Kiwi.Group</span>:
+                    
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+            </div>
+        
+
+        
+            <div id="properties" class="api-class-tabpanel">
+                <h2 class="off-left">Properties</h2>
+
+                
+                    <div id="property_color" class="property item public inherited">
+    <h3 class="name"><code>color</code></h3>
+    <span class="type">Array</span>
+
+    
+
+    
+        <span class="flag public">public</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/Kiwi.Plugins.Primitives.Polygon.html#property_color">Kiwi.Plugins.Primitives.Polygon</a>:
+            
+        
+        
+        <a href="../files/src_primitives-1.0.0.js.html#l724"><code>src&#x2F;primitives-1.0.0.js:724</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>RGB color triplet, normalized to the range 0-1</p>
+
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_drawFill" class="property item public inherited">
+    <h3 class="name"><code>drawFill</code></h3>
+    <span class="type">Boolean</span>
+
+    
+
+    
+        <span class="flag public">public</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            <p>Inherited from
+            <a href="../classes/Kiwi.Plugins.Primitives.Polygon.html#property_drawFill">
+                Kiwi.Plugins.Primitives.Polygon
+            </a>
+            
+            but overwritten in
+            
+        
+        
+        <a href="../files/src_primitives-1.0.0.js.html#l732"><code>src&#x2F;primitives-1.0.0.js:732</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Whether the fill will draw</p>
+
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_glRenderer" class="property item public inherited">
+    <h3 class="name"><code>glRenderer</code></h3>
+    <span class="type">Kiwi.Renderers.Renderer</span>
+
+    
+
+    
+        <span class="flag public">public</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/Kiwi.Plugins.Primitives.Polygon.html#property_glRenderer">Kiwi.Plugins.Primitives.Polygon</a>:
+            
+        
+        
+        <a href="../files/src_primitives-1.0.0.js.html#l685"><code>src&#x2F;primitives-1.0.0.js:685</code></a>
+        
+        </p>
+
+        
+
+        
+            <p>Available since 0.1.0</p>
+        
+    </div>
+
+    <div class="description">
+        <p>Part of the WebGL rendering pipeline</p>
+
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_indices" class="property item public inherited">
+    <h3 class="name"><code>indices</code></h3>
+    <span class="type">Array</span>
+
+    
+
+    
+        <span class="flag public">public</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/Kiwi.Plugins.Primitives.Polygon.html#property_indices">Kiwi.Plugins.Primitives.Polygon</a>:
+            
+        
+        
+        <a href="../files/src_primitives-1.0.0.js.html#l177"><code>src&#x2F;primitives-1.0.0.js:177</code></a>
+        
+        </p>
+
+        
+
+        
+            <p>Available since 0.3.0</p>
+        
+    </div>
+
+    <div class="description">
+        <p>Index of pointers to vertices. The sequence of points
+which constructs the poly.</p>
+
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_strokeColor" class="property item public inherited">
+    <h3 class="name"><code>strokeColor</code></h3>
+    <span class="type">Array</span>
+
+    
+
+    
+        <span class="flag public">public</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/Kiwi.Plugins.Primitives.Polygon.html#property_strokeColor">Kiwi.Plugins.Primitives.Polygon</a>:
+            
+        
+        
+        <a href="../files/src_primitives-1.0.0.js.html#l758"><code>src&#x2F;primitives-1.0.0.js:758</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>RGB color triplet, normalized to the range 0-1</p>
+
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_strokeIndices" class="property item public inherited">
+    <h3 class="name"><code>strokeIndices</code></h3>
+    <span class="type">Array</span>
+
+    
+
+    
+        <span class="flag public">public</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/Kiwi.Plugins.Primitives.Polygon.html#property_strokeIndices">Kiwi.Plugins.Primitives.Polygon</a>:
+            
+        
+        
+        <a href="../files/src_primitives-1.0.0.js.html#l224"><code>src&#x2F;primitives-1.0.0.js:224</code></a>
+        
+        </p>
+
+        
+
+        
+            <p>Available since 0.3.0</p>
+        
+    </div>
+
+    <div class="description">
+        <p>Index of pointers to vertices. The sequence of points which
+constructs the stroke. To be distinguished from the strokePolyIndices,
+which define the actual shape of the stroke.</p>
+
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_strokePolyIndices" class="property item public inherited">
+    <h3 class="name"><code>strokePolyIndices</code></h3>
+    <span class="type">Array</span>
+
+    
+
+    
+        <span class="flag public">public</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/Kiwi.Plugins.Primitives.Polygon.html#property_strokePolyIndices">Kiwi.Plugins.Primitives.Polygon</a>:
+            
+        
+        
+        <a href="../files/src_primitives-1.0.0.js.html#l251"><code>src&#x2F;primitives-1.0.0.js:251</code></a>
+        
+        </p>
+
+        
+
+        
+            <p>Available since 0.3.0</p>
+        
+    </div>
+
+    <div class="description">
+        <p>Index of pointers to vertices. The sequence of points which
+make up the stroke. To be distinguished from the strokeIndices,
+which define the construction of the stroke.</p>
+
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_strokePolyVertices" class="property item public inherited">
+    <h3 class="name"><code>strokePolyVertices</code></h3>
+    <span class="type">Array</span>
+
+    
+
+    
+        <span class="flag public">public</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/Kiwi.Plugins.Primitives.Polygon.html#property_strokePolyVertices">Kiwi.Plugins.Primitives.Polygon</a>:
+            
+        
+        
+        <a href="../files/src_primitives-1.0.0.js.html#l283"><code>src&#x2F;primitives-1.0.0.js:283</code></a>
+        
+        </p>
+
+        
+
+        
+            <p>Available since 0.3.0</p>
+        
+    </div>
+
+    <div class="description">
+        <p>Index of vertices for stroke shape.</p>
+
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_strokeWidth" class="property item public inherited">
+    <h3 class="name"><code>strokeWidth</code></h3>
+    <span class="type">Number</span>
+
+    
+
+    
+        <span class="flag public">public</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/Kiwi.Plugins.Primitives.Polygon.html#property_strokeWidth">Kiwi.Plugins.Primitives.Polygon</a>:
+            
+        
+        
+        <a href="../files/src_primitives-1.0.0.js.html#l766"><code>src&#x2F;primitives-1.0.0.js:766</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Width of the stroke, in pixels. If the primitive is scaled, the stroke
+will also change size.</p>
+
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_vertices" class="property item public inherited">
+    <h3 class="name"><code>vertices</code></h3>
+    <span class="type">Array</span>
+
+    
+
+    
+        <span class="flag public">public</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/Kiwi.Plugins.Primitives.Polygon.html#property_vertices">Kiwi.Plugins.Primitives.Polygon</a>:
+            
+        
+        
+        <a href="../files/src_primitives-1.0.0.js.html#l201"><code>src&#x2F;primitives-1.0.0.js:201</code></a>
+        
+        </p>
+
+        
+
+        
+            <p>Available since 0.3.0</p>
+        
+    </div>
+
+    <div class="description">
+        <p>Index of vertices.</p>
+
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+            </div>
+        
+
+        
+
+        
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>
