@@ -141,15 +141,16 @@ Kiwi.Plugins.Primitives.create = function(game) {
 * @extends Kiwi.Entity
 * @param params {Object} The parameter object.
 * @param params.state {Kiwi.State} Context state
-* @param [params.color=[0.5,0.5,0.5]] {array} RGB normalized color
-* @param [params.drawFill=true] {boolean} Whether to fill the polygon
-* @param [params.drawStroke=true] {boolean} Whether to draw the stroke
-* @param [params.indices] {array} Array of vertices for triangle strips
-* @param [params.strokeColor=[0.5,0.5,0.5]] {array} RGB normalized color
-* @param [params.strokeWidth=1] {number} Width of stroke in pixels
-* @param [params.strokeIndices] {array} Array of vertices for strokes
-* @param [params.vertices] {array} Array of vertex coordinates
-*	array pairs ([ [ x1, y1 ], [x2, y2 ] ] etc).
+*	@param [params.color=[0.5,0.5,0.5]] {array} RGB normalized color
+*	@param [params.drawFill=true] {boolean} Whether to fill the polygon
+*	@param [params.drawStroke=true] {boolean} Whether to draw the stroke
+*	@param [params.enableInput=false] {Boolean} Whether to enable input
+*	@param [params.indices] {array} Array of vertices for triangle strips
+*	@param [params.strokeColor=[0.5,0.5,0.5]] {array} RGB normalized color
+*	@param [params.strokeWidth=1] {number} Width of stroke in pixels
+*	@param [params.strokeIndices] {array} Array of vertices for strokes
+*	@param [params.vertices] {array} Array of vertex coordinates
+*		array pairs ([ [ x1, y1 ], [x2, y2 ] ] etc).
 * @since 0.1.0
 */
 Kiwi.Plugins.Primitives.Polygon = function( params ) {
@@ -749,6 +750,15 @@ Kiwi.Plugins.Primitives.Polygon.prototype.parseParams = function( params ) {
 		params.drawStroke :
 		true;
 
+	/**
+	* Whether to enable input
+	* @property enableInput
+	* @type {Boolean}
+	* @public
+	* @since 1.0.1
+	*/
+	this.enableInput = params.enableInput === true;
+
 	this.indices = params.indices || [];
 	this.vertices = params.vertices || [];
 
@@ -917,6 +927,18 @@ Kiwi.Plugins.Primitives.Polygon.prototype.rebuildBounds = function() {
 	this.box = this.components.add( new Kiwi.Components.Box(
 		this, this.x + bounds.minX, this.x + bounds.minY,
 		this.width, this.height ) );
+
+	// Create input
+	this.input = this.components.add( new Kiwi.Components.Input(
+		this, this.box, this.enableInput ) );
+
+	// Set dummy cell data for use in hitboxes
+	this.atlas.cells[0].hitboxes[0] = {
+		x: 0,
+		y: 0,
+		w: this.width,
+		h: this.height
+	};
 };
 
 /**
@@ -1128,6 +1150,13 @@ Kiwi.Plugins.Primitives.Polygon.prototype.shatter = function() {
 	this.destroy();
 
 	return group;
+};
+
+
+Kiwi.Plugins.Primitives.Polygon.prototype.update = function() {
+	Kiwi.Entity.prototype.update.call( this );
+
+	this.input.update();
 };
 
 
@@ -1519,7 +1548,7 @@ Kiwi.extend( Kiwi.Plugins.Primitives.Triangle,
 * @since 0.1.0
 */
 Kiwi.Plugins.Primitives.NullAtlas = function() {
-	this.cells = [];
+	this.cells = [ { hitboxes: [] } ];
 };
 
 /** Dummy texture enable method, doing the bare minimum to satisfy the

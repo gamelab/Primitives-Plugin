@@ -17,7 +17,7 @@ module.exports = function(grunt) {
 					extension: ".js",
 					paths: "<%= DEVELOPMENT_PATH %>" + "src/",
 					outdir: "<%= BASE_PATH %>" + "docs/",
-					exclude: "primitives-0.1.0.js,primitives-0.2.0.js,primitives-0.3.0.js,primitives-0.4.0.js"
+					exclude: "**/*.min.js"
 				}
 			}
 		},
@@ -25,7 +25,7 @@ module.exports = function(grunt) {
 		uglify: {
 			build: {
 				files: {
-				"src/<%= pkg.name %>-<%= pkg.version %>.min.js": [ "<%= pkg.main %>" ]
+				"src/<%= pkg.name %>.min.js": [ "<%= pkg.main %>" ]
 				}
 			}
 		},

@@ -1,7 +1,9 @@
+IN PROGRESS - REMOVE THIS NOTICE UPON RELEASE
+
 Primitives Plugin for KiwiJS
 ============================
 
-- Version: 1.0.0
+- Version: 1.0.1
 - Type: GameObject
 - Author: Benjamin D. Richards for KiwiJS Team
 - Website: www.kiwijs.org
@@ -10,6 +12,11 @@ Primitives Plugin for KiwiJS
 
 Versions:
 ---------
+
+1.0.1
+- Add input options as with Kiwi.GameObjects.Sprite
+- Add `update()` method
+- Simplify plugin names
 
 1.0.0
 - Release
@@ -75,7 +82,7 @@ Include this in your html file after the Kiwi library:
 
 ```
 <script src="libs/kiwi.js"></script>
-<script src="libs/primitives-1.0.0.min.js"></script>
+<script src="libs/primitives.min.js"></script>
 ```
 
 
@@ -170,7 +177,8 @@ var polygon3 = new Kiwi.Plugins.Primitives.Polygon( {
 	scaleY: 2,
 	rotation: Math.PI,
 	anchorPointX: 0,
-	anchorPointY: 100
+	anchorPointY: 100,
+	enableInput: true
 } );
 ```
 

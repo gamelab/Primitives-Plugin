@@ -1,6 +1,6 @@
 {
 	"name": "primitives",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Create GameObjects to render geometric primitives.",
 	"author": "GameLab",
 	"logo": "xx",
@@ -15,7 +15,7 @@
 		"url": "xx"
 	},
 
-	"main": "src/primitives-1.0.0.js",
+	"main": "src/primitives.js",
 
 	"dependencies": {},
 	"devDependencies": {
