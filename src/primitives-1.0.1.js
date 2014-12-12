@@ -1,113 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>src/primitives.js - primitives</title>
-    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
-    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
-    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
-    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
-    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
-</head>
-<body class="yui3-skin-sam">
-
-<div id="doc">
-    <div id="hd" class="yui3-g header">
-        <div class="yui3-u-3-4">
-            
-                <h1><img src="../assets/css/logo.png" title="primitives"></h1>
-            
-        </div>
-        <div class="yui3-u-1-4 version">
-            <em>API Docs for: 1.0.1</em>
-        </div>
-    </div>
-    <div id="bd" class="yui3-g">
-
-        <div class="yui3-u-1-4">
-            <div id="docs-sidebar" class="sidebar apidocs">
-                <div id="api-list">
-    <h2 class="off-left">APIs</h2>
-    <div id="api-tabview" class="tabview">
-        <ul class="tabs">
-            <li><a href="#api-classes">Classes</a></li>
-            <li><a href="#api-modules">Modules</a></li>
-        </ul>
-
-        <div id="api-tabview-filter">
-            <input type="search" id="api-filter" placeholder="Type to filter APIs">
-        </div>
-
-        <div id="api-tabview-panel">
-            <ul id="api-classes" class="apis classes">
-            
-                <li><a href="../classes/Kiwi.Plugins.Primitives.html">Kiwi.Plugins.Primitives</a></li>
-            
-                <li><a href="../classes/Kiwi.Plugins.Primitives.Ellipse.html">Kiwi.Plugins.Primitives.Ellipse</a></li>
-            
-                <li><a href="../classes/Kiwi.Plugins.Primitives.Line.html">Kiwi.Plugins.Primitives.Line</a></li>
-            
-                <li><a href="../classes/Kiwi.Plugins.Primitives.NullAtlas.html">Kiwi.Plugins.Primitives.NullAtlas</a></li>
-            
-                <li><a href="../classes/Kiwi.Plugins.Primitives.Polygon.html">Kiwi.Plugins.Primitives.Polygon</a></li>
-            
-                <li><a href="../classes/Kiwi.Plugins.Primitives.Rectangle.html">Kiwi.Plugins.Primitives.Rectangle</a></li>
-            
-                <li><a href="../classes/Kiwi.Plugins.Primitives.Star.html">Kiwi.Plugins.Primitives.Star</a></li>
-            
-                <li><a href="../classes/Kiwi.Plugins.Primitives.Triangle.html">Kiwi.Plugins.Primitives.Triangle</a></li>
-            
-                <li><a href="../classes/Kiwi.Renderers.PrimitiveRenderer.html">Kiwi.Renderers.PrimitiveRenderer</a></li>
-            
-                <li><a href="../classes/Kiwi.Shaders.PrimitiveShader.html">Kiwi.Shaders.PrimitiveShader</a></li>
-            
-            </ul>
-
-            <ul id="api-modules" class="apis modules">
-            
-                <li><a href="../modules/Kiwi.html">Kiwi</a></li>
-            
-                <li><a href="../modules/Plugins.html">Plugins</a></li>
-            
-            </ul>
-        </div>
-    </div>
-</div>
-
-            </div>
-        </div>
-        <div class="yui3-u-3-4">
-                <div id="api-options">
-        Show:
-        <label for="api-show-inherited">
-            <input type="checkbox" id="api-show-inherited" checked>
-            Inherited
-        </label>
-
-        <label for="api-show-protected">
-            <input type="checkbox" id="api-show-protected">
-            Protected
-        </label>
-
-        <label for="api-show-private">
-            <input type="checkbox" id="api-show-private">
-            Private
-        </label>
-        <label for="api-show-deprecated">
-            <input type="checkbox" id="api-show-deprecated">
-            Deprecated
-        </label>
-
-    </div>
-
-
-            <div class="apidocs">
-                <div id="docs-main">
-                    <div class="content">
-                        <h1 class="file-heading">File: src/primitives.js</h1>
-
-<div class="file">
-    <pre class="code prettyprint linenums">
 /**
 * Primitive Gameobjects plugin, providing geometric objects to the designer.
 *
@@ -122,10 +12,10 @@ Kiwi.Plugins.Primitives = {
 	* The name of this plugin.
 	* @property name
 	* @type String
-	* @default &quot;Primitives&quot;
+	* @default "Primitives"
 	* @public
 	*/
-	name:&quot;Primitives&quot;,
+	name:"Primitives",
 
 	/**
 	* The version of this plugin.
@@ -133,7 +23,7 @@ Kiwi.Plugins.Primitives = {
 	* @type String
 	* @public
 	*/
-	version:&quot;1.0.0&quot;
+	version:"1.0.1"
 
 };
 
@@ -151,28 +41,28 @@ Kiwi.PluginManager.register(Kiwi.Plugins.Primitives);
 * @private 
 */
 Kiwi.Plugins.Primitives.create = function(game) {
-	console.log( &quot;Hello &quot; + game.name );
+	console.log( "Hello " + game.name );
 };
 
 
 /**
 * Polygon Gameobject
-* &lt;br&gt;&lt;br&gt;
+* <br><br>
 * This is the master system which handles all primitives. When you create
 * another primitive (Ellipse, Line, Rectangle, Star or Triangle) you are
 * really creating a Polygon with some options pre-set. All primitives
 * inherit parameters and methods from Polygon.
-* &lt;br&gt;&lt;br&gt;
+* <br><br>
 * Polygons are defined with a params object. This must contain the non-optional
-* parameter &quot;state&quot;, which is a reference to the current state. It also contains
+* parameter "state", which is a reference to the current state. It also contains
 * optional transform and style information.
-* &lt;br&gt;&lt;br&gt;
+* <br><br>
 * You may specify common transform options in the params of any primitive.
 * This includes alpha, visible, x, y, rotation, scale, scaleX, scaleY,
 * anchorPointX, and anchorPointY. If not specified, these default to alpha = 1,
 * visible = true, x = 0, y = 0, rotation = 0, scale = 1, and the anchorPoint
 * defaults to the geometric center of the object.
-* &lt;br&gt;&lt;br&gt;
+* <br><br>
 * All primitives contain both a fill and a stroke. You may style these
 * separately and enable or disable rendering of either. Available style options
 * include color (the color with which the primitive is filled; an array of 3
@@ -180,45 +70,45 @@ Kiwi.Plugins.Primitives.create = function(game) {
 * (whether to render the fill), strokeColor (as color, but for the stroke),
 * drawStroke (whether to render the stroke), and strokeWidth (the width of the
 * stroke line, in pixels).
-* &lt;br&gt;&lt;br&gt;
+* <br><br>
 * If the default primitives do not meet your requirements, you can define your
 * own by using the Polygon. You will need to provide the params object with
 * arrays of vertices, indices, and strokeIndices.
-* &lt;br&gt;&lt;br&gt;
-* new Kiwi.Plugins.Primitives.Polygon( {&lt;br&gt;
-*	state: MyGame.state,&lt;br&gt;
-*	indices: [ 0, 1, 2, 3 ],&lt;br&gt;
-*	vertices: [[ 0, 0 ], [ 100, 100 ], [ 200, 0 ], [ 300, 100 ] ],&lt;br&gt;
-*	strokeIndices: [ 0, 1, 2, 0 ]&lt;br&gt;
+* <br><br>
+* new Kiwi.Plugins.Primitives.Polygon( {<br>
+*	state: MyGame.state,<br>
+*	indices: [ 0, 1, 2, 3 ],<br>
+*	vertices: [[ 0, 0 ], [ 100, 100 ], [ 200, 0 ], [ 300, 100 ] ],<br>
+*	strokeIndices: [ 0, 1, 2, 0 ]<br>
 * } );
-* &lt;br&gt;&lt;br&gt;
+* <br><br>
 * All three arrays are processed to create new internal representations.
 * Two Polygons created from the same arrays will not contain the same data.
 * This prevents unexpected modifications from one object affecting another.
-* &lt;br&gt;&lt;br&gt;
-* The &quot;vertices&quot; param is a list of points, each defined as an array of two
+* <br><br>
+* The "vertices" param is a list of points, each defined as an array of two
 * points. The order of vertices does not matter for rendering, but you must be
 * aware of it. A simple vertices array might read [ [ 0, 0 ], [ 100, 100 ],
 * [ 200, 0 ], [ 300, 100 ] ]. Each is an XY coordinate.
-* &lt;br&gt;&lt;br&gt;
-* The &quot;indices&quot; param is a list of references to vertices. It is processed
+* <br><br>
+* The "indices" param is a list of references to vertices. It is processed
 * using a TRIANGLE_STRIP procedure. This means that every three consecutive
 * values on the list define a new triangle. You can add new triangles simply
 * by appending a single new index. Each index is the array position of a vertex.
 * For example, to draw a single triangle you could pass [ 0, 1, 2 ]. To draw two
 * triangles, you could pass [ 0, 1, 2, 3 ].
-* &lt;br&gt;&lt;br&gt;
-* The TRIANGLE_STRIP procedure is very succinct, but it doesn&#x27;t allow for every
+* <br><br>
+* The TRIANGLE_STRIP procedure is very succinct, but it doesn't allow for every
 * desirable form of geometry. If you need to stop positioning triangles in one
-* place and start adding them elsewhere, you can&#x27;t skip over empty space.
-* Fortunately, you can use a concept called &quot;degenerate triangles&quot; to cheat.
-* &lt;br&gt;&lt;br&gt;
+* place and start adding them elsewhere, you can't skip over empty space.
+* Fortunately, you can use a concept called "degenerate triangles" to cheat.
+* <br><br>
 * A degenerate triangle is one with zero area. It is formed when a triangle has
 * two or three vertices in the same place. It is very easy to simply not draw a
 * degenerate triangle. We can use these to connect disparate triangles. (In
 * fact, the renderer uses these behind the scenes to efficiently render numerous
 * primitives at once.)
-* &lt;br&gt;&lt;br&gt;
+* <br><br>
 * To create degenerate triangles, just double up an index on either side of the
 * gap. For example, if you want to draw triangles at indices [ 0, 1, 2 ] and
 * [ 8, 9, 10 ], you can combine them into one with the indices
@@ -226,22 +116,22 @@ Kiwi.Plugins.Primitives.create = function(game) {
 * [ 1, 2, 2 ], [ 2, 2, 8 ], [ 2, 8, 8 ] and [ 8, 8, 9 ]. Although this
 * introduces some overhead, it is often quicker than rendering them as separate
 * objects.
-* &lt;br&gt;&lt;br&gt;
-* You may reduce the degenerate data to a single index if you know what you&#x27;re
+* <br><br>
+* You may reduce the degenerate data to a single index if you know what you're
 * doing with winding orders. This is left as an exercise for the user.
-* &lt;br&gt;&lt;br&gt;
-* The &quot;strokeIndices&quot; param is used to create a stroke. This is usually a line
+* <br><br>
+* The "strokeIndices" param is used to create a stroke. This is usually a line
 * around the edge of a polygon, but it can be any sort of line. It is, like the
 * indices param, a list of array positions in the vertices param. Unlike
 * indices, strokeIndices does not use TRIANGLE_STRIP. It just connects points in
 * order.
-* &lt;br&gt;&lt;br&gt;
+* <br><br>
 * Technically, the stroke is itself a series of triangles, a sort of
 * mini-polygon. It will usually have more triangles than the fill. For this
 * reason, you should be careful about overusing stroke.
-* &lt;br&gt;&lt;br&gt;
+* <br><br>
 * You may also construct polygons by building several objects and combining
-* them using the &quot;.combine()&quot; method. This may not be as efficient as
+* them using the ".combine()" method. This may not be as efficient as
 * defining a polygon by hand, and will introduce several degenerate triangles,
 * but for large-scale constructions it is very convenient.
 *
@@ -277,7 +167,7 @@ Kiwi.Plugins.Primitives.Polygon = function( params ) {
 	// Create WebGL renderer
 	if (this.game.renderOption === Kiwi.RENDERER_WEBGL) {
 		this.glRenderer =
-			this.game.renderer.requestSharedRenderer( &quot;PrimitiveRenderer&quot; );
+			this.game.renderer.requestSharedRenderer( "PrimitiveRenderer" );
 		this.atlas = this.glRenderer.getAtlas();
 	}
 
@@ -293,7 +183,7 @@ Kiwi.extend( Kiwi.Plugins.Primitives.Polygon, Kiwi.Entity );
 * @public
 * @since 0.3.0
 */
-Object.defineProperty( Kiwi.Plugins.Primitives.Polygon.prototype, &quot;indices&quot;, {
+Object.defineProperty( Kiwi.Plugins.Primitives.Polygon.prototype, "indices", {
 	get: function() {
 		return this._indices;
 	},
@@ -301,8 +191,8 @@ Object.defineProperty( Kiwi.Plugins.Primitives.Polygon.prototype, &quot;indices&
 		var i;
 		this._indices = [];
 
-		if ( value.length &gt; 2 ) {
-			for ( i = 0; i &lt; value.length; i++ ) {
+		if ( value.length > 2 ) {
+			for ( i = 0; i < value.length; i++ ) {
 				this._indices.push( value[ i ] );
 			}
 		}
@@ -316,14 +206,14 @@ Object.defineProperty( Kiwi.Plugins.Primitives.Polygon.prototype, &quot;indices&
 * @public
 * @since 0.3.0
 */
-Object.defineProperty( Kiwi.Plugins.Primitives.Polygon.prototype, &quot;vertices&quot;, {
+Object.defineProperty( Kiwi.Plugins.Primitives.Polygon.prototype, "vertices", {
 	get: function() {
 		return this._vertices;
 	},
 	set: function( value ) {
 		var i;
 		this._vertices = [];
-		for ( i = 0; i &lt; value.length; i++ ) {
+		for ( i = 0; i < value.length; i++ ) {
 			this._vertices.push( [
 				value[ i ][ 0 ],
 				value[ i ][ 1 ]
@@ -342,7 +232,7 @@ Object.defineProperty( Kiwi.Plugins.Primitives.Polygon.prototype, &quot;vertices
 * @since 0.3.0
 */
 Object.defineProperty(
-		Kiwi.Plugins.Primitives.Polygon.prototype, &quot;strokeIndices&quot;, {
+		Kiwi.Plugins.Primitives.Polygon.prototype, "strokeIndices", {
 	get: function() {
 		return this._strokeIndices;
 	},
@@ -350,8 +240,8 @@ Object.defineProperty(
 		var i;
 		this._strokeIndices = [];
 
-		if ( value.length &gt; 1 ) {
-			for ( i = 0; i &lt; value.length; i++ ) {
+		if ( value.length > 1 ) {
+			for ( i = 0; i < value.length; i++ ) {
 				this._strokeIndices.push( value[ i ] );
 			}
 			this.createstroke( this._strokeIndices, this._vertices );
@@ -369,7 +259,7 @@ Object.defineProperty(
 * @since 0.3.0
 */
 Object.defineProperty(
-		Kiwi.Plugins.Primitives.Polygon.prototype, &quot;strokePolyIndices&quot;, {
+		Kiwi.Plugins.Primitives.Polygon.prototype, "strokePolyIndices", {
 	get: function() {
 		return this._strokePolyIndices;
 	},
@@ -377,14 +267,14 @@ Object.defineProperty(
 		var i;
 		this._strokePolyIndices = [];
 
-		if ( value.length &gt; 2 ) {
+		if ( value.length > 2 ) {
 
 			// Double up the first index to prevent strip connexion
 			if ( value.length === 3 ) {
 				this._strokePolyIndices.push( value[ 0 ] );
 			}
 
-			for ( i = 0; i &lt; value.length; i++ ) {
+			for ( i = 0; i < value.length; i++ ) {
 				this._strokePolyIndices.push( value[ i ] );
 			}
 		}
@@ -399,14 +289,14 @@ Object.defineProperty(
 * @since 0.3.0
 */
 Object.defineProperty(
-		Kiwi.Plugins.Primitives.Polygon.prototype, &quot;strokePolyVertices&quot;, {
+		Kiwi.Plugins.Primitives.Polygon.prototype, "strokePolyVertices", {
 	get: function() {
 		return this._strokePolyVertices;
 	},
 	set: function( value ) {
 		var i;
 		this._strokePolyVertices = [];
-		for ( i = 0; i &lt; value.length; i++ ) {
+		for ( i = 0; i < value.length; i++ ) {
 			this._strokePolyVertices.push( [
 				value[ i ][ 0 ],
 				value[ i ][ 1 ]
@@ -451,16 +341,16 @@ Kiwi.Plugins.Primitives.Polygon.prototype._buildMiter =
 
 	// Compute the angle between the lines, then halve it for future use
 	angleDiffHalf = line2Angle - line1Angle;
-	if ( angleDiffHalf &gt; Math.PI ) {
+	if ( angleDiffHalf > Math.PI ) {
 		angleDiffHalf = Math.PI * 2 - angleDiffHalf;
-	} else if ( angleDiffHalf &lt; -Math.PI ) {
+	} else if ( angleDiffHalf < -Math.PI ) {
 		angleDiffHalf = -Math.PI * 2 - angleDiffHalf;
 	}
 	angleDiffHalf *= 0.5;
 
 	// Compute the average angle of the two lines
-	if ( Math.abs( line1Angle - line2Angle ) &gt; Math.PI ) {
-		if ( line1Angle &lt; line2Angle ) {
+	if ( Math.abs( line1Angle - line2Angle ) > Math.PI ) {
+		if ( line1Angle < line2Angle ) {
 			line1Angle += Math.PI * 2;
 		} else {
 			line2Angle += Math.PI * 2;
@@ -475,7 +365,7 @@ Kiwi.Plugins.Primitives.Polygon.prototype._buildMiter =
 
 	// Compute the distance to the inner corner, where two miter points overlap
 	innerDist = this.strokeWidth / ( 2 * Math.cos( angleDiffHalf ) );
-	if ( innerDist &gt; lineMinLength ) {
+	if ( innerDist > lineMinLength ) {
 		innerDist = lineMinLength;
 	}
 
@@ -515,7 +405,7 @@ Kiwi.Plugins.Primitives.Polygon.prototype._buildStroke =
 		vertLen = srcIndices.length,
 		verts = [];
 
-	if ( vertLen &gt; 1 ) {
+	if ( vertLen > 1 ) {
 
 		// Begin with a double-up on vertex 0
 		point1 = new Kiwi.Geom.Point(
@@ -532,7 +422,7 @@ Kiwi.Plugins.Primitives.Polygon.prototype._buildStroke =
 		offset += miter.vertices.length;
 
 		// Connect all additional vertices
-		for ( i = 1; i &lt; vertLen - 1; i++ ) {
+		for ( i = 1; i < vertLen - 1; i++ ) {
 			point1 = new Kiwi.Geom.Point(
 				srcVertices[ srcIndices[ i - 1 ] ][ 0 ],
 				srcVertices[ srcIndices[ i - 1 ] ][ 1 ]
@@ -546,7 +436,7 @@ Kiwi.Plugins.Primitives.Polygon.prototype._buildStroke =
 				srcVertices[ srcIndices[ i + 1 ] ][ 1 ]
 			);
 			miter = this._buildMiter( [ point1, point2 ], [ point2, point3 ] );
-			for ( j = 0; j &lt; miter.indices.length; j++ ) {
+			for ( j = 0; j < miter.indices.length; j++ ) {
 				miter.indices[ j ] += offset;
 			}
 			inds = inds.concat( miter.indices );
@@ -570,7 +460,7 @@ Kiwi.Plugins.Primitives.Polygon.prototype._buildStroke =
 			srcVertices[ srcIndices[ end ] ][ 1 ] + dy
 		);
 		miter = this._buildMiter( [ point1, point2 ], [ point1, point2 ] );
-		for ( j = 0; j &lt; miter.indices.length; j++ ) {
+		for ( j = 0; j < miter.indices.length; j++ ) {
 			miter.indices[ j ] += offset;
 		}
 		inds = inds.concat( miter.indices );
@@ -628,18 +518,18 @@ Kiwi.Plugins.Primitives.Polygon.prototype.computeMinMaxXY = function( array ) {
 		minX = 0,
 		minY = 0;
 
-	for ( i = 0; i &lt; vertLen; i++ ) {
+	for ( i = 0; i < vertLen; i++ ) {
 		vert = array[ i ];
-		if ( vert[0] &lt; minX ) {
+		if ( vert[0] < minX ) {
 			minX = vert[0];
 		}
-		if ( vert[0] &gt; maxX ) {
+		if ( vert[0] > maxX ) {
 			maxX = vert[0];
 		}
-		if ( vert[1] &lt; minY ) {
+		if ( vert[1] < minY ) {
 			minY = vert[1];
 		}
-		if ( vert[1] &gt; maxY ) {
+		if ( vert[1] > maxY ) {
 			maxY = vert[1];
 		}
 	}
@@ -662,7 +552,7 @@ Kiwi.Plugins.Primitives.Polygon.prototype.computeMinMaxXY = function( array ) {
 * @since 0.3.0
 */
 Kiwi.Plugins.Primitives.Polygon.prototype.combine = function( poly, discard ) {
-	if ( typeof discard === &quot;undefined&quot; ) {
+	if ( typeof discard === "undefined" ) {
 		discard = true;
 	}
 
@@ -682,20 +572,20 @@ Kiwi.Plugins.Primitives.Polygon.prototype.combine = function( poly, discard ) {
 
 
 	// Attach fill
-	if ( polyIndicesLen &gt; 2 ) {
+	if ( polyIndicesLen > 2 ) {
 		indexOffset = this._vertices.length;
 
 		// Create degenerate attachment
-		if ( this._indices.length &gt; 0 ) {
+		if ( this._indices.length > 0 ) {
 			this._indices.push( this._indices[ this._indices.length - 1 ] );
 			this._indices.push( poly.indices[ 0 ] + indexOffset );
 		}
 
 		// Add vertices and indices
-		for ( i = 0; i &lt; polyIndicesLen; i++ ) {
+		for ( i = 0; i < polyIndicesLen; i++ ) {
 			this._indices.push( poly.indices[ i ] + indexOffset );
 		}
-		for ( i = 0; i &lt; polyVerticesLen; i++ ) {
+		for ( i = 0; i < polyVerticesLen; i++ ) {
 			point.setTo(
 				poly.vertices[ i ][ 0 ] - poly.anchorPointX,
 				poly.vertices[ i ][ 1 ] - poly.anchorPointY
@@ -713,11 +603,11 @@ Kiwi.Plugins.Primitives.Polygon.prototype.combine = function( poly, discard ) {
 	
 
 	// Attach stroke
-	if ( polyStrokeIndicesLen &gt; 2 ) {
+	if ( polyStrokeIndicesLen > 2 ) {
 		indexOffset = this._strokePolyVertices.length;
 
 		// Create degenerate attachment
-		if ( this._strokePolyIndices.length &gt; 0 ) {
+		if ( this._strokePolyIndices.length > 0 ) {
 			this._strokePolyIndices.push(
 				this._strokePolyIndices[ this._strokePolyIndices.length - 1 ] );
 			this._strokePolyIndices.push(
@@ -725,11 +615,11 @@ Kiwi.Plugins.Primitives.Polygon.prototype.combine = function( poly, discard ) {
 		}
 
 		// Add vertices and indices
-		for ( i = 0; i &lt; polyStrokeIndicesLen; i++ ) {
+		for ( i = 0; i < polyStrokeIndicesLen; i++ ) {
 			this._strokePolyIndices.push(
 				poly.strokePolyIndices[ i ] + indexOffset );
 		}
-		for ( i = 0; i &lt; polyStrokeVerticesLen; i++ ) {
+		for ( i = 0; i < polyStrokeVerticesLen; i++ ) {
 			point.setTo(
 				poly.strokePolyVertices[ i ][ 0 ] - poly.anchorPointX,
 				poly.strokePolyVertices[ i ][ 1 ] - poly.anchorPointY
@@ -764,7 +654,7 @@ Kiwi.Plugins.Primitives.Polygon.prototype.combine = function( poly, discard ) {
 */
 Kiwi.Plugins.Primitives.Polygon.prototype.complain = function( string ) {
 	console.log(
-		&quot;Primitive Error encountered:&quot;,
+		"Primitive Error encountered:",
 		string
 	);
 };
@@ -817,7 +707,7 @@ Kiwi.Plugins.Primitives.Polygon.prototype._initProperties = function() {
 * @public
 */
 Kiwi.Plugins.Primitives.Polygon.prototype.objType = function() {
-	return &quot;Primitive Polygon&quot;;
+	return "Primitive Polygon";
 };
 
 /**
@@ -846,7 +736,7 @@ Kiwi.Plugins.Primitives.Polygon.prototype.parseParams = function( params ) {
 	* @type {boolean}
 	* @public
 	*/
-	this.drawFill = ( typeof params.drawFill !== &quot;undefined&quot; ) ?
+	this.drawFill = ( typeof params.drawFill !== "undefined" ) ?
 		params.drawFill :
 		true;
 
@@ -856,7 +746,7 @@ Kiwi.Plugins.Primitives.Polygon.prototype.parseParams = function( params ) {
 	* @type {boolean}
 	* @public
 	*/
-	this.drawStroke = ( typeof params.drawStroke !== &quot;undefined&quot; ) ?
+	this.drawStroke = ( typeof params.drawStroke !== "undefined" ) ?
 		params.drawStroke :
 		true;
 
@@ -890,35 +780,46 @@ Kiwi.Plugins.Primitives.Polygon.prototype.parseParams = function( params ) {
 	* @type {number}
 	* @public
 	*/
-	this.strokeWidth = params.strokeWidth || 1;
+	this.strokeWidth = typeof params.strokeWidth === "number" ?
+		params.strokeWidth : 1;
 
 	this.strokeIndices = params.strokeIndices || [];
 	this.strokePolyIndices = this._strokePolyIndices || [];
 	this.strokePolyVertices = this._strokePolyVertices || [];
 
 	// Universal entity params
-	this.alpha = params.alpha || 1;
-	this.anchorPointX = params.anchorPointX || undefined;
-	this.anchorPointY = params.anchorPointY || undefined;
-	this.rotation = params.rotation || 0;
+	this.alpha = typeof params.alpha === "number" ?
+		params.alpha : 1;
+	this.anchorPointX = typeof params.anchorPointX === "number" ?
+		params.anchorPointX : undefined;
+	this.anchorPointY = typeof params.anchorPointY === "number" ?
+		params.anchorPointY : undefined;
+	this.rotation = typeof params.rotation === "number" ?
+		params.rotation : 0;
 	if (
-			typeof params.scaleX === &quot;undefined&quot; &amp;&amp;
-			typeof params.scaleY === &quot;undefined&quot; ) {
-		this.scale = params.scale || 1;
+			typeof params.scaleX === "undefined" &&
+			typeof params.scaleY === "undefined" ) {
+		this.scale = typeof params.scale === "number" ?
+			params.scale : 1;
 	} else {
-		this.scaleX = params.scaleX || 1;
-		this.scaleY = params.scaleY || 1;
+		this.scaleX = typeof params.scaleX === "number" ?
+			params.scaleX : 1;
+		this.scaleY = typeof params.scaleY === "number" ?
+			params.scaleY : 1;
 	}
-	this.visible = params.visible || true;
-	this.x = params.x || 0;
-	this.y = params.y || 0;
+	this.visible = typeof params.visible === "boolean" ?
+		params.visible : true;
+	this.x = typeof params.x === "number" ?
+		params.x : 0;
+	this.y = typeof params.y === "number" ?
+		params.y : 0;
 
 	return this.parseStrict();
 };
 
 /**
 * Perform a strict compliance check on data. If this fails,
-* it&#x27;s because somebody passed bad data.
+* it's because somebody passed bad data.
 * @method parseStrict
 * @return boolean
 * @public
@@ -929,88 +830,96 @@ Kiwi.Plugins.Primitives.Polygon.prototype.parseStrict = function() {
 
 	// Check stroke width
 	if ( isNaN( this.strokeWidth ) ) {
-		this.complain( &quot;strokeWidth is not a number&quot; );
+		this.complain( "strokeWidth is not a number" );
 		return false;
 	}
 
 	// Check color values
 	if ( Kiwi.Utils.Common.isArray( this.color ) ) {
-		for ( i = 0; i &lt; 3; i++ ) {
+		for ( i = 0; i < 3; i++ ) {
 			if ( isNaN( this.color[ i ] ) ) {
 				this.complain(
-					&quot;Could not parse color: Non-numeric color channel &quot; + i );
+					"Could not parse color: Non-numeric color channel " + i );
 				return false;
 			}
 		}
 	} else {
-		this.complain( &quot;Could not parse color: Color is not an array&quot; );
+		this.complain( "Could not parse color: Color is not an array" );
 		return false;
 	}
 
 	// Check stroke color values
 	if ( Kiwi.Utils.Common.isArray( this.strokeColor ) ) {
-		for ( i = 0; i &lt; 3; i++ ) {
+		for ( i = 0; i < 3; i++ ) {
 			if ( isNaN( this.strokeColor[ i ] ) ) {
 				this.complain(
-					&quot;Could not parse strokeColor: Non-numeric color channel &quot; +
+					"Could not parse strokeColor: Non-numeric color channel " +
 					i );
 				return false;
 			}
 		}
 	} else {
-		this.complain( &quot;Could not parse strokeColor: Color is not an array&quot; );
+		this.complain( "Could not parse strokeColor: Color is not an array" );
 		return false;
 	}
 
 	// Check indices
 	if ( Kiwi.Utils.Common.isArray( this.indices ) ) {
-		for ( i = 0; i &lt; this.indices.length; i++ ) {
+		for ( i = 0; i < this.indices.length; i++ ) {
 			if ( isNaN( this.indices[ i ] ) ) {
-				this.complain( &quot;Index &quot; + i + &quot; is not a number&quot; );
+				this.complain( "Index " + i + " is not a number" );
+				return false;
+			}
+			if ( this.indices[ i ] % 1 !== 0 ) {
+				this.complain( "Index" + i + " is not an integer" );
 				return false;
 			}
 		}
 	} else {
-		this.complain( &quot;Could not parse indices: Not an array&quot; );
+		this.complain( "Could not parse indices: Not an array" );
 		return false;
 	}
 
 	// Check stroke indices
 	if ( Kiwi.Utils.Common.isArray( this.strokeIndices ) ) {
-		for ( i = 0; i &lt; this.strokeIndices.length; i++ ) {
+		for ( i = 0; i < this.strokeIndices.length; i++ ) {
 			if ( isNaN( this.strokeIndices[ i ] ) ) {
-				this.complain( &quot;Stroke Index &quot; + i + &quot; is not a number&quot; );
+				this.complain( "Stroke Index " + i + " is not a number" );
+				return false;
+			}
+			if ( this.strokeIndices[ i ] % 1 !== 0 ) {
+				this.complain( "Stroke Index" + i + " is not an integer" );
 				return false;
 			}
 		}
 	} else {
-		this.complain( &quot;Could not parse strokeIndices: Not an array&quot; );
+		this.complain( "Could not parse strokeIndices: Not an array" );
 		return false;
 	}
 
 	// Check vertices
 	if ( Kiwi.Utils.Common.isArray( this.vertices ) ) {
-		for ( i = 0; i &lt; this.vertices.length; i++ ) {
+		for ( i = 0; i < this.vertices.length; i++ ) {
 			if ( Kiwi.Utils.Common.isArray( this.vertices[ i ] ) ) {
 				if ( isNaN( this.vertices[ i ][ 0 ] ) ) {
-					this.complain( &quot;Vertex &quot; + i + &quot;.x is not a number&quot; );
+					this.complain( "Vertex " + i + ".x is not a number" );
 					return false;
 				}
 				if ( isNaN( this.vertices[ i ][ 1 ] ) ) {
-					this.complain( &quot;Vertex &quot; + i + &quot;.y is not a number&quot; );
+					this.complain( "Vertex " + i + ".y is not a number" );
 					return false;
 				}
 			} else {
-				this.complain( &quot;Vertex &quot; + i + &quot; is not an array&quot; );
+				this.complain( "Vertex " + i + " is not an array" );
 				return false;
 			}
 		}
 	} else {
-		this.complain( &quot;Could not parse indices: Not an array&quot; );
+		this.complain( "Could not parse indices: Not an array" );
 		return false;
 	}
 
-	// We can&#x27;t find anything wrong with it
+	// We can't find anything wrong with it
 	return true;
 };
 
@@ -1026,10 +935,10 @@ Kiwi.Plugins.Primitives.Polygon.prototype.rebuildBounds = function() {
 	var bounds = this.computeMinMaxXY( this._vertices );
 	this.width = bounds.maxX - bounds.minX;
 	this.height = bounds.maxY - bounds.minY;
-	if ( typeof this.anchorPointX === &quot;undefined&quot; ) {
+	if ( typeof this.anchorPointX === "undefined" ) {
 		this.anchorPointX = bounds.maxX - 0.5 * this.width;
 	}
-	if ( typeof this.anchorPointY === &quot;undefined&quot; ) {
+	if ( typeof this.anchorPointY === "undefined" ) {
 		this.anchorPointY = bounds.maxY - 0.5 * this.height;
 	}
 
@@ -1066,11 +975,11 @@ Kiwi.Plugins.Primitives.Polygon.prototype.render = function( camera ) {
 		p2 = new Kiwi.Geom.Point( 0, 0 );
 
 	Kiwi.Entity.prototype.render.call( this, camera );
-	if ( this.alpha &gt; 0 ) {
+	if ( this.alpha > 0 ) {
 		ctx = this.game.stage.ctx;
 		ctx.save();
 
-		if ( this.alpha &lt;= 1 ) {
+		if ( this.alpha <= 1 ) {
 			ctx.globalAlpha = this.alpha;
 		}
 
@@ -1080,10 +989,10 @@ Kiwi.Plugins.Primitives.Polygon.prototype.render = function( camera ) {
 
 
 		// Draw fill
-		if ( this.drawFill &amp;&amp; this._indices.length &gt; 3 ) {
-			ctx.fillStyle = &quot;rgb(&quot; + Math.round( this.color[ 0 ] * 255 ) + &quot;,&quot; +
-				Math.round( this.color[ 1 ] * 255 ) + &quot;,&quot; +
-				Math.round( this.color[ 2 ] * 255 ) + &quot;)&quot;;
+		if ( this.drawFill && this._indices.length > 3 ) {
+			ctx.fillStyle = "rgb(" + Math.round( this.color[ 0 ] * 255 ) + "," +
+				Math.round( this.color[ 1 ] * 255 ) + "," +
+				Math.round( this.color[ 2 ] * 255 ) + ")";
 
 			p1.setTo(
 				this._vertices[ this._indices[ 1 ] ][ 0 ] - t.anchorPointX,
@@ -1094,7 +1003,7 @@ Kiwi.Plugins.Primitives.Polygon.prototype.render = function( camera ) {
 				this._vertices[ this._indices[ 0 ] ][ 1 ] - t.anchorPointY
 			);
 
-			for ( i = 2; i &lt; indicesLen; i++ ) {
+			for ( i = 2; i < indicesLen; i++ ) {
 
 				// Overwrite start point
 				p0.setTo(
@@ -1120,13 +1029,13 @@ Kiwi.Plugins.Primitives.Polygon.prototype.render = function( camera ) {
 
 
 		// Draw stroke
-		if ( this.drawStroke &amp;&amp; this._strokePolyIndices.length &gt; 3 ) {
+		if ( this.drawStroke && this._strokePolyIndices.length > 3 ) {
 			indicesLen = this._strokePolyIndices.length;
 
 			ctx.fillStyle =
-				&quot;rgb(&quot; + Math.round( this.strokeColor[ 0 ] * 255 ) + &quot;,&quot; +
-				Math.round( this.strokeColor[ 1 ] * 255 ) + &quot;,&quot; +
-				Math.round( this.strokeColor[ 2 ] * 255 ) + &quot;)&quot;;
+				"rgb(" + Math.round( this.strokeColor[ 0 ] * 255 ) + "," +
+				Math.round( this.strokeColor[ 1 ] * 255 ) + "," +
+				Math.round( this.strokeColor[ 2 ] * 255 ) + ")";
 
 			p1.setTo(
 				this._strokePolyVertices[
@@ -1141,7 +1050,7 @@ Kiwi.Plugins.Primitives.Polygon.prototype.render = function( camera ) {
 					this._strokePolyIndices[ 0 ] ][ 1 ] - t.anchorPointY
 			);
 
-			for ( i = 2; i &lt; indicesLen; i++ ) {
+			for ( i = 2; i < indicesLen; i++ ) {
 
 				// Overwrite start point
 				p0.setTo(
@@ -1185,7 +1094,7 @@ Kiwi.Plugins.Primitives.Polygon.prototype.render = function( camera ) {
 */
 Kiwi.Plugins.Primitives.Polygon.prototype.renderGL =
 		function( gl ) {
-	if ( this.alpha &gt; 0 ) {
+	if ( this.alpha > 0 ) {
 		if ( this.drawFill ) {
 			this.glRenderer.addToBatch( gl, this,
 				this._indices, this._vertices, this.color
@@ -1214,7 +1123,7 @@ Kiwi.Plugins.Primitives.Polygon.prototype.shatter = function() {
 		indices = [ 0, 1, 2 ],
 		group = new Kiwi.Group( this.state );
 
-	for ( i = 0; i &lt; this._indices.length - 2; i++ ) {
+	for ( i = 0; i < this._indices.length - 2; i++ ) {
 
 		vert1 = this._vertices[ this._indices[ i ] ];
 		vert2 = this._vertices[ this._indices[ i + 1 ] ];
@@ -1234,7 +1143,7 @@ Kiwi.Plugins.Primitives.Polygon.prototype.shatter = function() {
 		);
 
 		// Avoid degenerate triangles
-		if ( dVert12 !== 0 &amp;&amp; dVert13 !== 0 &amp;&amp; dVert23 !== 0 ) {
+		if ( dVert12 !== 0 && dVert13 !== 0 && dVert23 !== 0 ) {
 			params = {
 				indices: indices,
 				vertices: [ vert1, vert2, vert3 ],
@@ -1272,18 +1181,18 @@ Kiwi.Plugins.Primitives.Polygon.prototype.update = function() {
 
 /**
 * Ellipse Primitive
-* &lt;br&gt;&lt;br&gt;
+* <br><br>
 * Create a ellipse primitive. Define a params object including a reference
 * to the current state. You may also add style parameters from the Polygon.
-* &lt;br&gt;&lt;br&gt;
+* <br><br>
 * You may draw regular polygons by reducing the segments. For example,
 * to draw a hexagon:
-* &lt;br&gt;&lt;br&gt;
-* new Kiwi.Plugins.Primitives.Ellipse( {&lt;br&gt;
-*	drawStroke: false,&lt;br&gt;
-*	radius: 32,&lt;br&gt;
-*	state: MyGame.state,&lt;br&gt;
-*	segments: 6&lt;br&gt;
+* <br><br>
+* new Kiwi.Plugins.Primitives.Ellipse( {<br>
+*	drawStroke: false,<br>
+*	radius: 32,<br>
+*	state: MyGame.state,<br>
+*	segments: 6<br>
 * } );
 * @class Ellipse
 * @constructor
@@ -1308,17 +1217,17 @@ Kiwi.Plugins.Primitives.Ellipse = function( params ) {
 		offsetY = 0;
 
 	// Create elliptical geometry data
-	if ( typeof params.segments === &quot;undefined&quot; ) {
+	if ( typeof params.segments === "undefined" ) {
 		params.segments = 32;
 	}
-	if ( typeof params.radius !== &quot;undefined&quot; ) {
+	if ( typeof params.radius !== "undefined" ) {
 		params.width = params.radius * 2;
 		params.height = params.radius * 2;
 	}
-	if ( typeof params.width !== &quot;number&quot; ) {
+	if ( typeof params.width !== "number" ) {
 		params.width = defaultDimension;
 	}
-	if ( typeof params.height !== &quot;number&quot; ) {
+	if ( typeof params.height !== "number" ) {
 		params.height = defaultDimension;
 	}
 	if ( !params.centerOnTransform ) {
@@ -1328,7 +1237,7 @@ Kiwi.Plugins.Primitives.Ellipse = function( params ) {
 	params.indices = [];
 	params.vertices = [];
 	params.strokeIndices = [];
-	for ( i = 0; i &lt; params.segments; i++ ) {
+	for ( i = 0; i < params.segments; i++ ) {
 
 		// Define indices, looping from the middle
 		params.indices.push( i );
@@ -1364,16 +1273,16 @@ Kiwi.extend( Kiwi.Plugins.Primitives.Ellipse,
 
 /**
 * Line Primitive
-* &lt;br&gt;&lt;br&gt;
+* <br><br>
 * Create a line primitive. Define a params object including a reference
 * to the current state. You may also add style parameters from the Polygon.
 * For example:
-* &lt;br&gt;&lt;br&gt;
-* new Kiwi.Plugins.Primitives.Line( {&lt;br&gt;
-*	points: [ [ 0, 0 ], [ 100, 100 ], [ 200, 0 ] ],&lt;br&gt;
-*	state: MyGame.state,&lt;br&gt;
-*	strokeColor: [ 1, 0.1, 1 ],&lt;br&gt;
-*	strokeWidth: 4&lt;br&gt;
+* <br><br>
+* new Kiwi.Plugins.Primitives.Line( {<br>
+*	points: [ [ 0, 0 ], [ 100, 100 ], [ 200, 0 ] ],<br>
+*	state: MyGame.state,<br>
+*	strokeColor: [ 1, 0.1, 1 ],<br>
+*	strokeWidth: 4<br>
 * } );
 * @class Line
 * @constructor
@@ -1392,7 +1301,7 @@ Kiwi.Plugins.Primitives.Line = function( params ) {
 	params.drawFill = false;
 	params.drawStroke = true;
 	if ( params.points ) {
-		for ( i = 0; i &lt; params.points.length; i++ ) {
+		for ( i = 0; i < params.points.length; i++ ) {
 			params.vertices.push( params.points[ i ] );
 			params.strokeIndices.push( i );
 		}
@@ -1406,17 +1315,17 @@ Kiwi.extend( Kiwi.Plugins.Primitives.Line,
 
 /**
 * Rectangle Primitive
-* &lt;br&gt;&lt;br&gt;
+* <br><br>
 * Create a rectangular primitive. Define a params object including a reference
 * to the current state. You may also add style parameters from the Polygon.
 * For example:
-* &lt;br&gt;&lt;br&gt;
-* new Kiwi.Plugins.Primitives.Rectangle( {&lt;br&gt;
-*	state: MyGame.state,&lt;br&gt;
-*	color: [ 0.9, 0.3, 0.7 ],&lt;br&gt;
-*	strokeWidth: 4,&lt;br&gt;
-*	width: 32,&lt;br&gt;
-*	height: 16&lt;br&gt;
+* <br><br>
+* new Kiwi.Plugins.Primitives.Rectangle( {<br>
+*	state: MyGame.state,<br>
+*	color: [ 0.9, 0.3, 0.7 ],<br>
+*	strokeWidth: 4,<br>
+*	width: 32,<br>
+*	height: 16<br>
 * } );
 * @class Rectangle
 * @constructor
@@ -1436,10 +1345,10 @@ Kiwi.Plugins.Primitives.Rectangle = function( params ) {
 	// Create rectangle geometry data
 	params.indices = [ 0, 1, 2, 3 ];
 	params.strokeIndices = [ 0, 1, 3, 2, 0 ];
-	if ( typeof params.width === &quot;undefined&quot; ) {
+	if ( typeof params.width === "undefined" ) {
 		params.width = defaultDimension;
 	}
-	if ( typeof params.height === &quot;undefined&quot; ) {
+	if ( typeof params.height === "undefined" ) {
 		params.height = defaultDimension;
 	}
 
@@ -1468,20 +1377,20 @@ Kiwi.extend( Kiwi.Plugins.Primitives.Rectangle,
 
 /**
 * Star Primitive
-* &lt;br&gt;&lt;br&gt;
+* <br><br>
 * Create a star primitive. Define a params object including a reference
 * to the current state. You may also add style parameters from the Polygon.
-* &lt;br&gt;&lt;br&gt;
+* <br><br>
 * You may draw semi-random stars. For example, to draw a cartoon impact flare:
-* &lt;br&gt;&lt;br&gt;
-* new Kiwi.Plugins.Primitives.Star( {&lt;br&gt;
-*	centerOnTransform: true,&lt;br&gt;
-*	color: [ 1, 0.01, 1 ],&lt;br&gt;
-*	drawStroke: false,&lt;br&gt;
-*	radius: 32,&lt;br&gt;
-*	spikeRandom: 1,&lt;br&gt;
-*	state: MyGame.state,&lt;br&gt;
-*	segments: 16&lt;br&gt;
+* <br><br>
+* new Kiwi.Plugins.Primitives.Star( {<br>
+*	centerOnTransform: true,<br>
+*	color: [ 1, 0.01, 1 ],<br>
+*	drawStroke: false,<br>
+*	radius: 32,<br>
+*	spikeRandom: 1,<br>
+*	state: MyGame.state,<br>
+*	segments: 16<br>
 * } );
 * @class Star
 * @constructor
@@ -1508,27 +1417,27 @@ Kiwi.Plugins.Primitives.Star = function( params ) {
 		offsetY = 0;
 
 	// Create stellar geometry data
-	if ( typeof params.segments === &quot;undefined&quot; ) {
+	if ( typeof params.segments === "undefined" ) {
 		params.segments = 32;
 	}
-	if ( typeof params.radius !== &quot;undefined&quot; ) {
+	if ( typeof params.radius !== "undefined" ) {
 		params.width = params.radius * 2;
 		params.height = params.radius * 2;
 	}
-	if ( typeof params.width !== &quot;number&quot; ) {
+	if ( typeof params.width !== "number" ) {
 		params.width = defaultDimension;
 	}
-	if ( typeof params.height !== &quot;number&quot; ) {
+	if ( typeof params.height !== "number" ) {
 		params.height = defaultDimension;
 	}
 	if ( !params.centerOnTransform ) {
 		offsetX = params.width * 0.5;
 		offsetY = params.height * 0.5;
 	}
-	if( typeof params.spikeLength !== &quot;number&quot; ) {
+	if( typeof params.spikeLength !== "number" ) {
 		params.spikeLength = 1;
 	}
-	if( typeof params.spikeRandom !== &quot;number&quot; ) {
+	if( typeof params.spikeRandom !== "number" ) {
 		params.spikeRandom = 0;
 	}
 
@@ -1537,7 +1446,7 @@ Kiwi.Plugins.Primitives.Star = function( params ) {
 	params.vertices = [];
 	params.strokeIndices = [];
 
-	for ( i = 0; i &lt; params.segments; i++ ) {
+	for ( i = 0; i < params.segments; i++ ) {
 
 		// Define indices, looping from the middle
 		params.indices.push( i );
@@ -1559,7 +1468,7 @@ Kiwi.Plugins.Primitives.Star = function( params ) {
 	params.vertices.push( [ offsetX, offsetY ] );
 
 	// Define stellar spikes
-	for ( i = 0; i &lt; params.segments; i++ ) {
+	for ( i = 0; i < params.segments; i++ ) {
 		params.indices.push( i );
 		params.indices.push( params.segments + i + 1 );
 		params.indices.push( ( i + 1) % params.segments );
@@ -1592,19 +1501,19 @@ Kiwi.extend( Kiwi.Plugins.Primitives.Star,
 
 /**
 * Triangle Primitive
-* &lt;br&gt;&lt;br&gt;
+* <br><br>
 * Create a triangle primitive. Define a params object including a reference
 * to the current state. You may also add style parameters from the Polygon.
 * For example:
-* &lt;br&gt;&lt;br&gt;
-* new Kiwi.Plugins.Primitives.Triangle( {&lt;br&gt;
-*	points: [ [ 0, 0 ], [ 100, 100 ], [ 200, 0 ] ],&lt;br&gt;
-*	state: MyGame.state,&lt;br&gt;
-*	x: 10,&lt;br&gt;
-*	y: 10,&lt;br&gt;
-*	scale: 2&lt;br&gt;
+* <br><br>
+* new Kiwi.Plugins.Primitives.Triangle( {<br>
+*	points: [ [ 0, 0 ], [ 100, 100 ], [ 200, 0 ] ],<br>
+*	state: MyGame.state,<br>
+*	x: 10,<br>
+*	y: 10,<br>
+*	scale: 2<br>
 * } );
-* &lt;br&gt;&lt;br&gt;
+* <br><br>
 * If you do not specify points in the param object, the Triangle will default to
 * [ [ 0, 0 ], [ 0, 8 ], [ 8, 0 ] ]
 * @class Triangle
@@ -1613,7 +1522,7 @@ Kiwi.extend( Kiwi.Plugins.Primitives.Star,
 * @namespace Kiwi.Plugins.Primitives
 * @param params {object} Parameter object
 * @param params.state {Kiwi.State} Current state
-* @param [params.corners] {array} Array of x,y pairs to form triangle&#x27;s corners.
+* @param [params.corners] {array} Array of x,y pairs to form triangle's corners.
 * @since 0.4.0
 */
 Kiwi.Plugins.Primitives.Triangle = function( params ) {
@@ -1626,7 +1535,7 @@ Kiwi.Plugins.Primitives.Triangle = function( params ) {
 	
 	// Create triangle geometry data
 	if ( params.points ) {
-		for ( i = 0; i &lt; 3; i++ ) {
+		for ( i = 0; i < 3; i++ ) {
 			if ( params.points[ i ] ) {
 				params.vertices.push( params.points[ i ] );
 			} else {
@@ -1662,7 +1571,7 @@ Kiwi.Plugins.Primitives.NullAtlas = function() {
 };
 
 /** Dummy texture enable method, doing the bare minimum to satisfy the
-* texture manager requirements. Parameters don&#x27;t matter.
+* texture manager requirements. Parameters don't matter.
 * @method enableGL
 * @public
 * @since 0.1.0
@@ -1673,7 +1582,7 @@ Kiwi.Plugins.Primitives.NullAtlas.prototype.enableGL = function() {};
 
 /**
 * Primitive Renderer
-* &lt;br&gt;&lt;br&gt;
+* <br><br>
 * This renders primitives using triangle strips.
 * @class PrimitiveRenderer
 * @constructor
@@ -1695,7 +1604,7 @@ Kiwi.Renderers.PrimitiveRenderer = function( gl, shaderManager ) {
 	// Perform super functionality
 	Kiwi.Renderers.Renderer.call( this, gl, shaderManager, true );
 
-	this.setShaderPair( &quot;PrimitiveShader&quot; );
+	this.setShaderPair( "PrimitiveShader" );
 };
 Kiwi.extend( Kiwi.Renderers.PrimitiveRenderer, Kiwi.Renderers.Renderer );
 
@@ -1774,7 +1683,7 @@ Kiwi.Renderers.PrimitiveRenderer.prototype.updateStageResolution =
 */
 Kiwi.Renderers.PrimitiveRenderer.prototype.setShaderPair =
 		function( shaderPair ) {
-	if ( typeof shaderPair === &quot;string&quot; ) {
+	if ( typeof shaderPair === "string" ) {
 		this._shaderPairName = shaderPair;
 	}
 };
@@ -1799,7 +1708,7 @@ Kiwi.Renderers.PrimitiveRenderer.prototype.addToBatch =
 	var t = entity.transform;
 	var m = t.getConcatenatedMatrix();
 
-	for ( i = 0; i &lt; vertLen; i++ ) {
+	for ( i = 0; i < vertLen; i++ ) {
 		this._tempPoint.setTo(
 			vertices[ i ][ 0 ] - t.anchorPointX,
 			vertices[ i ][ 1 ] - t.anchorPointY );
@@ -1817,12 +1726,12 @@ Kiwi.Renderers.PrimitiveRenderer.prototype.addToBatch =
 
 	// Because we cannot guarantee winding order, we must always assume
 	// that we will require two connectors, except for the first triangle.
-	if ( this.indices.length &gt; 0 ) {
+	if ( this.indices.length > 0 ) {
 		this.indices.push( this.indices[ this.indices.length - 1 ] );
 		this.indices.push( indices[ 0 ] + indexOffset );
 	}
 
-	for ( i = 0; i &lt; indexLen; i++ ) {
+	for ( i = 0; i < indexLen; i++ ) {
 		this.indices.push( indices[ i ] + indexOffset );
 	}
 };
@@ -1887,34 +1796,34 @@ Kiwi.Shaders.PrimitiveShader = function() {
 	// Configure uniforms
 	this.uniforms = {
 		uCamMatrix: {
-			type: &quot;mat3&quot;,
+			type: "mat3",
 		},
 		uResolution: {
-			type: &quot;2fv&quot;,
+			type: "2fv",
 		}
 	};
 
 	// Declare shaders
 	this.vertSource = [
-		&quot;attribute vec2 aXY;&quot;,
-		&quot;attribute vec4 aRGBA;&quot;,
-		&quot;uniform mat3 uCamMatrix;&quot;,
-		&quot;uniform vec2 uResolution;&quot;,
-		&quot;varying vec4 vRGBA;&quot;,
-		&quot;void main(void) {&quot;,
-		&quot;	vec2 pos = ( uCamMatrix * vec3( aXY, 1 ) ).xy; &quot;,
-		&quot;	gl_Position = vec4( ( pos / uResolution * 2.0 - 1.0 ) *&quot;,
-		&quot;		vec2(1 , -1 ), 0, 1 );&quot;,
-		&quot;	vRGBA = aRGBA;&quot;,
-		&quot;}&quot;
+		"attribute vec2 aXY;",
+		"attribute vec4 aRGBA;",
+		"uniform mat3 uCamMatrix;",
+		"uniform vec2 uResolution;",
+		"varying vec4 vRGBA;",
+		"void main(void) {",
+		"	vec2 pos = ( uCamMatrix * vec3( aXY, 1 ) ).xy; ",
+		"	gl_Position = vec4( ( pos / uResolution * 2.0 - 1.0 ) *",
+		"		vec2(1 , -1 ), 0, 1 );",
+		"	vRGBA = aRGBA;",
+		"}"
 	];
 
 	this.fragSource = [
-		&quot;precision mediump float;&quot;,
-		&quot;varying vec4 vRGBA;&quot;,
-		&quot;void main(void) {&quot;,
-		&quot;  gl_FragColor = vRGBA;&quot;,
-		&quot;}&quot;
+		"precision mediump float;",
+		"varying vec4 vRGBA;",
+		"void main(void) {",
+		"  gl_FragColor = vRGBA;",
+		"}"
 	];
 };
 Kiwi.extend( Kiwi.Shaders.PrimitiveShader, Kiwi.Shaders.ShaderPair );
@@ -1922,28 +1831,8 @@ Kiwi.extend( Kiwi.Shaders.PrimitiveShader, Kiwi.Shaders.ShaderPair );
 Kiwi.Shaders.PrimitiveShader.prototype.init = function( gl ) {
 	Kiwi.Shaders.ShaderPair.prototype.init.call( this, gl );
 
-	this.attributes.aXY = gl.getAttribLocation(this.shaderProgram, &quot;aXY&quot;);
-	this.attributes.aRGBA = gl.getAttribLocation(this.shaderProgram, &quot;aRGBA&quot;);
+	this.attributes.aXY = gl.getAttribLocation(this.shaderProgram, "aXY");
+	this.attributes.aRGBA = gl.getAttribLocation(this.shaderProgram, "aRGBA");
 
 	this.initUniforms(gl);
 };
-
-    </pre>
-</div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<script src="../assets/vendor/prettify/prettify-min.js"></script>
-<script>prettyPrint();</script>
-<script src="../assets/js/yui-prettify.js"></script>
-<script src="../assets/../api.js"></script>
-<script src="../assets/js/api-filter.js"></script>
-<script src="../assets/js/api-list.js"></script>
-<script src="../assets/js/api-search.js"></script>
-<script src="../assets/js/apidocs.js"></script>
-</body>
-</html>

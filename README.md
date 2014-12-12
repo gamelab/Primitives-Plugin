@@ -16,7 +16,7 @@ Versions:
 1.0.1
 - Add input options as with Kiwi.GameObjects.Sprite
 - Add `update()` method
-- Simplify plugin names
+- Differentiate between params set to "0" and "undefined"
 
 1.0.0
 - Release
@@ -71,7 +71,7 @@ This plugin provides the following primitives:
 This plugin is intended for use with [KiwiJS](http://www.kiwijs.org/).
 
 
-How to Include: 
+How to Include:
 ---------------
 
 Acquire the full plugin, with examples and API documentation, [from Github](https://github.com/gamelab/Primitives-Plugin).
