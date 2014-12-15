@@ -1,13 +1,11 @@
-IN PROGRESS - REMOVE THIS NOTICE UPON RELEASE
-
 Primitives Plugin for KiwiJS
 ============================
 
-- Version: 1.0.1
-- Type: GameObject
-- Author: Benjamin D. Richards for KiwiJS Team
-- Website: www.kiwijs.org
-- Kiwi.js Version Last Tested: 1.1.1
+	Version: 1.0.1
+	Type: GameObject
+	Author: Benjamin D. Richards for KiwiJS Team
+	Website: www.kiwijs.org
+	Kiwi.js Version Last Tested: 1.1.1
 
 
 Versions:
@@ -15,7 +13,7 @@ Versions:
 
 1.0.1
 - Add input options as with Kiwi.GameObjects.Sprite
-- Add `update()` method
+- Add `update()` method to support input
 - Differentiate between params set to "0" and "undefined"
 
 1.0.0
@@ -23,11 +21,11 @@ Versions:
 
 0.4.0
 - Implement user-facing primitives
-  - Ellipse
-  - Line
-  - Rectangle
-  - Star
-  - Triangle
+	- Ellipse
+	- Line
+	- Rectangle
+	- Star
+	- Triangle
 
 0.3.0
 - Implement triangle strip rendering
@@ -45,13 +43,14 @@ Versions:
 Files/Folders:
 --------------
 
-- README.md 	 - This readme file.
-- src/		 - The source files for the plugin
-- docs/ 		 - API documentation
-- examples/ 	 - Examples of primitives in action
-- .gitignore   - General gitignore stuff.
-- gruntfile.js - A build file that populates the 'dist' and 'docs' folders with the appropriate content. Use this to build docs and minified versions.
-- package.json - Node packages required for the grunt build along with information for the gruntfile - to use when building
+	README.md		 - This readme file.
+	build/			- Plugin and minified plugin
+	src/			- The source files for the plugin
+	docs/		- API documentation
+	examples/		- Examples of primitives in action
+	.gitignore		- General gitignore stuff.
+	gruntfile.js	- A build file that populates folders with the appropriate content. Use this to build docs and minified versions.
+	package.json	- Node packages required for the grunt build along with information for the gruntfile - to use when building
 
 
 Description:

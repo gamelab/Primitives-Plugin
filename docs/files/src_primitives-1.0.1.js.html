@@ -133,7 +133,9 @@ Kiwi.Plugins.Primitives = {
 	* @type String
 	* @public
 	*/
-	version:&quot;1.0.0&quot;
+	version:&quot;1.0.1&quot;,
+
+	minimumKiwiVersion:&quot;1.1.0&quot;
 
 };
 
@@ -1282,6 +1284,14 @@ Kiwi.Plugins.Primitives.Polygon.prototype.shatter = function() {
 };
 
 
+/**
+* Automatically called once per update loop.
+* Handles input. If you override this, make sure to call the prototype:
+* &lt;code&gt;Kiwi.Plugins.prototype.update.calL( this );&lt;/code&gt;
+* @method update
+* @public
+* @since 1.0.1
+*/
 Kiwi.Plugins.Primitives.Polygon.prototype.update = function() {
 	Kiwi.Entity.prototype.update.call( this );
 
