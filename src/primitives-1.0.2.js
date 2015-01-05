@@ -23,7 +23,7 @@ Kiwi.Plugins.Primitives = {
 	* @type String
 	* @public
 	*/
-	version:"1.0.1",
+	version:"1.0.2",
 
 	minimumKiwiVersion:"1.1.0"
 
@@ -954,12 +954,14 @@ Kiwi.Plugins.Primitives.Polygon.prototype.rebuildBounds = function() {
 		this, this.box, this.enableInput ) );
 
 	// Set dummy cell data for use in hitboxes
-	this.atlas.cells[0].hitboxes[0] = {
-		x: 0,
-		y: 0,
-		w: this.width,
-		h: this.height
-	};
+	if ( this.atlas ) {
+		this.atlas.cells[0].hitboxes[0] = {
+			x: 0,
+			y: 0,
+			w: this.width,
+			h: this.height
+		};
+	}
 };
 
 /**
@@ -1532,7 +1534,7 @@ Kiwi.extend( Kiwi.Plugins.Primitives.Star,
 * @namespace Kiwi.Plugins.Primitives
 * @param params {object} Parameter object
 * @param params.state {Kiwi.State} Current state
-* @param [params.corners] {array} Array of x,y pairs to form triangle's corners.
+* @param [params.points] {array} Array of x,y pairs to form triangle's corners.
 * @since 0.4.0
 */
 Kiwi.Plugins.Primitives.Triangle = function( params ) {
