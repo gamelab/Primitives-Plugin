@@ -14,6 +14,7 @@ Versions:
 1.0.2
 - Fix incompatibility with Canvas rendering
 - Correct documentation for Triangle to refer to `points` (not `corners`)
+- Fix hitboxes being shared, allowing proper input on multiple primitives
 
 1.0.1
 - Add input options as with Kiwi.GameObjects.Sprite

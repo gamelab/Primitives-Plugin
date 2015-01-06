@@ -58,7 +58,7 @@
                 "Kiwi.Shaders": 1
             },
             "file": "src/primitives-1.0.2.js",
-            "line": 1790
+            "line": 1791
         },
         "Plugins": {
             "name": "Plugins",
@@ -86,7 +86,7 @@
             "module": "Kiwi",
             "namespace": "",
             "file": "src/primitives-1.0.2.js",
-            "line": 1790,
+            "line": 1791,
             "description": "Primitive Gameobjects plugin, providing geometric objects to the designer."
         }
     },
@@ -210,7 +210,7 @@
             "submodule": "Plugins",
             "namespace": "Kiwi.Plugins.Primitives",
             "file": "src/primitives-1.0.2.js",
-            "line": 1194,
+            "line": 1195,
             "description": "Ellipse Primitive\n<br><br>\nCreate a ellipse primitive. Define a params object including a reference\nto the current state. You may also add style parameters from the Polygon.\n<br><br>\nYou may draw regular polygons by reducing the segments. For example,\nto draw a hexagon:\n<br><br>\nnew Kiwi.Plugins.Primitives.Ellipse( {<br>\n\tdrawStroke: false,<br>\n\tradius: 32,<br>\n\tstate: MyGame.state,<br>\n\tsegments: 6<br>\n} );",
             "is_constructor": 1,
             "extends": "Kiwi.Plugins.Primitives.Polygon",
@@ -283,7 +283,7 @@
             "submodule": "Plugins",
             "namespace": "Kiwi.Plugins.Primitives",
             "file": "src/primitives-1.0.2.js",
-            "line": 1286,
+            "line": 1287,
             "description": "Line Primitive\n<br><br>\nCreate a line primitive. Define a params object including a reference\nto the current state. You may also add style parameters from the Polygon.\nFor example:\n<br><br>\nnew Kiwi.Plugins.Primitives.Line( {<br>\n\tpoints: [ [ 0, 0 ], [ 100, 100 ], [ 200, 0 ] ],<br>\n\tstate: MyGame.state,<br>\n\tstrokeColor: [ 1, 0.1, 1 ],<br>\n\tstrokeWidth: 4<br>\n} );",
             "is_constructor": 1,
             "extends": "Kiwi.Plugins.Primitives.Polygon",
@@ -321,7 +321,7 @@
             "submodule": "Plugins",
             "namespace": "Kiwi.Plugins.Primitives",
             "file": "src/primitives-1.0.2.js",
-            "line": 1328,
+            "line": 1329,
             "description": "Rectangle Primitive\n<br><br>\nCreate a rectangular primitive. Define a params object including a reference\nto the current state. You may also add style parameters from the Polygon.\nFor example:\n<br><br>\nnew Kiwi.Plugins.Primitives.Rectangle( {<br>\n\tstate: MyGame.state,<br>\n\tcolor: [ 0.9, 0.3, 0.7 ],<br>\n\tstrokeWidth: 4,<br>\n\twidth: 32,<br>\n\theight: 16<br>\n} );",
             "is_constructor": 1,
             "extends": "Kiwi.Plugins.Primitives.Polygon",
@@ -374,7 +374,7 @@
             "submodule": "Plugins",
             "namespace": "Kiwi.Plugins.Primitives",
             "file": "src/primitives-1.0.2.js",
-            "line": 1390,
+            "line": 1391,
             "description": "Star Primitive\n<br><br>\nCreate a star primitive. Define a params object including a reference\nto the current state. You may also add style parameters from the Polygon.\n<br><br>\nYou may draw semi-random stars. For example, to draw a cartoon impact flare:\n<br><br>\nnew Kiwi.Plugins.Primitives.Star( {<br>\n\tcenterOnTransform: true,<br>\n\tcolor: [ 1, 0.01, 1 ],<br>\n\tdrawStroke: false,<br>\n\tradius: 32,<br>\n\tspikeRandom: 1,<br>\n\tstate: MyGame.state,<br>\n\tsegments: 16<br>\n} );",
             "is_constructor": 1,
             "extends": "Kiwi.Plugins.Primitives.Polygon",
@@ -454,7 +454,7 @@
             "submodule": "Plugins",
             "namespace": "Kiwi.Plugins.Primitives",
             "file": "src/primitives-1.0.2.js",
-            "line": 1514,
+            "line": 1515,
             "description": "Triangle Primitive\n<br><br>\nCreate a triangle primitive. Define a params object including a reference\nto the current state. You may also add style parameters from the Polygon.\nFor example:\n<br><br>\nnew Kiwi.Plugins.Primitives.Triangle( {<br>\n\tpoints: [ [ 0, 0 ], [ 100, 100 ], [ 200, 0 ] ],<br>\n\tstate: MyGame.state,<br>\n\tx: 10,<br>\n\ty: 10,<br>\n\tscale: 2<br>\n} );\n<br><br>\nIf you do not specify points in the param object, the Triangle will default to\n[ [ 0, 0 ], [ 0, 8 ], [ 8, 0 ] ]",
             "is_constructor": 1,
             "extends": "Kiwi.Plugins.Primitives.Polygon",
@@ -492,7 +492,7 @@
             "submodule": "Plugins",
             "namespace": "Kiwi.Plugins.Primitives",
             "file": "src/primitives-1.0.2.js",
-            "line": 1571,
+            "line": 1572,
             "description": "Null Texture Atlas interfaces with KiwiJS rendering system\nwhich expects a texture atlas, and provides it with an atlas\nthat has no texture.",
             "is_constructor": 1,
             "since": "0.1.0"
@@ -509,7 +509,7 @@
             "submodule": "Plugins",
             "namespace": "Kiwi.Renderers",
             "file": "src/primitives-1.0.2.js",
-            "line": 1595,
+            "line": 1596,
             "description": "Primitive Renderer\n<br><br>\nThis renders primitives using triangle strips.",
             "is_constructor": 1,
             "params": [
@@ -538,7 +538,7 @@
             "submodule": "Plugins",
             "namespace": "Kiwi.Shaders",
             "file": "src/primitives-1.0.2.js",
-            "line": 1790,
+            "line": 1791,
             "description": "Primitive Shader Pair",
             "is_constructor": 1,
             "since": "0.1.0"
@@ -1034,7 +1034,7 @@
         },
         {
             "file": "src/primitives-1.0.2.js",
-            "line": 967,
+            "line": 968,
             "description": "Software rendering method",
             "itemtype": "method",
             "name": "render",
@@ -1054,7 +1054,7 @@
         },
         {
             "file": "src/primitives-1.0.2.js",
-            "line": 1092,
+            "line": 1093,
             "description": "Hardware rendering method using WebGL",
             "itemtype": "method",
             "name": "renderGL",
@@ -1082,7 +1082,7 @@
         },
         {
             "file": "src/primitives-1.0.2.js",
-            "line": 1116,
+            "line": 1117,
             "description": "Decompose a polygon into its constituent triangles.\nThis will destroy the original polygon and substitute a group\ncontaining the triangles.",
             "itemtype": "method",
             "name": "shatter",
@@ -1100,7 +1100,7 @@
         },
         {
             "file": "src/primitives-1.0.2.js",
-            "line": 1179,
+            "line": 1180,
             "description": "Automatically called once per update loop.\nHandles input. If you override this, make sure to call the prototype:\n<code>Kiwi.Plugins.prototype.update.calL( this );</code>",
             "itemtype": "method",
             "name": "update",
@@ -1114,7 +1114,7 @@
         },
         {
             "file": "src/primitives-1.0.2.js",
-            "line": 1585,
+            "line": 1586,
             "description": "texture manager requirements. Parameters don't matter.",
             "itemtype": "method",
             "name": "enableGL",
@@ -1128,7 +1128,7 @@
         },
         {
             "file": "src/primitives-1.0.2.js",
-            "line": 1623,
+            "line": 1624,
             "description": "Returns a null atlas so that all primitives share a texture object.",
             "itemtype": "method",
             "name": "getAtlas",
@@ -1145,7 +1145,7 @@
         },
         {
             "file": "src/primitives-1.0.2.js",
-            "line": 1634,
+            "line": 1635,
             "description": "Enables the renderer for drawing",
             "itemtype": "method",
             "name": "enable",
@@ -1172,7 +1172,7 @@
         },
         {
             "file": "src/primitives-1.0.2.js",
-            "line": 1655,
+            "line": 1656,
             "description": "Disables the renderer",
             "itemtype": "method",
             "name": "disable",
@@ -1192,7 +1192,7 @@
         },
         {
             "file": "src/primitives-1.0.2.js",
-            "line": 1666,
+            "line": 1667,
             "description": "Clears the vertex buffer",
             "itemtype": "method",
             "name": "clear",
@@ -1212,7 +1212,7 @@
         },
         {
             "file": "src/primitives-1.0.2.js",
-            "line": 1678,
+            "line": 1679,
             "description": "Updates the stage resolution uniforms",
             "itemtype": "method",
             "name": "updateStageResolution",
@@ -1237,7 +1237,7 @@
         },
         {
             "file": "src/primitives-1.0.2.js",
-            "line": 1690,
+            "line": 1691,
             "description": "Sets shader pair by name",
             "itemtype": "method",
             "name": "setShaderPair",
@@ -1257,7 +1257,7 @@
         },
         {
             "file": "src/primitives-1.0.2.js",
-            "line": 1703,
+            "line": 1704,
             "description": "Collates all xy and uv coordinates into a buffer\nready for upload to video memory",
             "itemtype": "method",
             "name": "_collateVertexAttributeArrays",
@@ -1287,7 +1287,7 @@
         },
         {
             "file": "src/primitives-1.0.2.js",
-            "line": 1751,
+            "line": 1752,
             "description": "Makes a draw call. This is where things actually\nget rendered to the draw buffer (or a framebuffer).",
             "itemtype": "method",
             "name": "draw",

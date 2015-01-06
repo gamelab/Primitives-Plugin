@@ -948,6 +948,7 @@ Kiwi.Plugins.Primitives.Polygon.prototype.rebuildBounds = function() {
 	this.box = this.components.add( new Kiwi.Components.Box(
 		this, this.x + bounds.minX, this.x + bounds.minY,
 		this.width, this.height ) );
+	this.box.hitbox = new Kiwi.Geom.Rectangle( 0, 0, this.width, this.height );
 
 	// Create input
 	this.input = this.components.add( new Kiwi.Components.Input(
