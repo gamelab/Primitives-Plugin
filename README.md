@@ -1,7 +1,7 @@
 Primitives Plugin for KiwiJS
 ============================
 
-	Version: 1.0.2
+	Version: 1.0.3
 	Type: GameObject
 	Author: Benjamin D. Richards for KiwiJS Team
 	Website: www.kiwijs.org
@@ -10,6 +10,9 @@ Primitives Plugin for KiwiJS
 
 Versions:
 ---------
+
+1.0.3
+- Improve efficiency in rendering by recycling geometry points
 
 1.0.2
 - Fix incompatibility with Canvas rendering
