@@ -275,11 +275,11 @@ declare module Kiwi.Plugins.Primitives {
 
 		/**
 		* Whether the stroke will draw
-		* @property drawFill
+		* @property drawStroke
 		* @type {boolean}
 		* @public
 		*/
-		public drawFill: boolean;
+		public drawStroke: boolean;
 
 		/**
 		* Whether to enable input
@@ -598,10 +598,10 @@ declare module Kiwi.Renderers {
 	* @namespace Kiwi.Renderers
 	* @constructor
 	* @param gl {WebGLRenderingContext} The WebGL rendering context in use.
-	* @param shaderManager {Kiwi.Renderers.ShaderManager} The Kiwi shader manager.
+	* @param shaderManager {Kiwi.Shaders.ShaderManager} The Kiwi shader manager.
 	*/
 	class PrimitiveRenderer {
-		constructor(gl: WebGLRenderingContext, shaderManager: Kiwi.Renderers.ShaderManager);
+		constructor(gl: WebGLRenderingContext, shaderManager: Kiwi.Shaders.ShaderPair);
 
 		/**
 		* Returns a null atlas so that all primitives share a texture object.
