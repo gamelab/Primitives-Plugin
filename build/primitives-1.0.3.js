@@ -43,7 +43,7 @@ Kiwi.PluginManager.register(Kiwi.Plugins.Primitives);
 * @private 
 */
 Kiwi.Plugins.Primitives.create = function(game) {
-	console.log( "Hello " + game.name );
+	
 };
 
 
