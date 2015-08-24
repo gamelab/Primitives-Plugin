@@ -5,14 +5,14 @@ Primitives Plugin for KiwiJS
 	Type: GameObject
 	Author: Benjamin D. Richards for KiwiJS Team
 	Website: www.kiwijs.org
-	Kiwi.js Version Last Tested: 1.1.1
+	Kiwi.js Version Last Tested: 1.3.0
 
 
 Versions:
 ---------
 
 1.0.4
-- Color property updated. Now uses the `Kiwi.Utils.Color` under the hood.
+- `color` and `strokeColor` properties updated. They now use the `Kiwi.Utils.Color` class under the hood.
 
 1.0.3
 - Improve efficiency in rendering by recycling geometry points

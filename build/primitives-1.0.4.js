@@ -26,7 +26,7 @@ Kiwi.Plugins.Primitives = {
 	*/
 	version:"1.0.4",
 
-	minimumKiwiVersion:"1.1.0"
+	minimumKiwiVersion:"1.3.0"
 
 };
 
@@ -741,6 +741,16 @@ Kiwi.Plugins.Primitives.Polygon.prototype._initProperties = function() {
 	* @since 1.0.4
 	*/
 	this._color = new Kiwi.Utils.Color();
+
+	/**
+	* Stroke color utility. 
+	* 
+	* @property _strokeColor
+	* @type Kiwi.Utils.Color
+	* @private
+	* @since 1.0.4
+	*/
+	this._strokeColor = new Kiwi.Utils.Color();
 };
 
 /**
@@ -771,6 +781,22 @@ Object.defineProperty(Kiwi.Plugins.Primitives.Polygon.prototype, "color", {
 
 
 /**
+* RGB color triplet, normalized to the range 0-1
+* @property strokeColor
+* @type {array}
+* @public
+*/
+Object.defineProperty(Kiwi.Plugins.Primitives.Polygon.prototype, "strokeColor", {
+	get: function() {
+		return [ this._strokeColor.rNorm, this._strokeColor.gNorm, this._strokeColor.bNorm ];
+	},
+	set: function( val ) {
+		this._strokeColor.set.apply( this._strokeColor, val );
+	}
+});
+
+
+/**
 * Sets default parameters on primitive. Note that this will redefine the
 * entire primitive. If you call parseParams after creation, you will have to
 * take steps to preserve any shape, style, or transform data you wish to keep.
@@ -787,7 +813,7 @@ Kiwi.Plugins.Primitives.Polygon.prototype.parseParams = function( params ) {
 		if( Kiwi.Utils.Common.isArray( params.color ) ) {
 			this.color = params.color;
 		} else {
-			this.color.set( params.color );
+			this._color.set( params.color );
 		}
 
 	} else {
@@ -829,13 +855,17 @@ Kiwi.Plugins.Primitives.Polygon.prototype.parseParams = function( params ) {
 	// These stroke properties must be defined
 	// after base vertices and in unique order
 
-	/**
-	* RGB color triplet, normalized to the range 0-1
-	* @property strokeColor
-	* @type {array}
-	* @public
-	*/
-	this.strokeColor = params.strokeColor || [ 0, 0, 0 ];
+	if( typeof params.strokeColor !== "undefined" ) {
+		
+		if( Kiwi.Utils.Common.isArray( params.strokeColor ) ) {
+			this.strokeColor = params.strokeColor;
+		} else {
+			this._strokeColor.set( params.strokeColor );
+		}
+
+	} else {
+		this.strokeColor = [ 0, 0, 0 ];
+	}
 
 	/**
 	* Width of the stroke, in pixels. If the primitive is scaled, the stroke
@@ -895,21 +925,6 @@ Kiwi.Plugins.Primitives.Polygon.prototype.parseStrict = function() {
 	// Check stroke width
 	if ( isNaN( this.strokeWidth ) ) {
 		this.complain( "strokeWidth is not a number" );
-		return false;
-	}
-
-	// Check stroke color values
-	if ( Kiwi.Utils.Common.isArray( this.strokeColor ) ) {
-		for ( i = 0; i < 3; i++ ) {
-			if ( isNaN( this.strokeColor[ i ] ) ) {
-				this.complain(
-					"Could not parse strokeColor: Non-numeric color channel " +
-					i );
-				return false;
-			}
-		}
-	} else {
-		this.complain( "Could not parse strokeColor: Color is not an array" );
 		return false;
 	}
 
@@ -1083,9 +1098,9 @@ Kiwi.Plugins.Primitives.Polygon.prototype.render = function( camera ) {
 			indicesLen = this._strokePolyIndices.length;
 
 			ctx.fillStyle =
-				"rgb(" + Math.round( this.strokeColor[ 0 ] * 255 ) + "," +
-				Math.round( this.strokeColor[ 1 ] * 255 ) + "," +
-				Math.round( this.strokeColor[ 2 ] * 255 ) + ")";
+				"rgb(" + this._strokeColor.r255 + "," +
+				this._strokeColor.g255 + "," +
+				this._strokeColor.b255 + ")";
 
 			this._p1.setTo(
 				this._strokePolyVertices[
