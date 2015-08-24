@@ -24,7 +24,7 @@ Kiwi.Plugins.Primitives = {
 	* @type String
 	* @public
 	*/
-	version:"1.0.3",
+	version:"1.0.4",
 
 	minimumKiwiVersion:"1.1.0"
 
@@ -731,6 +731,16 @@ Kiwi.Plugins.Primitives.Polygon.prototype._initProperties = function() {
 	* @since 1.0.3
 	*/
 	this._p2 = new Kiwi.Geom.Point( 0, 0 );
+
+	/**
+	* Color Utility. 
+	* 
+	* @property _color
+	* @type Kiwi.Utils.Color
+	* @private
+	* @since 1.0.4
+	*/
+	this._color = new Kiwi.Utils.Color();
 };
 
 /**
@@ -742,6 +752,23 @@ Kiwi.Plugins.Primitives.Polygon.prototype._initProperties = function() {
 Kiwi.Plugins.Primitives.Polygon.prototype.objType = function() {
 	return "Primitive Polygon";
 };
+
+
+/**
+* RGB color triplet, normalized to the range 0-1
+* @property color
+* @type {array} 
+* @public
+*/
+Object.defineProperty(Kiwi.Plugins.Primitives.Polygon.prototype, "color", {
+	get: function() {
+		return [ this._color.rNorm, this._color.gNorm, this._color.bNorm ];
+	},
+	set: function( val ) {
+		this._color.set.apply( this._color, val );
+	}
+});
+
 
 /**
 * Sets default parameters on primitive. Note that this will redefine the
@@ -755,13 +782,17 @@ Kiwi.Plugins.Primitives.Polygon.prototype.objType = function() {
 */
 Kiwi.Plugins.Primitives.Polygon.prototype.parseParams = function( params ) {
 
-	/**
-	* RGB color triplet, normalized to the range 0-1
-	* @property color
-	* @type {array} 
-	* @public
-	*/
-	this.color = params.color || [ 0.5, 0.5, 0.5 ];
+	if( typeof params.color !== "undefined" ) {
+		
+		if( Kiwi.Utils.Common.isArray( params.color ) ) {
+			this.color = params.color;
+		} else {
+			this.color.set( params.color );
+		}
+
+	} else {
+		this.color = [ 0.5, 0.5, 0.5 ];
+	}
 
 	/**
 	* Whether the fill will draw
@@ -864,20 +895,6 @@ Kiwi.Plugins.Primitives.Polygon.prototype.parseStrict = function() {
 	// Check stroke width
 	if ( isNaN( this.strokeWidth ) ) {
 		this.complain( "strokeWidth is not a number" );
-		return false;
-	}
-
-	// Check color values
-	if ( Kiwi.Utils.Common.isArray( this.color ) ) {
-		for ( i = 0; i < 3; i++ ) {
-			if ( isNaN( this.color[ i ] ) ) {
-				this.complain(
-					"Could not parse color: Non-numeric color channel " + i );
-				return false;
-			}
-		}
-	} else {
-		this.complain( "Could not parse color: Color is not an array" );
 		return false;
 	}
 
@@ -1023,9 +1040,9 @@ Kiwi.Plugins.Primitives.Polygon.prototype.render = function( camera ) {
 
 		// Draw fill
 		if ( this.drawFill && this._indices.length > 3 ) {
-			ctx.fillStyle = "rgb(" + Math.round( this.color[ 0 ] * 255 ) + "," +
-				Math.round( this.color[ 1 ] * 255 ) + "," +
-				Math.round( this.color[ 2 ] * 255 ) + ")";
+			ctx.fillStyle = "rgb(" + this._color.r255 + "," +
+				this._color.g255 + "," +
+				this._color.b255 + ")";
 
 			this._p1.setTo(
 				this._vertices[ this._indices[ 1 ] ][ 0 ] - t.anchorPointX,
