@@ -1,3 +1,4 @@
+
 /**
 * Primitive Gameobjects plugin, providing geometric objects to the designer.
 *
@@ -45,6 +46,7 @@ Kiwi.PluginManager.register(Kiwi.Plugins.Primitives);
 Kiwi.Plugins.Primitives.create = function(game) {
 	
 };
+
 
 
 /**
@@ -1218,6 +1220,7 @@ Kiwi.Plugins.Primitives.Polygon.prototype.update = function() {
 };
 
 
+
 /**
 * Ellipse Primitive
 * <br><br>
@@ -1310,6 +1313,7 @@ Kiwi.Plugins.Primitives.Ellipse = function( params ) {
 Kiwi.extend( Kiwi.Plugins.Primitives.Ellipse,
 	Kiwi.Plugins.Primitives.Polygon );
 
+
 /**
 * Line Primitive
 * <br><br>
@@ -1350,6 +1354,31 @@ Kiwi.Plugins.Primitives.Line = function( params ) {
 };
 Kiwi.extend( Kiwi.Plugins.Primitives.Line,
 	Kiwi.Plugins.Primitives.Polygon );
+
+
+
+/**
+* Null Texture Atlas interfaces with KiwiJS rendering system
+* which expects a texture atlas, and provides it with an atlas
+* that has no texture.
+*
+* @class NullAtlas
+* @constructor
+* @namespace Kiwi.Plugins.Primitives
+* @since 0.1.0
+*/
+Kiwi.Plugins.Primitives.NullAtlas = function() {
+	this.cells = [ { hitboxes: [] } ];
+};
+
+/** Dummy texture enable method, doing the bare minimum to satisfy the
+* texture manager requirements. Parameters don't matter.
+* @method enableGL
+* @public
+* @since 0.1.0
+*/
+Kiwi.Plugins.Primitives.NullAtlas.prototype.enableGL = function() {};
+
 
 
 /**
@@ -1413,209 +1442,6 @@ Kiwi.Plugins.Primitives.Rectangle = function( params ) {
 Kiwi.extend( Kiwi.Plugins.Primitives.Rectangle,
 	Kiwi.Plugins.Primitives.Polygon );
 
-
-/**
-* Star Primitive
-* <br><br>
-* Create a star primitive. Define a params object including a reference
-* to the current state. You may also add style parameters from the Polygon.
-* <br><br>
-* You may draw semi-random stars. For example, to draw a cartoon impact flare:
-* <br><br>
-* new Kiwi.Plugins.Primitives.Star( {<br>
-*	centerOnTransform: true,<br>
-*	color: [ 1, 0.01, 1 ],<br>
-*	drawStroke: false,<br>
-*	radius: 32,<br>
-*	spikeRandom: 1,<br>
-*	state: MyGame.state,<br>
-*	segments: 16<br>
-* } );
-* @class Star
-* @constructor
-* @extends Kiwi.Plugins.Primitives.Polygon
-* @namespace Kiwi.Plugins.Primitives
-* @param params {object} Parameter object
-* @param params.state {Kiwi.State} Current state
-* @param [params.centerOnTransform=false] {boolean} If true, star is centered
-*	on transform; if false star has top left corner on transform
-* @param [params.height=8] {number} Height of the star
-* @param [params.spikeLength=1] {number} Length of spikes relative to radius
-* @param [params.spikeRandom=0] {number} Randomness of star spikes, where 0 is
-*	no randomness and 1 will make some spikes up to twice as long;
-*	there is no cap.
-* @param [params.radius] {number} Radius of a star; overide width and height
-* @param [params.segments=32] {number} Number of points
-* @param [params.width=8] {number} Width of the star
-* @since 0.4.0
-*/
-Kiwi.Plugins.Primitives.Star = function( params ) {
-	var angle, i, spikiness,
-		defaultDimension = 8,
-		offsetX = 0,
-		offsetY = 0;
-
-	// Create stellar geometry data
-	if ( typeof params.segments === "undefined" ) {
-		params.segments = 32;
-	}
-	if ( typeof params.radius !== "undefined" ) {
-		params.width = params.radius * 2;
-		params.height = params.radius * 2;
-	}
-	if ( typeof params.width !== "number" ) {
-		params.width = defaultDimension;
-	}
-	if ( typeof params.height !== "number" ) {
-		params.height = defaultDimension;
-	}
-	if ( !params.centerOnTransform ) {
-		offsetX = params.width * 0.5;
-		offsetY = params.height * 0.5;
-	}
-	if( typeof params.spikeLength !== "number" ) {
-		params.spikeLength = 1;
-	}
-	if( typeof params.spikeRandom !== "number" ) {
-		params.spikeRandom = 0;
-	}
-
-
-	params.indices = [];
-	params.vertices = [];
-	params.strokeIndices = [];
-
-	for ( i = 0; i < params.segments; i++ ) {
-
-		// Define indices, looping from the middle
-		params.indices.push( i );
-		params.indices.push( params.segments );
-		params.indices.push( ( i + 1 ) % params.segments );
-
-		// Define vertices
-		angle = Math.PI * 2 * i / params.segments;
-		params.vertices.push( [
-			params.width * 0.5 * Math.cos( angle ) + offsetX,
-			params.height * 0.5 * Math.sin( angle ) + offsetY
-		] );
-
-		// Define stroke
-		params.strokeIndices.push( i, i + 1 + params.segments );
-	}
-
-	// Define central vertex
-	params.vertices.push( [ offsetX, offsetY ] );
-
-	// Define stellar spikes
-	for ( i = 0; i < params.segments; i++ ) {
-		params.indices.push( i );
-		params.indices.push( params.segments + i + 1 );
-		params.indices.push( ( i + 1) % params.segments );
-
-		// Define vertices
-		angle = Math.PI * 2 * ( i + 0.5 ) / params.segments;
-		spikiness = ( 1 + Math.random() * params.spikeRandom ) *
-			( params.spikeLength + 1 ) * 0.5;
-		params.vertices.push( [
-			params.width * Math.cos( angle ) * spikiness + offsetX,
-			params.height * Math.sin( angle ) * spikiness + offsetY
-		] );
-	}
-
-	// Complete stroke
-	params.strokeIndices.push( 0 );
-
-
-	Kiwi.Plugins.Primitives.Polygon.call( this, params );
-
-
-	// Reset anchor point to middle of core circle.
-	// This compensates for random spike lengths.
-	this.anchorPointX = params.anchorPointX || offsetX;
-	this.anchorPointY = params.anchorPointY || offsetY;
-};
-Kiwi.extend( Kiwi.Plugins.Primitives.Star,
-	Kiwi.Plugins.Primitives.Polygon );
-
-
-/**
-* Triangle Primitive
-* <br><br>
-* Create a triangle primitive. Define a params object including a reference
-* to the current state. You may also add style parameters from the Polygon.
-* For example:
-* <br><br>
-* new Kiwi.Plugins.Primitives.Triangle( {<br>
-*	points: [ [ 0, 0 ], [ 100, 100 ], [ 200, 0 ] ],<br>
-*	state: MyGame.state,<br>
-*	x: 10,<br>
-*	y: 10,<br>
-*	scale: 2<br>
-* } );
-* <br><br>
-* If you do not specify points in the param object, the Triangle will default to
-* [ [ 0, 0 ], [ 0, 8 ], [ 8, 0 ] ]
-* @class Triangle
-* @constructor
-* @extends Kiwi.Plugins.Primitives.Polygon
-* @namespace Kiwi.Plugins.Primitives
-* @param params {object} Parameter object
-* @param params.state {Kiwi.State} Current state
-* @param [params.points] {array} Array of x,y pairs to form triangle's corners.
-* @since 0.4.0
-*/
-Kiwi.Plugins.Primitives.Triangle = function( params ) {
-	var i,
-		defaultDimension = 8;
-
-	params.indices = [ 0, 1, 2 ];
-	params.strokeIndices = [ 0, 1, 2, 0 ];
-	params.vertices = [];
-	
-	// Create triangle geometry data
-	if ( params.points ) {
-		for ( i = 0; i < 3; i++ ) {
-			if ( params.points[ i ] ) {
-				params.vertices.push( params.points[ i ] );
-			} else {
-				params.vertices.push( [ 0, 0 ] );
-			}
-		}
-	} else {
-		params.vertices.push(
-			[ 0, 0 ],
-			[ 0, defaultDimension ],
-			[ defaultDimension, 0 ]
-		);
-	}
-	
-	Kiwi.Plugins.Primitives.Polygon.call( this, params );
-};
-Kiwi.extend( Kiwi.Plugins.Primitives.Triangle,
-	Kiwi.Plugins.Primitives.Polygon );
-
-
-/**
-* Null Texture Atlas interfaces with KiwiJS rendering system
-* which expects a texture atlas, and provides it with an atlas
-* that has no texture.
-*
-* @class NullAtlas
-* @constructor
-* @namespace Kiwi.Plugins.Primitives
-* @since 0.1.0
-*/
-Kiwi.Plugins.Primitives.NullAtlas = function() {
-	this.cells = [ { hitboxes: [] } ];
-};
-
-/** Dummy texture enable method, doing the bare minimum to satisfy the
-* texture manager requirements. Parameters don't matter.
-* @method enableGL
-* @public
-* @since 0.1.0
-*/
-Kiwi.Plugins.Primitives.NullAtlas.prototype.enableGL = function() {};
 
 
 
@@ -1814,6 +1640,7 @@ Kiwi.Renderers.PrimitiveRenderer.prototype.draw = function( gl ) {
 };
 
 
+
 /**
 * Primitive Shader Pair
 * @class PrimitiveShader
@@ -1875,3 +1702,186 @@ Kiwi.Shaders.PrimitiveShader.prototype.init = function( gl ) {
 
 	this.initUniforms(gl);
 };
+
+
+/**
+* Star Primitive
+* <br><br>
+* Create a star primitive. Define a params object including a reference
+* to the current state. You may also add style parameters from the Polygon.
+* <br><br>
+* You may draw semi-random stars. For example, to draw a cartoon impact flare:
+* <br><br>
+* new Kiwi.Plugins.Primitives.Star( {<br>
+*	centerOnTransform: true,<br>
+*	color: [ 1, 0.01, 1 ],<br>
+*	drawStroke: false,<br>
+*	radius: 32,<br>
+*	spikeRandom: 1,<br>
+*	state: MyGame.state,<br>
+*	segments: 16<br>
+* } );
+* @class Star
+* @constructor
+* @extends Kiwi.Plugins.Primitives.Polygon
+* @namespace Kiwi.Plugins.Primitives
+* @param params {object} Parameter object
+* @param params.state {Kiwi.State} Current state
+* @param [params.centerOnTransform=false] {boolean} If true, star is centered
+*	on transform; if false star has top left corner on transform
+* @param [params.height=8] {number} Height of the star
+* @param [params.spikeLength=1] {number} Length of spikes relative to radius
+* @param [params.spikeRandom=0] {number} Randomness of star spikes, where 0 is
+*	no randomness and 1 will make some spikes up to twice as long;
+*	there is no cap.
+* @param [params.radius] {number} Radius of a star; overide width and height
+* @param [params.segments=32] {number} Number of points
+* @param [params.width=8] {number} Width of the star
+* @since 0.4.0
+*/
+Kiwi.Plugins.Primitives.Star = function( params ) {
+	var angle, i, spikiness,
+		defaultDimension = 8,
+		offsetX = 0,
+		offsetY = 0;
+
+	// Create stellar geometry data
+	if ( typeof params.segments === "undefined" ) {
+		params.segments = 32;
+	}
+	if ( typeof params.radius !== "undefined" ) {
+		params.width = params.radius * 2;
+		params.height = params.radius * 2;
+	}
+	if ( typeof params.width !== "number" ) {
+		params.width = defaultDimension;
+	}
+	if ( typeof params.height !== "number" ) {
+		params.height = defaultDimension;
+	}
+	if ( !params.centerOnTransform ) {
+		offsetX = params.width * 0.5;
+		offsetY = params.height * 0.5;
+	}
+	if( typeof params.spikeLength !== "number" ) {
+		params.spikeLength = 1;
+	}
+	if( typeof params.spikeRandom !== "number" ) {
+		params.spikeRandom = 0;
+	}
+
+
+	params.indices = [];
+	params.vertices = [];
+	params.strokeIndices = [];
+
+	for ( i = 0; i < params.segments; i++ ) {
+
+		// Define indices, looping from the middle
+		params.indices.push( i );
+		params.indices.push( params.segments );
+		params.indices.push( ( i + 1 ) % params.segments );
+
+		// Define vertices
+		angle = Math.PI * 2 * i / params.segments;
+		params.vertices.push( [
+			params.width * 0.5 * Math.cos( angle ) + offsetX,
+			params.height * 0.5 * Math.sin( angle ) + offsetY
+		] );
+
+		// Define stroke
+		params.strokeIndices.push( i, i + 1 + params.segments );
+	}
+
+	// Define central vertex
+	params.vertices.push( [ offsetX, offsetY ] );
+
+	// Define stellar spikes
+	for ( i = 0; i < params.segments; i++ ) {
+		params.indices.push( i );
+		params.indices.push( params.segments + i + 1 );
+		params.indices.push( ( i + 1) % params.segments );
+
+		// Define vertices
+		angle = Math.PI * 2 * ( i + 0.5 ) / params.segments;
+		spikiness = ( 1 + Math.random() * params.spikeRandom ) *
+			( params.spikeLength + 1 ) * 0.5;
+		params.vertices.push( [
+			params.width * Math.cos( angle ) * spikiness + offsetX,
+			params.height * Math.sin( angle ) * spikiness + offsetY
+		] );
+	}
+
+	// Complete stroke
+	params.strokeIndices.push( 0 );
+
+
+	Kiwi.Plugins.Primitives.Polygon.call( this, params );
+
+
+	// Reset anchor point to middle of core circle.
+	// This compensates for random spike lengths.
+	this.anchorPointX = params.anchorPointX || offsetX;
+	this.anchorPointY = params.anchorPointY || offsetY;
+};
+Kiwi.extend( Kiwi.Plugins.Primitives.Star,
+	Kiwi.Plugins.Primitives.Polygon );
+
+
+
+/**
+* Triangle Primitive
+* <br><br>
+* Create a triangle primitive. Define a params object including a reference
+* to the current state. You may also add style parameters from the Polygon.
+* For example:
+* <br><br>
+* new Kiwi.Plugins.Primitives.Triangle( {<br>
+*	points: [ [ 0, 0 ], [ 100, 100 ], [ 200, 0 ] ],<br>
+*	state: MyGame.state,<br>
+*	x: 10,<br>
+*	y: 10,<br>
+*	scale: 2<br>
+* } );
+* <br><br>
+* If you do not specify points in the param object, the Triangle will default to
+* [ [ 0, 0 ], [ 0, 8 ], [ 8, 0 ] ]
+* @class Triangle
+* @constructor
+* @extends Kiwi.Plugins.Primitives.Polygon
+* @namespace Kiwi.Plugins.Primitives
+* @param params {object} Parameter object
+* @param params.state {Kiwi.State} Current state
+* @param [params.points] {array} Array of x,y pairs to form triangle's corners.
+* @since 0.4.0
+*/
+Kiwi.Plugins.Primitives.Triangle = function( params ) {
+	var i,
+		defaultDimension = 8;
+
+	params.indices = [ 0, 1, 2 ];
+	params.strokeIndices = [ 0, 1, 2, 0 ];
+	params.vertices = [];
+	
+	// Create triangle geometry data
+	if ( params.points ) {
+		for ( i = 0; i < 3; i++ ) {
+			if ( params.points[ i ] ) {
+				params.vertices.push( params.points[ i ] );
+			} else {
+				params.vertices.push( [ 0, 0 ] );
+			}
+		}
+	} else {
+		params.vertices.push(
+			[ 0, 0 ],
+			[ 0, defaultDimension ],
+			[ defaultDimension, 0 ]
+		);
+	}
+	
+	Kiwi.Plugins.Primitives.Polygon.call( this, params );
+};
+Kiwi.extend( Kiwi.Plugins.Primitives.Triangle,
+	Kiwi.Plugins.Primitives.Polygon );
+

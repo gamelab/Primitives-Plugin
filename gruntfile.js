@@ -42,25 +42,23 @@ module.exports = function(grunt) {
 			}
 		},
 
-		copy: {
-			whole: {
-				expand: true,
-				cwd: "src/",
-				src: "**",
-				dest: "build/",
-				flatten: true,
-				filter: "isFile",
-			}
-		}
+	    concat: {
+
+    		build: {
+	           	src:[ 'src/**' ],
+	        	dest: '<%= pkg.main %>'
+	        }
+
+	    }
 
 	});
 
 	grunt.loadNpmTasks( "grunt-contrib-uglify" );
 	grunt.loadNpmTasks( "grunt-contrib-yuidoc" );
 	grunt.loadNpmTasks( "grunt-contrib-jshint" );
-	grunt.loadNpmTasks( "grunt-contrib-copy" );
+	grunt.loadNpmTasks( "grunt-contrib-concat" );
 
-	grunt.registerTask( "default", [ "jshint", "copy:whole", "uglify:build" ] );
-	grunt.registerTask( "full", [ "jshint", "copy:whole", "uglify:build",
+	grunt.registerTask( "default", [ "jshint", "concat:build", "uglify:build" ] );
+	grunt.registerTask( "full", [ "jshint", "concat:build", "uglify:build",
 		"yuidoc:compile" ] );
 };
