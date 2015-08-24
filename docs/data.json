@@ -2,33 +2,120 @@
     "project": {
         "name": "primitives",
         "description": "Create GameObjects to render geometric primitives.",
-        "version": "1.0.3",
+        "version": "1.0.4",
         "url": "http://kiwijs.org/"
     },
     "files": {
-        "src/primitives-1.0.3.js": {
-            "name": "src/primitives-1.0.3.js",
+        "src\\_main.js": {
+            "name": "src\\_main.js",
             "modules": {
                 "Plugins": 1
             },
             "classes": {
-                "Kiwi.Plugins.Primitives": 1,
-                "Kiwi.Plugins.Primitives.Polygon": 1,
-                "Kiwi.Plugins.Primitives.Ellipse": 1,
-                "Kiwi.Plugins.Primitives.Line": 1,
-                "Kiwi.Plugins.Primitives.Rectangle": 1,
-                "Kiwi.Plugins.Primitives.Star": 1,
-                "Kiwi.Plugins.Primitives.Triangle": 1,
-                "Kiwi.Plugins.Primitives.NullAtlas": 1,
-                "Kiwi.Renderers.PrimitiveRenderer": 1,
+                "Kiwi.Plugins.Primitives": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Kiwi.Plugins": 1
+            }
+        },
+        "src\\_polygon.js": {
+            "name": "src\\_polygon.js",
+            "modules": {},
+            "classes": {
+                "Kiwi.Plugins.Primitives.Polygon": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Kiwi.Plugins.Primitives": 1
+            }
+        },
+        "src\\ellipse.js": {
+            "name": "src\\ellipse.js",
+            "modules": {},
+            "classes": {
+                "Kiwi.Plugins.Primitives.Ellipse": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Kiwi.Plugins.Primitives": 1
+            }
+        },
+        "src\\line.js": {
+            "name": "src\\line.js",
+            "modules": {},
+            "classes": {
+                "Kiwi.Plugins.Primitives.Line": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Kiwi.Plugins.Primitives": 1
+            }
+        },
+        "src\\null-atlas.js": {
+            "name": "src\\null-atlas.js",
+            "modules": {},
+            "classes": {
+                "Kiwi.Plugins.Primitives.NullAtlas": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Kiwi.Plugins.Primitives": 1
+            }
+        },
+        "src\\rectange.js": {
+            "name": "src\\rectange.js",
+            "modules": {},
+            "classes": {
+                "Kiwi.Plugins.Primitives.Rectangle": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Kiwi.Plugins.Primitives": 1
+            }
+        },
+        "src\\renderer.js": {
+            "name": "src\\renderer.js",
+            "modules": {},
+            "classes": {
+                "Kiwi.Renderers.PrimitiveRenderer": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Kiwi.Renderers": 1
+            }
+        },
+        "src\\shader.js": {
+            "name": "src\\shader.js",
+            "modules": {},
+            "classes": {
                 "Kiwi.Shaders.PrimitiveShader": 1
             },
             "fors": {},
             "namespaces": {
-                "Kiwi.Plugins": 1,
-                "Kiwi.Plugins.Primitives": 1,
-                "Kiwi.Renderers": 1,
                 "Kiwi.Shaders": 1
+            }
+        },
+        "src\\star.js": {
+            "name": "src\\star.js",
+            "modules": {},
+            "classes": {
+                "Kiwi.Plugins.Primitives.Star": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Kiwi.Plugins.Primitives": 1
+            }
+        },
+        "src\\triangle.js": {
+            "name": "src\\triangle.js",
+            "modules": {},
+            "classes": {
+                "Kiwi.Plugins.Primitives.Triangle": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Kiwi.Plugins.Primitives": 1
             }
         }
     },
@@ -43,12 +130,12 @@
                 "Kiwi.Plugins.Primitives.Polygon": 1,
                 "Kiwi.Plugins.Primitives.Ellipse": 1,
                 "Kiwi.Plugins.Primitives.Line": 1,
-                "Kiwi.Plugins.Primitives.Rectangle": 1,
-                "Kiwi.Plugins.Primitives.Star": 1,
-                "Kiwi.Plugins.Primitives.Triangle": 1,
                 "Kiwi.Plugins.Primitives.NullAtlas": 1,
+                "Kiwi.Plugins.Primitives.Rectangle": 1,
                 "Kiwi.Renderers.PrimitiveRenderer": 1,
-                "Kiwi.Shaders.PrimitiveShader": 1
+                "Kiwi.Shaders.PrimitiveShader": 1,
+                "Kiwi.Plugins.Primitives.Star": 1,
+                "Kiwi.Plugins.Primitives.Triangle": 1
             },
             "fors": {},
             "namespaces": {
@@ -57,36 +144,24 @@
                 "Kiwi.Renderers": 1,
                 "Kiwi.Shaders": 1
             },
-            "file": "src/primitives-1.0.3.js",
-            "line": 1817
+            "file": "src\\triangle.js",
+            "line": 3
         },
         "Plugins": {
             "name": "Plugins",
             "submodules": {},
             "classes": {
-                "Kiwi.Plugins.Primitives": 1,
-                "Kiwi.Plugins.Primitives.Polygon": 1,
-                "Kiwi.Plugins.Primitives.Ellipse": 1,
-                "Kiwi.Plugins.Primitives.Line": 1,
-                "Kiwi.Plugins.Primitives.Rectangle": 1,
-                "Kiwi.Plugins.Primitives.Star": 1,
-                "Kiwi.Plugins.Primitives.Triangle": 1,
-                "Kiwi.Plugins.Primitives.NullAtlas": 1,
-                "Kiwi.Renderers.PrimitiveRenderer": 1,
-                "Kiwi.Shaders.PrimitiveShader": 1
+                "Kiwi.Plugins.Primitives": 1
             },
             "fors": {},
             "is_submodule": 1,
             "namespaces": {
-                "Kiwi.Plugins": 1,
-                "Kiwi.Plugins.Primitives": 1,
-                "Kiwi.Renderers": 1,
-                "Kiwi.Shaders": 1
+                "Kiwi.Plugins": 1
             },
             "module": "Kiwi",
             "namespace": "",
-            "file": "src/primitives-1.0.3.js",
-            "line": 1817,
+            "file": "src\\_main.js",
+            "line": 1,
             "description": "Primitive Gameobjects plugin, providing geometric objects to the designer."
         }
     },
@@ -102,7 +177,7 @@
             "module": "Kiwi",
             "submodule": "Plugins",
             "namespace": "Kiwi.Plugins",
-            "file": "src/primitives-1.0.3.js",
+            "file": "src\\_main.js",
             "line": 1,
             "description": "Primitive Gameobjects plugin, providing geometric objects to the designer."
         },
@@ -115,10 +190,9 @@
             "plugin_for": [],
             "extension_for": [],
             "module": "Kiwi",
-            "submodule": "Plugins",
             "namespace": "Kiwi.Plugins.Primitives",
-            "file": "src/primitives-1.0.3.js",
-            "line": 50,
+            "file": "src\\_polygon.js",
+            "line": 2,
             "description": "Polygon Gameobject\n<br><br>\nThis is the master system which handles all primitives. When you create\nanother primitive (Ellipse, Line, Rectangle, Star or Triangle) you are\nreally creating a Polygon with some options pre-set. All primitives\ninherit parameters and methods from Polygon.\n<br><br>\nPolygons are defined with a params object. This must contain the non-optional\nparameter \"state\", which is a reference to the current state. It also contains\noptional transform and style information.\n<br><br>\nYou may specify common transform options in the params of any primitive.\nThis includes alpha, visible, x, y, rotation, scale, scaleX, scaleY,\nanchorPointX, and anchorPointY. If not specified, these default to alpha = 1,\nvisible = true, x = 0, y = 0, rotation = 0, scale = 1, and the anchorPoint\ndefaults to the geometric center of the object.\n<br><br>\nAll primitives contain both a fill and a stroke. You may style these\nseparately and enable or disable rendering of either. Available style options\ninclude color (the color with which the primitive is filled; an array of 3\nnormalized values, from black [ 0, 0, 0 ] to white [ 1, 1, 1 ] ), drawFill\n(whether to render the fill), strokeColor (as color, but for the stroke),\ndrawStroke (whether to render the stroke), and strokeWidth (the width of the\nstroke line, in pixels).\n<br><br>\nIf the default primitives do not meet your requirements, you can define your\nown by using the Polygon. You will need to provide the params object with\narrays of vertices, indices, and strokeIndices.\n<br><br>\nnew Kiwi.Plugins.Primitives.Polygon( {<br>\n\tstate: MyGame.state,<br>\n\tindices: [ 0, 1, 2, 3 ],<br>\n\tvertices: [[ 0, 0 ], [ 100, 100 ], [ 200, 0 ], [ 300, 100 ] ],<br>\n\tstrokeIndices: [ 0, 1, 2, 0 ]<br>\n} );\n<br><br>\nAll three arrays are processed to create new internal representations.\nTwo Polygons created from the same arrays will not contain the same data.\nThis prevents unexpected modifications from one object affecting another.\n<br><br>\nThe \"vertices\" param is a list of points, each defined as an array of two\npoints. The order of vertices does not matter for rendering, but you must be\naware of it. A simple vertices array might read [ [ 0, 0 ], [ 100, 100 ],\n[ 200, 0 ], [ 300, 100 ] ]. Each is an XY coordinate.\n<br><br>\nThe \"indices\" param is a list of references to vertices. It is processed\nusing a TRIANGLE_STRIP procedure. This means that every three consecutive\nvalues on the list define a new triangle. You can add new triangles simply\nby appending a single new index. Each index is the array position of a vertex.\nFor example, to draw a single triangle you could pass [ 0, 1, 2 ]. To draw two\ntriangles, you could pass [ 0, 1, 2, 3 ].\n<br><br>\nThe TRIANGLE_STRIP procedure is very succinct, but it doesn't allow for every\ndesirable form of geometry. If you need to stop positioning triangles in one\nplace and start adding them elsewhere, you can't skip over empty space.\nFortunately, you can use a concept called \"degenerate triangles\" to cheat.\n<br><br>\nA degenerate triangle is one with zero area. It is formed when a triangle has\ntwo or three vertices in the same place. It is very easy to simply not draw a\ndegenerate triangle. We can use these to connect disparate triangles. (In\nfact, the renderer uses these behind the scenes to efficiently render numerous\nprimitives at once.)\n<br><br>\nTo create degenerate triangles, just double up an index on either side of the\ngap. For example, if you want to draw triangles at indices [ 0, 1, 2 ] and\n[ 8, 9, 10 ], you can combine them into one with the indices\n[ 0, 1, 2, 2, 8, 8, 9, 10 ]. This creates the degenerate triangles\n[ 1, 2, 2 ], [ 2, 2, 8 ], [ 2, 8, 8 ] and [ 8, 8, 9 ]. Although this\nintroduces some overhead, it is often quicker than rendering them as separate\nobjects.\n<br><br>\nYou may reduce the degenerate data to a single index if you know what you're\ndoing with winding orders. This is left as an exercise for the user.\n<br><br>\nThe \"strokeIndices\" param is used to create a stroke. This is usually a line\naround the edge of a polygon, but it can be any sort of line. It is, like the\nindices param, a list of array positions in the vertices param. Unlike\nindices, strokeIndices does not use TRIANGLE_STRIP. It just connects points in\norder.\n<br><br>\nTechnically, the stroke is itself a series of triangles, a sort of\nmini-polygon. It will usually have more triangles than the fill. For this\nreason, you should be careful about overusing stroke.\n<br><br>\nYou may also construct polygons by building several objects and combining\nthem using the \".combine()\" method. This may not be as efficient as\ndefining a polygon by hand, and will introduce several degenerate triangles,\nbut for large-scale constructions it is very convenient.",
             "is_constructor": 1,
             "extends": "Kiwi.Entity",
@@ -207,10 +281,9 @@
             "plugin_for": [],
             "extension_for": [],
             "module": "Kiwi",
-            "submodule": "Plugins",
             "namespace": "Kiwi.Plugins.Primitives",
-            "file": "src/primitives-1.0.3.js",
-            "line": 1221,
+            "file": "src\\ellipse.js",
+            "line": 3,
             "description": "Ellipse Primitive\n<br><br>\nCreate a ellipse primitive. Define a params object including a reference\nto the current state. You may also add style parameters from the Polygon.\n<br><br>\nYou may draw regular polygons by reducing the segments. For example,\nto draw a hexagon:\n<br><br>\nnew Kiwi.Plugins.Primitives.Ellipse( {<br>\n\tdrawStroke: false,<br>\n\tradius: 32,<br>\n\tstate: MyGame.state,<br>\n\tsegments: 6<br>\n} );",
             "is_constructor": 1,
             "extends": "Kiwi.Plugins.Primitives.Polygon",
@@ -280,10 +353,9 @@
             "plugin_for": [],
             "extension_for": [],
             "module": "Kiwi",
-            "submodule": "Plugins",
             "namespace": "Kiwi.Plugins.Primitives",
-            "file": "src/primitives-1.0.3.js",
-            "line": 1313,
+            "file": "src\\line.js",
+            "line": 2,
             "description": "Line Primitive\n<br><br>\nCreate a line primitive. Define a params object including a reference\nto the current state. You may also add style parameters from the Polygon.\nFor example:\n<br><br>\nnew Kiwi.Plugins.Primitives.Line( {<br>\n\tpoints: [ [ 0, 0 ], [ 100, 100 ], [ 200, 0 ] ],<br>\n\tstate: MyGame.state,<br>\n\tstrokeColor: [ 1, 0.1, 1 ],<br>\n\tstrokeWidth: 4<br>\n} );",
             "is_constructor": 1,
             "extends": "Kiwi.Plugins.Primitives.Polygon",
@@ -309,6 +381,22 @@
             ],
             "since": "0.4.0"
         },
+        "Kiwi.Plugins.Primitives.NullAtlas": {
+            "name": "Kiwi.Plugins.Primitives.NullAtlas",
+            "shortname": "Kiwi.Plugins.Primitives.NullAtlas",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Kiwi",
+            "namespace": "Kiwi.Plugins.Primitives",
+            "file": "src\\null-atlas.js",
+            "line": 2,
+            "description": "Null Texture Atlas interfaces with KiwiJS rendering system\nwhich expects a texture atlas, and provides it with an atlas\nthat has no texture.",
+            "is_constructor": 1,
+            "since": "0.1.0"
+        },
         "Kiwi.Plugins.Primitives.Rectangle": {
             "name": "Kiwi.Plugins.Primitives.Rectangle",
             "shortname": "Kiwi.Plugins.Primitives.Rectangle",
@@ -318,10 +406,9 @@
             "plugin_for": [],
             "extension_for": [],
             "module": "Kiwi",
-            "submodule": "Plugins",
             "namespace": "Kiwi.Plugins.Primitives",
-            "file": "src/primitives-1.0.3.js",
-            "line": 1355,
+            "file": "src\\rectange.js",
+            "line": 2,
             "description": "Rectangle Primitive\n<br><br>\nCreate a rectangular primitive. Define a params object including a reference\nto the current state. You may also add style parameters from the Polygon.\nFor example:\n<br><br>\nnew Kiwi.Plugins.Primitives.Rectangle( {<br>\n\tstate: MyGame.state,<br>\n\tcolor: [ 0.9, 0.3, 0.7 ],<br>\n\tstrokeWidth: 4,<br>\n\twidth: 32,<br>\n\theight: 16<br>\n} );",
             "is_constructor": 1,
             "extends": "Kiwi.Plugins.Primitives.Polygon",
@@ -362,6 +449,50 @@
             ],
             "since": "0.4.0"
         },
+        "Kiwi.Renderers.PrimitiveRenderer": {
+            "name": "Kiwi.Renderers.PrimitiveRenderer",
+            "shortname": "Kiwi.Renderers.PrimitiveRenderer",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Kiwi",
+            "namespace": "Kiwi.Renderers",
+            "file": "src\\renderer.js",
+            "line": 3,
+            "description": "Primitive Renderer\n<br><br>\nThis renders primitives using triangle strips.",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "gl",
+                    "description": "The WebGL rendering context in use.",
+                    "type": "WebGLRenderingContext"
+                },
+                {
+                    "name": "shaderManager",
+                    "description": "The Kiwi shader manager.",
+                    "type": "Kiwi.Renderers.ShaderManager"
+                }
+            ],
+            "since": "0.1.0"
+        },
+        "Kiwi.Shaders.PrimitiveShader": {
+            "name": "Kiwi.Shaders.PrimitiveShader",
+            "shortname": "Kiwi.Shaders.PrimitiveShader",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Kiwi",
+            "namespace": "Kiwi.Shaders",
+            "file": "src\\shader.js",
+            "line": 2,
+            "description": "Primitive Shader Pair",
+            "is_constructor": 1,
+            "since": "0.1.0"
+        },
         "Kiwi.Plugins.Primitives.Star": {
             "name": "Kiwi.Plugins.Primitives.Star",
             "shortname": "Kiwi.Plugins.Primitives.Star",
@@ -371,10 +502,9 @@
             "plugin_for": [],
             "extension_for": [],
             "module": "Kiwi",
-            "submodule": "Plugins",
             "namespace": "Kiwi.Plugins.Primitives",
-            "file": "src/primitives-1.0.3.js",
-            "line": 1417,
+            "file": "src\\star.js",
+            "line": 2,
             "description": "Star Primitive\n<br><br>\nCreate a star primitive. Define a params object including a reference\nto the current state. You may also add style parameters from the Polygon.\n<br><br>\nYou may draw semi-random stars. For example, to draw a cartoon impact flare:\n<br><br>\nnew Kiwi.Plugins.Primitives.Star( {<br>\n\tcenterOnTransform: true,<br>\n\tcolor: [ 1, 0.01, 1 ],<br>\n\tdrawStroke: false,<br>\n\tradius: 32,<br>\n\tspikeRandom: 1,<br>\n\tstate: MyGame.state,<br>\n\tsegments: 16<br>\n} );",
             "is_constructor": 1,
             "extends": "Kiwi.Plugins.Primitives.Polygon",
@@ -451,10 +581,9 @@
             "plugin_for": [],
             "extension_for": [],
             "module": "Kiwi",
-            "submodule": "Plugins",
             "namespace": "Kiwi.Plugins.Primitives",
-            "file": "src/primitives-1.0.3.js",
-            "line": 1541,
+            "file": "src\\triangle.js",
+            "line": 3,
             "description": "Triangle Primitive\n<br><br>\nCreate a triangle primitive. Define a params object including a reference\nto the current state. You may also add style parameters from the Polygon.\nFor example:\n<br><br>\nnew Kiwi.Plugins.Primitives.Triangle( {<br>\n\tpoints: [ [ 0, 0 ], [ 100, 100 ], [ 200, 0 ] ],<br>\n\tstate: MyGame.state,<br>\n\tx: 10,<br>\n\ty: 10,<br>\n\tscale: 2<br>\n} );\n<br><br>\nIf you do not specify points in the param object, the Triangle will default to\n[ [ 0, 0 ], [ 0, 8 ], [ 8, 0 ] ]",
             "is_constructor": 1,
             "extends": "Kiwi.Plugins.Primitives.Polygon",
@@ -479,74 +608,11 @@
                 }
             ],
             "since": "0.4.0"
-        },
-        "Kiwi.Plugins.Primitives.NullAtlas": {
-            "name": "Kiwi.Plugins.Primitives.NullAtlas",
-            "shortname": "Kiwi.Plugins.Primitives.NullAtlas",
-            "classitems": [],
-            "plugins": [],
-            "extensions": [],
-            "plugin_for": [],
-            "extension_for": [],
-            "module": "Kiwi",
-            "submodule": "Plugins",
-            "namespace": "Kiwi.Plugins.Primitives",
-            "file": "src/primitives-1.0.3.js",
-            "line": 1598,
-            "description": "Null Texture Atlas interfaces with KiwiJS rendering system\nwhich expects a texture atlas, and provides it with an atlas\nthat has no texture.",
-            "is_constructor": 1,
-            "since": "0.1.0"
-        },
-        "Kiwi.Renderers.PrimitiveRenderer": {
-            "name": "Kiwi.Renderers.PrimitiveRenderer",
-            "shortname": "Kiwi.Renderers.PrimitiveRenderer",
-            "classitems": [],
-            "plugins": [],
-            "extensions": [],
-            "plugin_for": [],
-            "extension_for": [],
-            "module": "Kiwi",
-            "submodule": "Plugins",
-            "namespace": "Kiwi.Renderers",
-            "file": "src/primitives-1.0.3.js",
-            "line": 1622,
-            "description": "Primitive Renderer\n<br><br>\nThis renders primitives using triangle strips.",
-            "is_constructor": 1,
-            "params": [
-                {
-                    "name": "gl",
-                    "description": "The WebGL rendering context in use.",
-                    "type": "WebGLRenderingContext"
-                },
-                {
-                    "name": "shaderManager",
-                    "description": "The Kiwi shader manager.",
-                    "type": "Kiwi.Renderers.ShaderManager"
-                }
-            ],
-            "since": "0.1.0"
-        },
-        "Kiwi.Shaders.PrimitiveShader": {
-            "name": "Kiwi.Shaders.PrimitiveShader",
-            "shortname": "Kiwi.Shaders.PrimitiveShader",
-            "classitems": [],
-            "plugins": [],
-            "extensions": [],
-            "plugin_for": [],
-            "extension_for": [],
-            "module": "Kiwi",
-            "submodule": "Plugins",
-            "namespace": "Kiwi.Shaders",
-            "file": "src/primitives-1.0.3.js",
-            "line": 1817,
-            "description": "Primitive Shader Pair",
-            "is_constructor": 1,
-            "since": "0.1.0"
         }
     },
     "classitems": [
         {
-            "file": "src/primitives-1.0.3.js",
+            "file": "src\\_main.js",
             "line": 11,
             "description": "The name of this plugin.",
             "itemtype": "property",
@@ -561,7 +627,7 @@
             "namespace": "Kiwi.Plugins"
         },
         {
-            "file": "src/primitives-1.0.3.js",
+            "file": "src\\_main.js",
             "line": 20,
             "description": "The version of this plugin.",
             "itemtype": "property",
@@ -575,7 +641,7 @@
             "namespace": "Kiwi.Plugins"
         },
         {
-            "file": "src/primitives-1.0.3.js",
+            "file": "src\\_main.js",
             "line": 32,
             "description": "Registers this plugin with the Global Kiwi Plugins Manager if it is avaiable.",
             "class": "Kiwi.Plugins.Primitives",
@@ -584,7 +650,7 @@
             "namespace": "Kiwi.Plugins"
         },
         {
-            "file": "src/primitives-1.0.3.js",
+            "file": "src\\_main.js",
             "line": 38,
             "description": "This create method is executed when Kiwi Game that has been told to\nuse this plugin reaches the boot stage of the game loop.",
             "itemtype": "method",
@@ -604,8 +670,8 @@
             "namespace": "Kiwi.Plugins"
         },
         {
-            "file": "src/primitives-1.0.3.js",
-            "line": 180,
+            "file": "src\\_polygon.js",
+            "line": 132,
             "description": "Index of pointers to vertices. The sequence of points\nwhich constructs the poly.",
             "itemtype": "property",
             "name": "indices",
@@ -615,12 +681,11 @@
             "since": "0.3.0",
             "class": "Kiwi.Plugins.Primitives.Polygon",
             "module": "Kiwi",
-            "submodule": "Plugins",
             "namespace": "Kiwi.Plugins.Primitives"
         },
         {
-            "file": "src/primitives-1.0.3.js",
-            "line": 204,
+            "file": "src\\_polygon.js",
+            "line": 156,
             "description": "Index of vertices.",
             "itemtype": "property",
             "name": "vertices",
@@ -630,12 +695,11 @@
             "since": "0.3.0",
             "class": "Kiwi.Plugins.Primitives.Polygon",
             "module": "Kiwi",
-            "submodule": "Plugins",
             "namespace": "Kiwi.Plugins.Primitives"
         },
         {
-            "file": "src/primitives-1.0.3.js",
-            "line": 227,
+            "file": "src\\_polygon.js",
+            "line": 179,
             "description": "Index of pointers to vertices. The sequence of points which\nconstructs the stroke. To be distinguished from the strokePolyIndices,\nwhich define the actual shape of the stroke.",
             "itemtype": "property",
             "name": "strokeIndices",
@@ -645,12 +709,11 @@
             "since": "0.3.0",
             "class": "Kiwi.Plugins.Primitives.Polygon",
             "module": "Kiwi",
-            "submodule": "Plugins",
             "namespace": "Kiwi.Plugins.Primitives"
         },
         {
-            "file": "src/primitives-1.0.3.js",
-            "line": 254,
+            "file": "src\\_polygon.js",
+            "line": 206,
             "description": "Index of pointers to vertices. The sequence of points which\nmake up the stroke. To be distinguished from the strokeIndices,\nwhich define the construction of the stroke.",
             "itemtype": "property",
             "name": "strokePolyIndices",
@@ -660,12 +723,11 @@
             "since": "0.3.0",
             "class": "Kiwi.Plugins.Primitives.Polygon",
             "module": "Kiwi",
-            "submodule": "Plugins",
             "namespace": "Kiwi.Plugins.Primitives"
         },
         {
-            "file": "src/primitives-1.0.3.js",
-            "line": 286,
+            "file": "src\\_polygon.js",
+            "line": 238,
             "description": "Index of vertices for stroke shape.",
             "itemtype": "property",
             "name": "strokePolyVertices",
@@ -675,12 +737,11 @@
             "since": "0.3.0",
             "class": "Kiwi.Plugins.Primitives.Polygon",
             "module": "Kiwi",
-            "submodule": "Plugins",
             "namespace": "Kiwi.Plugins.Primitives"
         },
         {
-            "file": "src/primitives-1.0.3.js",
-            "line": 310,
+            "file": "src\\_polygon.js",
+            "line": 262,
             "description": "Constructs a miter, a building block for strokes.\nMiters sit atop vertices and form the endpoints for two stroke segments.",
             "itemtype": "method",
             "name": "_buildMiter",
@@ -705,12 +766,11 @@
             "since": "0.3.0",
             "class": "Kiwi.Plugins.Primitives.Polygon",
             "module": "Kiwi",
-            "submodule": "Plugins",
             "namespace": "Kiwi.Plugins.Primitives"
         },
         {
-            "file": "src/primitives-1.0.3.js",
-            "line": 394,
+            "file": "src\\_polygon.js",
+            "line": 346,
             "description": "Construct a stroke by tracing a connection through all vertices.",
             "itemtype": "method",
             "name": "_buildStroke",
@@ -731,12 +791,11 @@
             "since": "0.3.0",
             "class": "Kiwi.Plugins.Primitives.Polygon",
             "module": "Kiwi",
-            "submodule": "Plugins",
             "namespace": "Kiwi.Plugins.Primitives"
         },
         {
-            "file": "src/primitives-1.0.3.js",
-            "line": 477,
+            "file": "src\\_polygon.js",
+            "line": 429,
             "description": "Creates a copy of this polygon.",
             "itemtype": "method",
             "name": "clone",
@@ -749,12 +808,11 @@
             "since": "0.3.0",
             "class": "Kiwi.Plugins.Primitives.Polygon",
             "module": "Kiwi",
-            "submodule": "Plugins",
             "namespace": "Kiwi.Plugins.Primitives"
         },
         {
-            "file": "src/primitives-1.0.3.js",
-            "line": 507,
+            "file": "src\\_polygon.js",
+            "line": 459,
             "description": "Determines the min and max x and y coordinates from an array.",
             "itemtype": "method",
             "name": "computeMinMaxXY",
@@ -773,12 +831,11 @@
             "since": "0.1.0",
             "class": "Kiwi.Plugins.Primitives.Polygon",
             "module": "Kiwi",
-            "submodule": "Plugins",
             "namespace": "Kiwi.Plugins.Primitives"
         },
         {
-            "file": "src/primitives-1.0.3.js",
-            "line": 547,
+            "file": "src\\_polygon.js",
+            "line": 499,
             "description": "Adds another poly to this.",
             "itemtype": "method",
             "name": "combine",
@@ -805,12 +862,11 @@
             "since": "0.3.0",
             "class": "Kiwi.Plugins.Primitives.Polygon",
             "module": "Kiwi",
-            "submodule": "Plugins",
             "namespace": "Kiwi.Plugins.Primitives"
         },
         {
-            "file": "src/primitives-1.0.3.js",
-            "line": 648,
+            "file": "src\\_polygon.js",
+            "line": 600,
             "description": "Reports an error message.",
             "itemtype": "method",
             "name": "complain",
@@ -826,12 +882,11 @@
             "since": "0.4.0",
             "class": "Kiwi.Plugins.Primitives.Polygon",
             "module": "Kiwi",
-            "submodule": "Plugins",
             "namespace": "Kiwi.Plugins.Primitives"
         },
         {
-            "file": "src/primitives-1.0.3.js",
-            "line": 663,
+            "file": "src\\_polygon.js",
+            "line": 615,
             "description": "Put a stroke on this Polygon, following the strokeIndices vertex list.\nYou should not need to do this manually.",
             "itemtype": "method",
             "name": "createstroke",
@@ -843,12 +898,11 @@
             "since": "0.3.0",
             "class": "Kiwi.Plugins.Primitives.Polygon",
             "module": "Kiwi",
-            "submodule": "Plugins",
             "namespace": "Kiwi.Plugins.Primitives"
         },
         {
-            "file": "src/primitives-1.0.3.js",
-            "line": 680,
+            "file": "src\\_polygon.js",
+            "line": 632,
             "description": "Initialise internal properties",
             "itemtype": "method",
             "name": "_initProperties",
@@ -857,12 +911,11 @@
             "since": "0.1.0",
             "class": "Kiwi.Plugins.Primitives.Polygon",
             "module": "Kiwi",
-            "submodule": "Plugins",
             "namespace": "Kiwi.Plugins.Primitives"
         },
         {
-            "file": "src/primitives-1.0.3.js",
-            "line": 687,
+            "file": "src\\_polygon.js",
+            "line": 639,
             "description": "Part of the WebGL rendering pipeline",
             "itemtype": "property",
             "name": "glRenderer",
@@ -872,12 +925,11 @@
             "since": "0.1.0",
             "class": "Kiwi.Plugins.Primitives.Polygon",
             "module": "Kiwi",
-            "submodule": "Plugins",
             "namespace": "Kiwi.Plugins.Primitives"
         },
         {
-            "file": "src/primitives-1.0.3.js",
-            "line": 703,
+            "file": "src\\_polygon.js",
+            "line": 655,
             "description": "Geometry point used in rendering.",
             "itemtype": "property",
             "name": "_p0",
@@ -887,12 +939,11 @@
             "since": "1.0.3",
             "class": "Kiwi.Plugins.Primitives.Polygon",
             "module": "Kiwi",
-            "submodule": "Plugins",
             "namespace": "Kiwi.Plugins.Primitives"
         },
         {
-            "file": "src/primitives-1.0.3.js",
-            "line": 713,
+            "file": "src\\_polygon.js",
+            "line": 665,
             "description": "Geometry point used in rendering.",
             "itemtype": "property",
             "name": "_p1",
@@ -902,12 +953,11 @@
             "since": "1.0.3",
             "class": "Kiwi.Plugins.Primitives.Polygon",
             "module": "Kiwi",
-            "submodule": "Plugins",
             "namespace": "Kiwi.Plugins.Primitives"
         },
         {
-            "file": "src/primitives-1.0.3.js",
-            "line": 723,
+            "file": "src\\_polygon.js",
+            "line": 675,
             "description": "Geometry point used in rendering.",
             "itemtype": "property",
             "name": "_p2",
@@ -917,12 +967,39 @@
             "since": "1.0.3",
             "class": "Kiwi.Plugins.Primitives.Polygon",
             "module": "Kiwi",
-            "submodule": "Plugins",
             "namespace": "Kiwi.Plugins.Primitives"
         },
         {
-            "file": "src/primitives-1.0.3.js",
-            "line": 734,
+            "file": "src\\_polygon.js",
+            "line": 685,
+            "description": "Color Utility.",
+            "itemtype": "property",
+            "name": "_color",
+            "type": "Kiwi.Utils.Color",
+            "access": "private",
+            "tagname": "",
+            "since": "1.0.4",
+            "class": "Kiwi.Plugins.Primitives.Polygon",
+            "module": "Kiwi",
+            "namespace": "Kiwi.Plugins.Primitives"
+        },
+        {
+            "file": "src\\_polygon.js",
+            "line": 695,
+            "description": "Stroke color utility.",
+            "itemtype": "property",
+            "name": "_strokeColor",
+            "type": "Kiwi.Utils.Color",
+            "access": "private",
+            "tagname": "",
+            "since": "1.0.4",
+            "class": "Kiwi.Plugins.Primitives.Polygon",
+            "module": "Kiwi",
+            "namespace": "Kiwi.Plugins.Primitives"
+        },
+        {
+            "file": "src\\_polygon.js",
+            "line": 706,
             "description": "Returns the type of object that this is.",
             "itemtype": "method",
             "name": "objType",
@@ -934,12 +1011,37 @@
             "tagname": "",
             "class": "Kiwi.Plugins.Primitives.Polygon",
             "module": "Kiwi",
-            "submodule": "Plugins",
             "namespace": "Kiwi.Plugins.Primitives"
         },
         {
-            "file": "src/primitives-1.0.3.js",
-            "line": 744,
+            "file": "src\\_polygon.js",
+            "line": 717,
+            "description": "RGB color triplet, normalized to the range 0-1",
+            "itemtype": "property",
+            "name": "color",
+            "type": "{array}",
+            "access": "public",
+            "tagname": "",
+            "class": "Kiwi.Plugins.Primitives.Polygon",
+            "module": "Kiwi",
+            "namespace": "Kiwi.Plugins.Primitives"
+        },
+        {
+            "file": "src\\_polygon.js",
+            "line": 733,
+            "description": "RGB color triplet, normalized to the range 0-1",
+            "itemtype": "property",
+            "name": "strokeColor",
+            "type": "{array}",
+            "access": "public",
+            "tagname": "",
+            "class": "Kiwi.Plugins.Primitives.Polygon",
+            "module": "Kiwi",
+            "namespace": "Kiwi.Plugins.Primitives"
+        },
+        {
+            "file": "src\\_polygon.js",
+            "line": 749,
             "description": "Sets default parameters on primitive. Note that this will redefine the\nentire primitive. If you call parseParams after creation, you will have to\ntake steps to preserve any shape, style, or transform data you wish to keep.",
             "itemtype": "method",
             "name": "parseParams",
@@ -958,26 +1060,11 @@
             "since": "0.1.0",
             "class": "Kiwi.Plugins.Primitives.Polygon",
             "module": "Kiwi",
-            "submodule": "Plugins",
             "namespace": "Kiwi.Plugins.Primitives"
         },
         {
-            "file": "src/primitives-1.0.3.js",
-            "line": 756,
-            "description": "RGB color triplet, normalized to the range 0-1",
-            "itemtype": "property",
-            "name": "color",
-            "type": "{array}",
-            "access": "public",
-            "tagname": "",
-            "class": "Kiwi.Plugins.Primitives.Polygon",
-            "module": "Kiwi",
-            "submodule": "Plugins",
-            "namespace": "Kiwi.Plugins.Primitives"
-        },
-        {
-            "file": "src/primitives-1.0.3.js",
-            "line": 764,
+            "file": "src\\_polygon.js",
+            "line": 773,
             "description": "Whether the fill will draw",
             "itemtype": "property",
             "name": "drawFill",
@@ -986,12 +1073,11 @@
             "tagname": "",
             "class": "Kiwi.Plugins.Primitives.Polygon",
             "module": "Kiwi",
-            "submodule": "Plugins",
             "namespace": "Kiwi.Plugins.Primitives"
         },
         {
-            "file": "src/primitives-1.0.3.js",
-            "line": 774,
+            "file": "src\\_polygon.js",
+            "line": 783,
             "description": "Whether the stroke will draw",
             "itemtype": "property",
             "name": "drawFill",
@@ -1000,12 +1086,11 @@
             "tagname": "",
             "class": "Kiwi.Plugins.Primitives.Polygon",
             "module": "Kiwi",
-            "submodule": "Plugins",
             "namespace": "Kiwi.Plugins.Primitives"
         },
         {
-            "file": "src/primitives-1.0.3.js",
-            "line": 784,
+            "file": "src\\_polygon.js",
+            "line": 793,
             "description": "Whether to enable input",
             "itemtype": "property",
             "name": "enableInput",
@@ -1015,26 +1100,11 @@
             "since": "1.0.1",
             "class": "Kiwi.Plugins.Primitives.Polygon",
             "module": "Kiwi",
-            "submodule": "Plugins",
             "namespace": "Kiwi.Plugins.Primitives"
         },
         {
-            "file": "src/primitives-1.0.3.js",
-            "line": 799,
-            "description": "RGB color triplet, normalized to the range 0-1",
-            "itemtype": "property",
-            "name": "strokeColor",
-            "type": "{array}",
-            "access": "public",
-            "tagname": "",
-            "class": "Kiwi.Plugins.Primitives.Polygon",
-            "module": "Kiwi",
-            "submodule": "Plugins",
-            "namespace": "Kiwi.Plugins.Primitives"
-        },
-        {
-            "file": "src/primitives-1.0.3.js",
-            "line": 807,
+            "file": "src\\_polygon.js",
+            "line": 820,
             "description": "Width of the stroke, in pixels. If the primitive is scaled, the stroke\nwill also change size.",
             "itemtype": "property",
             "name": "strokeWidth",
@@ -1043,12 +1113,11 @@
             "tagname": "",
             "class": "Kiwi.Plugins.Primitives.Polygon",
             "module": "Kiwi",
-            "submodule": "Plugins",
             "namespace": "Kiwi.Plugins.Primitives"
         },
         {
-            "file": "src/primitives-1.0.3.js",
-            "line": 851,
+            "file": "src\\_polygon.js",
+            "line": 864,
             "description": "Perform a strict compliance check on data. If this fails,\nit's because somebody passed bad data.",
             "itemtype": "method",
             "name": "parseStrict",
@@ -1060,12 +1129,11 @@
             "since": "0.4.0",
             "class": "Kiwi.Plugins.Primitives.Polygon",
             "module": "Kiwi",
-            "submodule": "Plugins",
             "namespace": "Kiwi.Plugins.Primitives"
         },
         {
-            "file": "src/primitives-1.0.3.js",
-            "line": 957,
+            "file": "src\\_polygon.js",
+            "line": 941,
             "description": "Compute width, height, box, anchor points etc",
             "itemtype": "method",
             "name": "rebuildBounds",
@@ -1074,12 +1142,11 @@
             "since": "0.1.0",
             "class": "Kiwi.Plugins.Primitives.Polygon",
             "module": "Kiwi",
-            "submodule": "Plugins",
             "namespace": "Kiwi.Plugins.Primitives"
         },
         {
-            "file": "src/primitives-1.0.3.js",
-            "line": 997,
+            "file": "src\\_polygon.js",
+            "line": 985,
             "description": "Software rendering method",
             "itemtype": "method",
             "name": "render",
@@ -1094,12 +1161,11 @@
             "tagname": "",
             "class": "Kiwi.Plugins.Primitives.Polygon",
             "module": "Kiwi",
-            "submodule": "Plugins",
             "namespace": "Kiwi.Plugins.Primitives"
         },
         {
-            "file": "src/primitives-1.0.3.js",
-            "line": 1119,
+            "file": "src\\_polygon.js",
+            "line": 1107,
             "description": "Hardware rendering method using WebGL",
             "itemtype": "method",
             "name": "renderGL",
@@ -1122,12 +1188,11 @@
             ],
             "class": "Kiwi.Plugins.Primitives.Polygon",
             "module": "Kiwi",
-            "submodule": "Plugins",
             "namespace": "Kiwi.Plugins.Primitives"
         },
         {
-            "file": "src/primitives-1.0.3.js",
-            "line": 1143,
+            "file": "src\\_polygon.js",
+            "line": 1131,
             "description": "Decompose a polygon into its constituent triangles.\nThis will destroy the original polygon and substitute a group\ncontaining the triangles.",
             "itemtype": "method",
             "name": "shatter",
@@ -1140,12 +1205,11 @@
             "since": "0.3.0",
             "class": "Kiwi.Plugins.Primitives.Polygon",
             "module": "Kiwi",
-            "submodule": "Plugins",
             "namespace": "Kiwi.Plugins.Primitives"
         },
         {
-            "file": "src/primitives-1.0.3.js",
-            "line": 1206,
+            "file": "src\\_polygon.js",
+            "line": 1194,
             "description": "Automatically called once per update loop.\nHandles input. If you override this, make sure to call the prototype:\n<code>Kiwi.Plugins.prototype.update.calL( this );</code>",
             "itemtype": "method",
             "name": "update",
@@ -1154,12 +1218,11 @@
             "since": "1.0.1",
             "class": "Kiwi.Plugins.Primitives.Polygon",
             "module": "Kiwi",
-            "submodule": "Plugins",
             "namespace": "Kiwi.Plugins.Primitives"
         },
         {
-            "file": "src/primitives-1.0.3.js",
-            "line": 1612,
+            "file": "src\\null-atlas.js",
+            "line": 16,
             "description": "texture manager requirements. Parameters don't matter.",
             "itemtype": "method",
             "name": "enableGL",
@@ -1168,12 +1231,11 @@
             "since": "0.1.0",
             "class": "Kiwi.Plugins.Primitives.NullAtlas",
             "module": "Kiwi",
-            "submodule": "Plugins",
             "namespace": "Kiwi.Plugins.Primitives"
         },
         {
-            "file": "src/primitives-1.0.3.js",
-            "line": 1650,
+            "file": "src\\renderer.js",
+            "line": 31,
             "description": "Returns a null atlas so that all primitives share a texture object.",
             "itemtype": "method",
             "name": "getAtlas",
@@ -1185,12 +1247,11 @@
             "since": "0.3.0",
             "class": "Kiwi.Renderers.PrimitiveRenderer",
             "module": "Kiwi",
-            "submodule": "Plugins",
             "namespace": "Kiwi.Renderers"
         },
         {
-            "file": "src/primitives-1.0.3.js",
-            "line": 1661,
+            "file": "src\\renderer.js",
+            "line": 42,
             "description": "Enables the renderer for drawing",
             "itemtype": "method",
             "name": "enable",
@@ -1212,12 +1273,11 @@
             "tagname": "",
             "class": "Kiwi.Renderers.PrimitiveRenderer",
             "module": "Kiwi",
-            "submodule": "Plugins",
             "namespace": "Kiwi.Renderers"
         },
         {
-            "file": "src/primitives-1.0.3.js",
-            "line": 1682,
+            "file": "src\\renderer.js",
+            "line": 63,
             "description": "Disables the renderer",
             "itemtype": "method",
             "name": "disable",
@@ -1232,12 +1292,11 @@
             "tagname": "",
             "class": "Kiwi.Renderers.PrimitiveRenderer",
             "module": "Kiwi",
-            "submodule": "Plugins",
             "namespace": "Kiwi.Renderers"
         },
         {
-            "file": "src/primitives-1.0.3.js",
-            "line": 1693,
+            "file": "src\\renderer.js",
+            "line": 74,
             "description": "Clears the vertex buffer",
             "itemtype": "method",
             "name": "clear",
@@ -1252,12 +1311,11 @@
             "tagname": "",
             "class": "Kiwi.Renderers.PrimitiveRenderer",
             "module": "Kiwi",
-            "submodule": "Plugins",
             "namespace": "Kiwi.Renderers"
         },
         {
-            "file": "src/primitives-1.0.3.js",
-            "line": 1705,
+            "file": "src\\renderer.js",
+            "line": 86,
             "description": "Updates the stage resolution uniforms",
             "itemtype": "method",
             "name": "updateStageResolution",
@@ -1277,12 +1335,11 @@
             "tagname": "",
             "class": "Kiwi.Renderers.PrimitiveRenderer",
             "module": "Kiwi",
-            "submodule": "Plugins",
             "namespace": "Kiwi.Renderers"
         },
         {
-            "file": "src/primitives-1.0.3.js",
-            "line": 1717,
+            "file": "src\\renderer.js",
+            "line": 98,
             "description": "Sets shader pair by name",
             "itemtype": "method",
             "name": "setShaderPair",
@@ -1297,12 +1354,11 @@
             "tagname": "",
             "class": "Kiwi.Renderers.PrimitiveRenderer",
             "module": "Kiwi",
-            "submodule": "Plugins",
             "namespace": "Kiwi.Renderers"
         },
         {
-            "file": "src/primitives-1.0.3.js",
-            "line": 1730,
+            "file": "src\\renderer.js",
+            "line": 111,
             "description": "Collates all xy and uv coordinates into a buffer\nready for upload to video memory",
             "itemtype": "method",
             "name": "_collateVertexAttributeArrays",
@@ -1327,12 +1383,11 @@
             "tagname": "",
             "class": "Kiwi.Renderers.PrimitiveRenderer",
             "module": "Kiwi",
-            "submodule": "Plugins",
             "namespace": "Kiwi.Renderers"
         },
         {
-            "file": "src/primitives-1.0.3.js",
-            "line": 1778,
+            "file": "src\\renderer.js",
+            "line": 159,
             "description": "Makes a draw call. This is where things actually\nget rendered to the draw buffer (or a framebuffer).",
             "itemtype": "method",
             "name": "draw",
@@ -1347,14 +1402,13 @@
             "tagname": "",
             "class": "Kiwi.Renderers.PrimitiveRenderer",
             "module": "Kiwi",
-            "submodule": "Plugins",
             "namespace": "Kiwi.Renderers"
         }
     ],
     "warnings": [
         {
             "message": "Missing item type\nRegisters this plugin with the Global Kiwi Plugins Manager if it is avaiable.",
-            "line": " src/primitives-1.0.3.js:32"
+            "line": " src\\_main.js:32"
         }
     ]
 }

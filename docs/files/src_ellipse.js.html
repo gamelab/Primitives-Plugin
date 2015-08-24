@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Kiwi.Plugins.Primitives.NullAtlas - primitives</title>
+    <title>src\ellipse.js - primitives</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -104,212 +104,105 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1>Kiwi.Plugins.Primitives.NullAtlas Class</h1>
-<div class="box meta">
-    
+                        <h1 class="file-heading">File: src\ellipse.js</h1>
 
-    
-
-    
-        <div class="foundat">
-            Defined in: <a href="../files/src_null-atlas.js.html#l2"><code>src\null-atlas.js:2</code></a>
-        </div>
-    
-
-    
-        
-            Module: <a href="../modules/Kiwi.html">Kiwi</a>
-        
-    
-
-    
-        <p>Available since 0.1.0</p>
-    
-</div>
+<div class="file">
+    <pre class="code prettyprint linenums">
 
 
+/**
+* Ellipse Primitive
+* &lt;br&gt;&lt;br&gt;
+* Create a ellipse primitive. Define a params object including a reference
+* to the current state. You may also add style parameters from the Polygon.
+* &lt;br&gt;&lt;br&gt;
+* You may draw regular polygons by reducing the segments. For example,
+* to draw a hexagon:
+* &lt;br&gt;&lt;br&gt;
+* new Kiwi.Plugins.Primitives.Ellipse( {&lt;br&gt;
+*	drawStroke: false,&lt;br&gt;
+*	radius: 32,&lt;br&gt;
+*	state: MyGame.state,&lt;br&gt;
+*	segments: 6&lt;br&gt;
+* } );
+* @class Ellipse
+* @constructor
+* @extends Kiwi.Plugins.Primitives.Polygon
+* @namespace Kiwi.Plugins.Primitives
+* @param params {object} Parameter object
+* @param params.state {Kiwi.State} Current state
+* @param [params.centerOnTransform=false] {boolean} If true, ellipse is centered
+*	on transform; if false, ellipse has top left corner on transform
+* @param [params.height=8] {number} Height of the ellipse
+* @param [params.radius] {number} Radius of a circle; overide width and height
+* @param [params.radiusPointer=false] {boolean} Whether to draw the radius,
+*	useful for debugging rotation on circles.
+* @param [params.segments=32] {number} Number of radial segments; detail.
+* @param [params.width=8] {number} Width of the ellipse
+* @since 0.4.0
+*/
+Kiwi.Plugins.Primitives.Ellipse = function( params ) {
+	var angle, i,
+		defaultDimension = 8,
+		offsetX = 0,
+		offsetY = 0;
 
-<div class="box intro">
-    <p>Null Texture Atlas interfaces with KiwiJS rendering system
-which expects a texture atlas, and provides it with an atlas
-that has no texture.</p>
+	// Create elliptical geometry data
+	if ( typeof params.segments === &quot;undefined&quot; ) {
+		params.segments = 32;
+	}
+	if ( typeof params.radius !== &quot;undefined&quot; ) {
+		params.width = params.radius * 2;
+		params.height = params.radius * 2;
+	}
+	if ( typeof params.width !== &quot;number&quot; ) {
+		params.width = defaultDimension;
+	}
+	if ( typeof params.height !== &quot;number&quot; ) {
+		params.height = defaultDimension;
+	}
+	if ( !params.centerOnTransform ) {
+		offsetX = params.width * 0.5;
+		offsetY = params.height * 0.5;
+	}
+	params.indices = [];
+	params.vertices = [];
+	params.strokeIndices = [];
+	for ( i = 0; i &lt; params.segments; i++ ) {
 
-</div>
+		// Define indices, looping from the middle
+		params.indices.push( i );
+		params.indices.push( params.segments );
+		params.indices.push( ( i + 1 ) % params.segments );
 
+		// Define vertices
+		angle = Math.PI * 2 * i / params.segments;
+		params.vertices.push( [
+			params.width * 0.5 * Math.cos( angle ) + offsetX,
+			params.height * 0.5 * Math.sin( angle ) + offsetY
+		] );
 
-    <div class="constructor">
-        <h2>Constructor</h2>
-        <div id="method_Kiwi.Plugins.Primitives.NullAtlas" class="method item">
-    <h3 class="name"><code>Kiwi.Plugins.Primitives.NullAtlas</code></h3>
+		// Define stroke
+		params.strokeIndices.push( i );
+	}
 
-    
-        <span class="paren">()</span>
-    
+	// Define central vertex
+	params.vertices.push( [ offsetX, offsetY ] );
 
-    
+	// Complete stroke
+	params.strokeIndices.push( 0 );
 
-    
+	// Add radius pointer
+	if ( params.radiusPointer ) {
+		params.strokeIndices.push( params.segments );
+	}
 
-    
+	Kiwi.Plugins.Primitives.Polygon.call( this, params );
+};
+Kiwi.extend( Kiwi.Plugins.Primitives.Ellipse,
+	Kiwi.Plugins.Primitives.Polygon );
 
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/src_null-atlas.js.html#l2"><code>src\null-atlas.js:2</code></a>
-        
-        </p>
-
-
-        
-
-        
-            <p>Available since 0.1.0</p>
-        
-    </div>
-
-    <div class="description">
-        
-    </div>
-
-    
-
-    
-
-    
-</div>
-
-    </div>
-
-
-<div id="classdocs" class="tabview">
-    <ul class="api-class-tabs">
-        <li class="api-class-tab index"><a href="#index">Index</a></li>
-
-        
-            <li class="api-class-tab methods"><a href="#methods">Methods</a></li>
-        
-        
-        
-        
-    </ul>
-
-    <div>
-        <div id="index" class="api-class-tabpanel index">
-            <h2 class="off-left">Item Index</h2>
-
-            
-                <div class="index-section methods">
-                    <h3>Methods</h3>
-
-                    <ul class="index-list methods">
-                        
-                            <li class="index-item method public">
-                                <a href="#method_enableGL">enableGL</a>
-
-                                
-                                
-                            </li>
-                        
-                    </ul>
-                </div>
-            
-
-            
-
-            
-
-            
-        </div>
-
-        
-            <div id="methods" class="api-class-tabpanel">
-                <h2 class="off-left">Methods</h2>
-
-                
-                    <div id="method_enableGL" class="method item public">
-    <h3 class="name"><code>enableGL</code></h3>
-
-    
-        <span class="paren">()</span>
-    
-
-    
-
-    
-
-    
-        <span class="flag public">public</span>
-    
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/src_null-atlas.js.html#l16"><code>src\null-atlas.js:16</code></a>
-        
-        </p>
-
-
-        
-
-        
-            <p>Available since 0.1.0</p>
-        
-    </div>
-
-    <div class="description">
-        <p>texture manager requirements. Parameters don&#39;t matter.</p>
-
-    </div>
-
-    
-
-    
-
-    
-</div>
-
-                
-            </div>
-        
-
-        
-
-        
-
-        
-    </div>
+    </pre>
 </div>
 
                     </div>

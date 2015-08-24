@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Kiwi.Plugins.Primitives.NullAtlas - primitives</title>
+    <title>src\line.js - primitives</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -104,212 +104,54 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1>Kiwi.Plugins.Primitives.NullAtlas Class</h1>
-<div class="box meta">
-    
+                        <h1 class="file-heading">File: src\line.js</h1>
 
-    
+<div class="file">
+    <pre class="code prettyprint linenums">
 
-    
-        <div class="foundat">
-            Defined in: <a href="../files/src_null-atlas.js.html#l2"><code>src\null-atlas.js:2</code></a>
-        </div>
-    
+/**
+* Line Primitive
+* &lt;br&gt;&lt;br&gt;
+* Create a line primitive. Define a params object including a reference
+* to the current state. You may also add style parameters from the Polygon.
+* For example:
+* &lt;br&gt;&lt;br&gt;
+* new Kiwi.Plugins.Primitives.Line( {&lt;br&gt;
+*	points: [ [ 0, 0 ], [ 100, 100 ], [ 200, 0 ] ],&lt;br&gt;
+*	state: MyGame.state,&lt;br&gt;
+*	strokeColor: [ 1, 0.1, 1 ],&lt;br&gt;
+*	strokeWidth: 4&lt;br&gt;
+* } );
+* @class Line
+* @constructor
+* @extends Kiwi.Plugins.Primitives.Polygon
+* @namespace Kiwi.Plugins.Primitives
+* @param params {object} Parameter object
+* @param params.state {Kiwi.State} Current state
+* @param [params.points] {array} Array of x,y points to connect with lines
+* @since 0.4.0
+*/
+Kiwi.Plugins.Primitives.Line = function( params ) {
+	var i;
 
-    
-        
-            Module: <a href="../modules/Kiwi.html">Kiwi</a>
-        
-    
+	params.vertices = [];
+	params.strokeIndices = [];
+	params.drawFill = false;
+	params.drawStroke = true;
+	if ( params.points ) {
+		for ( i = 0; i &lt; params.points.length; i++ ) {
+			params.vertices.push( params.points[ i ] );
+			params.strokeIndices.push( i );
+		}
+	}
 
-    
-        <p>Available since 0.1.0</p>
-    
-</div>
-
-
-
-<div class="box intro">
-    <p>Null Texture Atlas interfaces with KiwiJS rendering system
-which expects a texture atlas, and provides it with an atlas
-that has no texture.</p>
-
-</div>
-
-
-    <div class="constructor">
-        <h2>Constructor</h2>
-        <div id="method_Kiwi.Plugins.Primitives.NullAtlas" class="method item">
-    <h3 class="name"><code>Kiwi.Plugins.Primitives.NullAtlas</code></h3>
-
-    
-        <span class="paren">()</span>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/src_null-atlas.js.html#l2"><code>src\null-atlas.js:2</code></a>
-        
-        </p>
+	Kiwi.Plugins.Primitives.Polygon.call( this, params );
+};
+Kiwi.extend( Kiwi.Plugins.Primitives.Line,
+	Kiwi.Plugins.Primitives.Polygon );
 
 
-        
-
-        
-            <p>Available since 0.1.0</p>
-        
-    </div>
-
-    <div class="description">
-        
-    </div>
-
-    
-
-    
-
-    
-</div>
-
-    </div>
-
-
-<div id="classdocs" class="tabview">
-    <ul class="api-class-tabs">
-        <li class="api-class-tab index"><a href="#index">Index</a></li>
-
-        
-            <li class="api-class-tab methods"><a href="#methods">Methods</a></li>
-        
-        
-        
-        
-    </ul>
-
-    <div>
-        <div id="index" class="api-class-tabpanel index">
-            <h2 class="off-left">Item Index</h2>
-
-            
-                <div class="index-section methods">
-                    <h3>Methods</h3>
-
-                    <ul class="index-list methods">
-                        
-                            <li class="index-item method public">
-                                <a href="#method_enableGL">enableGL</a>
-
-                                
-                                
-                            </li>
-                        
-                    </ul>
-                </div>
-            
-
-            
-
-            
-
-            
-        </div>
-
-        
-            <div id="methods" class="api-class-tabpanel">
-                <h2 class="off-left">Methods</h2>
-
-                
-                    <div id="method_enableGL" class="method item public">
-    <h3 class="name"><code>enableGL</code></h3>
-
-    
-        <span class="paren">()</span>
-    
-
-    
-
-    
-
-    
-        <span class="flag public">public</span>
-    
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/src_null-atlas.js.html#l16"><code>src\null-atlas.js:16</code></a>
-        
-        </p>
-
-
-        
-
-        
-            <p>Available since 0.1.0</p>
-        
-    </div>
-
-    <div class="description">
-        <p>texture manager requirements. Parameters don&#39;t matter.</p>
-
-    </div>
-
-    
-
-    
-
-    
-</div>
-
-                
-            </div>
-        
-
-        
-
-        
-
-        
-    </div>
+    </pre>
 </div>
 
                     </div>

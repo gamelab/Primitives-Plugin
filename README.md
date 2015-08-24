@@ -13,7 +13,7 @@ Versions:
 
 1.0.4
 - `color` and `strokeColor` properties updated. They now use the `Kiwi.Utils.Color` class under the hood.
-- Hitbox offset bug fixed. 
+- Hitbox offsets now correctly set. 
 
 1.0.3
 - Improve efficiency in rendering by recycling geometry points
