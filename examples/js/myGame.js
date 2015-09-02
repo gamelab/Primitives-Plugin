@@ -1,4 +1,6 @@
-var gameOptions = {},
+var gameOptions = {
+	renderer: Kiwi.RENDERER_CANVAS
+},
 	MyGame = {};
 
 MyGame.game = new Kiwi.Game( null, "game", null, gameOptions );
@@ -135,139 +137,6 @@ MyGame.state.create = function() {
 			new Kiwi.Plugins.Primitives.Rectangle( params ) );
 	}
 
-	// The Blob
-	this.blobGroup = new Kiwi.Group( this );
-	this.blobGroup.x = 550;
-	this.blobGroup.y = 250;
-
-	// Blob cytoplasm
-	this.blobCytoplasmGroup = new Kiwi.Group( this );
-	params = {
-		state: this,
-		x: 0,
-		y: 0,
-		centerOnTransform: true,
-		color: [ 0.1, 0.3, 1.0 ],
-		strokeColor: [ 0.1, 1, 0.8 ],
-		strokeWidth: 8,
-		radius: 64,
-		alpha: 0.1
-	};
-	this.blobCytoplasmGroup.addChild(
-		new Kiwi.Plugins.Primitives.Ellipse( params ) );
-
-	// Blob membrane
-	params.drawFill = false;
-	for ( i = 0; i < 3; i++ ) {
-		params.strokeWidth -= 2;
-		this.blobCytoplasmGroup.addChild(
-			new Kiwi.Plugins.Primitives.Ellipse( params ) );
-	}
-
-	// Blob cyto-reliant floaters
-	params = {
-		state: this,
-		centerOnTransform: true,
-		color: [ 0.1, 1, 0.8 ],
-		strokeColor: [ 0.1, 1, 0.8 ],
-		alpha: 0.1
-	};
-	for ( i = 0; i < 16; i++ ) {
-		params.radius = Math.random() * 8;
-		blobFloaterAng = Math.random() * Math.PI * 2;
-		blobFloaterDist = Math.pow( Math.random(), 1 ) * 58;
-		params.x = blobFloaterDist * Math.cos( blobFloaterAng );
-		params.y = blobFloaterDist * Math.sin( blobFloaterAng );
-		params.drawStroke = Math.random() < 0.3;
-		params.drawFill = !params.drawStroke;
-		this.blobCytoplasmGroup.addChild(
-			new Kiwi.Plugins.Primitives.Ellipse( params ) );
-	}
-
-	// Blob independent floaters
-	this.blobFloaterGroup = new Kiwi.Group( this );
-	for ( i = 0; i < 16; i++ ) {
-		params.radius = Math.random() * 8;
-		blobFloaterAng = Math.random() * Math.PI * 2;
-		blobFloaterDist = Math.pow( Math.random(), 1 ) * 58;
-		params.x = blobFloaterDist * Math.cos( blobFloaterAng );
-		params.y = blobFloaterDist * Math.sin( blobFloaterAng );
-		params.drawStroke = Math.random() < 0.3;
-		params.drawFill = !params.drawStroke;
-		this.blobFloaterGroup.addChild(
-			new Kiwi.Plugins.Primitives.Ellipse( params ) );
-	}
-
-	// Blob core
-	this.blobCoreGroup = new Kiwi.Group( this );
-	this.blobCoreGroup.x = 20;
-	this.blobCoreGroup.y = -10;
-	params = {
-		state: this,
-		x: 0,
-		y: 0,
-		centerOnTransform: true,
-		color: [ 1.0, 0.1, 0.3 ],
-		drawStroke: false,
-		radius: 32,
-		alpha: 0.1
-	};
-	for ( i = 0; i < 8; i++ ) {
-		this.blobCoreGroup.addChild(
-			new Kiwi.Plugins.Primitives.Ellipse( params ) );
-		params.radius -= 2;
-	}
-
-	// Blob core glow
-	this.game.renderer.addSharedRendererClone(
-		"PrimitiveRenderer", "PrimitiveGlowRenderer");
-	blobGlowRenderer = this.game.renderer.requestSharedRenderer(
-		"PrimitiveGlowRenderer" );
-	blobGlowRenderer.blendMode.setMode( "ADD" );
-	this.blobCoreGlowGroup = new Kiwi.Group( this );
-	this.blobCoreGlowGroup.x = 20;
-	this.blobCoreGlowGroup.y = -10;
-	params = {
-		state: this,
-		x: 0,
-		y: 0,
-		centerOnTransform: true,
-		color: [ 1.0, 0.1, 0.3 ],
-		drawStroke: false,
-		radius: 32,
-		alpha: 0.1
-	};
-	for ( i = 0; i < 8; i++ ) {
-		this.blobCoreGlowGroup.addChild(
-			new Kiwi.Plugins.Primitives.Ellipse( params ) );
-		params.radius -= 2;
-		this.blobCoreGlowGroup.members[ 0 ].glRenderer = blobGlowRenderer;
-	}
-
-	this.blobGroup.addChild( this.blobCytoplasmGroup );
-	this.blobGroup.addChild( this.blobFloaterGroup );
-	this.blobGroup.addChild( this.blobCoreGroup );
-	this.blobGroup.addChild( this.blobCoreGlowGroup );
-
-	this.blobShadowGroup = new Kiwi.Group( this );
-	this.blobShadowGroup.x = this.blobGroup.x;
-	this.blobShadowGroup.y = this.blobGroup.y + 96;
-	params = {
-		state: this,
-		centerOnTransform: true,
-		width: 96,
-		height: 36,
-		color: [ 0.01, 0.02, 0.05 ],
-		alpha: 0.1,
-		drawStroke: false
-	};
-	for ( i = 0; i < 3; i++ ) {
-		this.blobShadowGroup.addChild(
-			new Kiwi.Plugins.Primitives.Ellipse( params ) );
-		params.width -= 8;
-		params.height -= 8;
-	}
-
 
 
 	Kiwi.State.prototype.create.call(this);
@@ -292,9 +161,6 @@ MyGame.state.create = function() {
 	this.addChild( this.encase( this.starNoStroke ) );
 	this.addChild( this.encase( this.starNoFill ) );
 	this.addChild( this.encase( this.line ) );
-
-	this.addChild( this.blobShadowGroup );
-	this.addChild( this.blobGroup );
 
 	// Construct foreground object list
 	this.foregroundObjects.push( this.triangleStroke );
@@ -326,19 +192,6 @@ MyGame.state.update = function() {
 		fo.y = wobble * Math.sin( this.game.idealFrame * 0.011 + i * i );
 		fo.rotation = wobbleRotation *
 			Math.sin( this.game.idealFrame * 0.013 + i * i );
-	}
-
-	// Animate blob
-	this.blobCytoplasmGroup.scaleX = 1 + 0.05 *
-		Math.cos( this.game.idealFrame * 0.01 );
-	this.blobCytoplasmGroup.scaleY = 2 - this.blobCytoplasmGroup.scaleX;
-	this.blobCytoplasmGroup.rotation = 0.2 *
-		Math.sin( this.game.idealFrame * 0.017 );
-	// this.blobCoreGlowGroup.scale = 0.5 + 0.5 *
-	// 	Math.sin( this.game.idealFrame * 0.037 );
-	for ( i = 0; i < this.blobCoreGlowGroup.members.length; i++ ) {
-		this.blobCoreGlowGroup.members[ i ].alpha =
-			( 0.5 + 0.5 * Math.sin( this.game.idealFrame * 0.037 ) ) * 0.05;
 	}
 };
 

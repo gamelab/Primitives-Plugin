@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>src\_polygon.js - primitives</title>
+    <title>src/_polygon.js - primitives</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -104,7 +104,7 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1 class="file-heading">File: src\_polygon.js</h1>
+                        <h1 class="file-heading">File: src/_polygon.js</h1>
 
 <div class="file">
     <pre class="code prettyprint linenums">
@@ -1119,7 +1119,9 @@ Kiwi.Plugins.Primitives.Polygon.prototype.render = function( camera ) {
 
 		// Draw fill
 		if ( this.drawFill &amp;&amp; this._indices.length &gt; 3 ) {
-			ctx.fillStyle = &quot;rgb(&quot; + this._color.r255 + &quot;,&quot; +
+			ctx.fillStyle =
+				&quot;rgb(&quot; +
+				this._color.r255 + &quot;,&quot; +
 				this._color.g255 + &quot;,&quot; +
 				this._color.b255 + &quot;)&quot;;
 
@@ -1132,6 +1134,8 @@ Kiwi.Plugins.Primitives.Polygon.prototype.render = function( camera ) {
 				this._vertices[ this._indices[ 0 ] ][ 1 ] - t.anchorPointY
 			);
 
+			ctx.beginPath();
+
 			for ( i = 2; i &lt; indicesLen; i++ ) {
 
 				// Overwrite start point
@@ -1141,12 +1145,9 @@ Kiwi.Plugins.Primitives.Polygon.prototype.render = function( camera ) {
 				);
 
 				// Draw
-				ctx.beginPath();
 				ctx.moveTo( this._p0.x, this._p0.y );
 				ctx.lineTo( this._p1.x, this._p1.y );
 				ctx.lineTo( this._p2.x, this._p2.y );
-				ctx.closePath();
-				ctx.fill();
 
 				// Cycle points
 				pTemp = this._p2;
@@ -1154,6 +1155,9 @@ Kiwi.Plugins.Primitives.Polygon.prototype.render = function( camera ) {
 				this._p1 = this._p0;
 				this._p0 = pTemp;
 			}
+
+			ctx.closePath();
+			ctx.fill();
 		}
 
 
@@ -1162,7 +1166,8 @@ Kiwi.Plugins.Primitives.Polygon.prototype.render = function( camera ) {
 			indicesLen = this._strokePolyIndices.length;
 
 			ctx.fillStyle =
-				&quot;rgb(&quot; + this._strokeColor.r255 + &quot;,&quot; +
+				&quot;rgb(&quot; +
+				this._strokeColor.r255 + &quot;,&quot; +
 				this._strokeColor.g255 + &quot;,&quot; +
 				this._strokeColor.b255 + &quot;)&quot;;
 
@@ -1179,6 +1184,8 @@ Kiwi.Plugins.Primitives.Polygon.prototype.render = function( camera ) {
 					this._strokePolyIndices[ 0 ] ][ 1 ] - t.anchorPointY
 			);
 
+			ctx.beginPath();
+
 			for ( i = 2; i &lt; indicesLen; i++ ) {
 
 				// Overwrite start point
@@ -1190,12 +1197,9 @@ Kiwi.Plugins.Primitives.Polygon.prototype.render = function( camera ) {
 				);
 
 				// Draw
-				ctx.beginPath();
 				ctx.moveTo( this._p0.x, this._p0.y );
 				ctx.lineTo( this._p1.x, this._p1.y );
 				ctx.lineTo( this._p2.x, this._p2.y );
-				ctx.closePath();
-				ctx.fill();
 
 				// Cycle points
 				pTemp = this._p2;
@@ -1203,8 +1207,10 @@ Kiwi.Plugins.Primitives.Polygon.prototype.render = function( camera ) {
 				this._p1 = this._p0;
 				this._p0 = pTemp;
 			}
+
+			ctx.closePath();
+			ctx.fill();
 		}
-		
 
 
 		// Clean up context

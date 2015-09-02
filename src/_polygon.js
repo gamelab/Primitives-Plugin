@@ -1009,7 +1009,9 @@ Kiwi.Plugins.Primitives.Polygon.prototype.render = function( camera ) {
 
 		// Draw fill
 		if ( this.drawFill && this._indices.length > 3 ) {
-			ctx.fillStyle = "rgb(" + this._color.r255 + "," +
+			ctx.fillStyle =
+				"rgb(" +
+				this._color.r255 + "," +
 				this._color.g255 + "," +
 				this._color.b255 + ")";
 
@@ -1022,6 +1024,8 @@ Kiwi.Plugins.Primitives.Polygon.prototype.render = function( camera ) {
 				this._vertices[ this._indices[ 0 ] ][ 1 ] - t.anchorPointY
 			);
 
+			ctx.beginPath();
+
 			for ( i = 2; i < indicesLen; i++ ) {
 
 				// Overwrite start point
@@ -1031,12 +1035,9 @@ Kiwi.Plugins.Primitives.Polygon.prototype.render = function( camera ) {
 				);
 
 				// Draw
-				ctx.beginPath();
 				ctx.moveTo( this._p0.x, this._p0.y );
 				ctx.lineTo( this._p1.x, this._p1.y );
 				ctx.lineTo( this._p2.x, this._p2.y );
-				ctx.closePath();
-				ctx.fill();
 
 				// Cycle points
 				pTemp = this._p2;
@@ -1044,6 +1045,9 @@ Kiwi.Plugins.Primitives.Polygon.prototype.render = function( camera ) {
 				this._p1 = this._p0;
 				this._p0 = pTemp;
 			}
+
+			ctx.closePath();
+			ctx.fill();
 		}
 
 
@@ -1052,7 +1056,8 @@ Kiwi.Plugins.Primitives.Polygon.prototype.render = function( camera ) {
 			indicesLen = this._strokePolyIndices.length;
 
 			ctx.fillStyle =
-				"rgb(" + this._strokeColor.r255 + "," +
+				"rgb(" +
+				this._strokeColor.r255 + "," +
 				this._strokeColor.g255 + "," +
 				this._strokeColor.b255 + ")";
 
@@ -1069,6 +1074,8 @@ Kiwi.Plugins.Primitives.Polygon.prototype.render = function( camera ) {
 					this._strokePolyIndices[ 0 ] ][ 1 ] - t.anchorPointY
 			);
 
+			ctx.beginPath();
+
 			for ( i = 2; i < indicesLen; i++ ) {
 
 				// Overwrite start point
@@ -1080,12 +1087,9 @@ Kiwi.Plugins.Primitives.Polygon.prototype.render = function( camera ) {
 				);
 
 				// Draw
-				ctx.beginPath();
 				ctx.moveTo( this._p0.x, this._p0.y );
 				ctx.lineTo( this._p1.x, this._p1.y );
 				ctx.lineTo( this._p2.x, this._p2.y );
-				ctx.closePath();
-				ctx.fill();
 
 				// Cycle points
 				pTemp = this._p2;
@@ -1093,8 +1097,10 @@ Kiwi.Plugins.Primitives.Polygon.prototype.render = function( camera ) {
 				this._p1 = this._p0;
 				this._p0 = pTemp;
 			}
+
+			ctx.closePath();
+			ctx.fill();
 		}
-		
 
 
 		// Clean up context
