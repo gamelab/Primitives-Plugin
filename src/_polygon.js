@@ -1008,7 +1008,7 @@ Kiwi.Plugins.Primitives.Polygon.prototype.render = function( camera ) {
 
 
 		// Draw fill
-		if ( this.drawFill && this._indices.length > 3 ) {
+		if ( this.drawFill && this._indices.length > 2 ) {
 			ctx.fillStyle =
 				"rgb(" +
 				this._color.r255 + "," +
@@ -1052,7 +1052,7 @@ Kiwi.Plugins.Primitives.Polygon.prototype.render = function( camera ) {
 
 
 		// Draw stroke
-		if ( this.drawStroke && this._strokePolyIndices.length > 3 ) {
+		if ( this.drawStroke && this._strokePolyIndices.length > 2 ) {
 			indicesLen = this._strokePolyIndices.length;
 
 			ctx.fillStyle =
