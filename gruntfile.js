@@ -25,7 +25,8 @@ module.exports = function(grunt) {
 		uglify: {
 			build: {
 				files: {
-				"build/<%= pkg.name %>-<%= pkg.version %>.min.js": [ "<%= pkg.main %>" ]
+					"build/<%= pkg.name %>-<%= pkg.version %>.min.js":
+						[ "<%= pkg.main %>" ]
 				}
 			}
 		},
@@ -42,14 +43,14 @@ module.exports = function(grunt) {
 			}
 		},
 
-	    concat: {
+		concat: {
 
-    		build: {
-	           	src:[ 'src/**' ],
-	        	dest: '<%= pkg.main %>'
-	        }
+			build: {
+				src:[ "src/**" ],
+				dest: "<%= pkg.main %>"
+			}
 
-	    }
+		}
 
 	});
 
@@ -58,7 +59,10 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks( "grunt-contrib-jshint" );
 	grunt.loadNpmTasks( "grunt-contrib-concat" );
 
-	grunt.registerTask( "default", [ "jshint", "concat:build", "uglify:build" ] );
-	grunt.registerTask( "full", [ "jshint", "concat:build", "uglify:build",
-		"yuidoc:compile" ] );
+	grunt.registerTask(
+		"default",
+		[ "jshint", "concat:build", "uglify:build" ] );
+	grunt.registerTask(
+		"full",
+		[ "jshint", "concat:build", "uglify:build", "yuidoc:compile" ] );
 };

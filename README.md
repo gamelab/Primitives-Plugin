@@ -5,7 +5,7 @@ Primitives Plugin for KiwiJS
 	Type: GameObject
 	Author: Benjamin D. Richards for KiwiJS Team
 	Website: www.kiwijs.org
-	Kiwi.js Version Last Tested: 1.3.0
+	Kiwi.js Version Last Tested: 1.4.0
 
 
 Versions:
@@ -13,10 +13,12 @@ Versions:
 
 1.0.4
 - `color` and `strokeColor` properties updated. They now use the `Kiwi.Utils.Color` class under the hood.
-- Hitbox offsets now correctly set. 
+- Hitbox offsets now correctly set
+- Primitives in Canvas render mode look better, thanks to faster and more accurate draw method
 
 1.0.3
 - Improve efficiency in rendering by recycling geometry points
+- Add TypeScript type definitions, thanks to Github user @tkyaji
 
 1.0.2
 - Fix incompatibility with Canvas rendering
