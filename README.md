@@ -11,6 +11,9 @@ Primitives Plugin for KiwiJS
 Versions:
 ---------
 
+1.1.0
+- Alter shaders for compatibility with KiwiJS 1.5.0
+
 1.0.4
 - `color` and `strokeColor` properties updated. They now use the `Kiwi.Utils.Color` class under the hood.
 - Hitbox offsets now correctly set

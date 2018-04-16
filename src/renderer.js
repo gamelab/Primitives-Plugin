@@ -127,6 +127,10 @@ Kiwi.Renderers.PrimitiveRenderer.prototype.addToBatch =
 
 	var t = entity.transform;
 	var m = t.getConcatenatedMatrix();
+	var a = entity.alpha;
+	var r = color[ 0 ] * a;
+	var g = color[ 1 ] * a;
+	var b = color[ 2 ] * a;
 
 	for ( i = 0; i < vertLen; i++ ) {
 		this._tempPoint.setTo(
@@ -136,9 +140,7 @@ Kiwi.Renderers.PrimitiveRenderer.prototype.addToBatch =
 		this._tempPoint = m.transformPoint( this._tempPoint );
 
 		this._vertexBuffer.items.push(
-			this._tempPoint.x, this._tempPoint.y,
-			color[ 0 ], color[ 1 ], color[ 2 ],
-			entity.alpha
+			this._tempPoint.x, this._tempPoint.y, r, g, b, a
 		);
 	}
 
