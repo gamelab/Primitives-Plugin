@@ -32,7 +32,7 @@ module.exports = function(grunt) {
 		},
 
 		jshint: {
-			src: "src/**",
+			src: "src/",
 			options: {
 				camelcase: true,
 				curly: true,
@@ -44,12 +44,10 @@ module.exports = function(grunt) {
 		},
 
 		concat: {
-
 			build: {
 				src:[ "src/**" ],
 				dest: "<%= pkg.main %>"
 			}
-
 		}
 
 	});
@@ -61,8 +59,8 @@ module.exports = function(grunt) {
 
 	grunt.registerTask(
 		"default",
-		[ "jshint", "concat:build", "uglify:build" ] );
+		[ "concat:build", "uglify:build" ] );
 	grunt.registerTask(
 		"full",
-		[ "jshint", "concat:build", "uglify:build", "yuidoc:compile" ] );
+		[ "concat:build", "uglify:build", "yuidoc:compile" ] );
 };

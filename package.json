@@ -15,7 +15,7 @@
 		"url": "xx"
 	},
 
-	"main": "build/primitives-1.0.4.js",
+	"main": "build/primitives-1.1.0.js",
 
 	"dependencies": {},
 	"devDependencies": {
